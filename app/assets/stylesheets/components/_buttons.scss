@@ -3,6 +3,8 @@
   border-radius: 50px;
   transition: opacity 0.3s ease;
   color: $white;
+  font-family: $headers-font;
+  font-size: 18px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
@@ -22,14 +24,6 @@
   color: $dark-grey;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
 }
-
-.btn-back {
-  border-radius: 50%;
-  color: $c1;
-  font-size: 38px;
-}
-
-
 
 .btn-go-back {
   width: 40px;
