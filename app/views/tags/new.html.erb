@@ -1,0 +1,9 @@
+<h1> Here we register our tag #new</h1>
+
+ <%= simple_form_for @tag do |f| %>
+    <div class="form-inputs">
+      <%= f.input :code %>
+    </div>
+  <% end %>
+
+  <%= link_to "Register now", tag_path, :class => "btn btn-green mt-5", :method => :patch %>
