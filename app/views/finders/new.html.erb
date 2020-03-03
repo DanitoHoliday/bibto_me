@@ -1,0 +1,28 @@
+<div class="finder-cont">
+  <h2>You are a hero! </h2>
+  <h2>EMOJI </h2>
+  <h4>You found Ryans(@tag.user.first_name) </h4>
+  <h4> +49 151 1337 1338 (@tag.user.phone)</h4>
+
+  <h4>Please contact Ryan or send him your contact details</h4>
+
+  <%= simple_form_for @finder do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :phone,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :email,
+                  required: false,
+                  hint: "hh" %>
+      <%= f.input :message,
+                  required: false %>
+    </div>
+
+    <div class="form-actions btn btn-primary">
+      <%= f.button :submit, "Share information with owner" %>
+    </div>
+  <% end %>
+</div>
+
