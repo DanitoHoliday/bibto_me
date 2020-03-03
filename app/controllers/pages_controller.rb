@@ -10,4 +10,7 @@ class PagesController < ApplicationController
   def thank_you
   end
 
+  def return_item
+  end
+
 end

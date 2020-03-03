@@ -11,6 +11,18 @@ class TagsController < ApplicationController
     end
   end
 
+  def return_tag_verification
+    @tag = Tag.find_by(code: params[:code])
+
+    if @tag && @tag.registered == true
+      redirect_to new_finder_path(tag: @tag)
+    elsif @tag && @tag.registered == false
+      # Display new popup message
+    else
+      # Please check code - popup
+    end
+  end
+
   def successful_registration
   end
 

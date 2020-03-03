@@ -1,6 +1,7 @@
 class FindersController < ApplicationController
 
   def new
+    @tag = Tag.find(params[:tag])
     @finder = Finder.new
   end
 
