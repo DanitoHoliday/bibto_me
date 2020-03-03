@@ -53,10 +53,19 @@ puts "#{kaylin.first_name} created"
 ######################
 
 puts 'Creating 50 unregistered tags...'
-50.times do |i|
+40.times do |i|
   tag = Tag.create!(
     code: Faker::Alphanumeric.alphanumeric(number: 5),
     registered: false
+  )
+  puts "Tag #{tag.code} created"
+end
+
+puts '###################'
+10.times do |i|
+  tag = Tag.create!(
+    code: Faker::Alphanumeric.alphanumeric(number: 5),
+    registered: true
   )
   puts "Tag #{tag.code} created"
 end
