@@ -1,0 +1,49 @@
+<h2>Your code <%= @tag.code %> was successfully registered</h2>
+
+<br>
+
+<h3>Finders of your item can anonymously contact you via:</h3>
+
+<br>
+
+<strong>E-Mail:</strong><%=User.first.email%> <!-- change to current user -->
+<strong>Phone:</strong><%=User.first.phone%> <!-- change to current user -->
+
+<%= link_to "Change contact data", edit_user_registration_path, :class => "btn btn-link mt-5" %>
+<br>
+<br>
+
+<h3>Please select a category for your code:</h3>
+
+<div class="d-flex justify-content-around mt-5">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+</div>
+
+<%= link_to "Register another tag", registration_path, :class => "btn btn-success mt-5" %>
+<!-- replace user path by correct (future) path to user dashboard -->
+<%= link_to "Visit your dashboard", registration_path, :class => "btn btn-warning mt-5" %>
+
+
+
+
+
+

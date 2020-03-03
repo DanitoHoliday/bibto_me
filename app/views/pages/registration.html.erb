@@ -1,0 +1,10 @@
+<h1> Here you can register your tag</h1>
+
+ <%= form_tag update_registration_path, method: :post do %>
+  <%= text_field_tag :code,
+    params[:code],
+    class: "form-control",
+    placeholder: "Enter your code"
+  %>
+  <%= submit_tag "Register now", class: "btn btn-primary" %>
+<% end %>

@@ -1,10 +1,12 @@
 <div class="finder-cont">
   <h2>You are a hero! </h2>
-  <h2>EMOJI </h2>
-  <h4>You found Ryans(@tag.user.first_name) </h4>
-  <h4> +49 151 1337 1338 (@tag.user.phone)</h4>
+  <h2>❤️</h2>
+  <h4>You found <%= @tag.user.first_name %></h4>
+  <% if @tag.user.phone && @tag.user.shared_phone %>
+    <p><%= @tag.user.phone %></p>
+  <% end %>
 
-  <h4>Please contact Ryan or send him your contact details</h4>
+  <h4>Please contact <%= @tag.user.first_name %> or send him your contact details</h4>
 
   <%= simple_form_for @finder do |f| %>
 

@@ -4,7 +4,13 @@ class PagesController < ApplicationController
   def home
   end
 
+  def registration
+  end
+
   def thank_you
+  end
+
+  def return_item
   end
 
 end
