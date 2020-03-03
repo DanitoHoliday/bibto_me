@@ -4,12 +4,10 @@ class PagesController < ApplicationController
   def home
   end
 
-<<<<<<< HEAD
   def registration
   end
-=======
+
   def thank_you
   end
 
->>>>>>> master
 end
