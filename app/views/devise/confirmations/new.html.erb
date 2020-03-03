@@ -9,7 +9,7 @@
                 required: true,
                 autofocus: true,
                 value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
-                input_html: { autocomplete: "email" } %>
+                input_html: { autocomplete: "email", class: "bib-form-styling" } %>
   </div>
 
   <div class="form-actions">

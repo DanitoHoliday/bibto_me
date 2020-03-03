@@ -1,0 +1,33 @@
+.btn-bib {
+  padding: 8px 24px;
+  border-radius: 50px;
+  transition: opacity 0.3s ease;
+  color: $white;
+  font-family: $headers-font;
+  font-size: 18px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.btn-green {
+  background: $c1;
+}
+
+.btn-grey {
+  background: $light-grey;
+}
+
+.btn-icon {
+  width: 40px;
+  background: lightgrey;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+  color: $dark-grey;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.btn-go-back {
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
