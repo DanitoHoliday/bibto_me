@@ -1,0 +1,13 @@
+<h1>Tag verification for RETURN</h1>
+
+<p>Please insert the tag ID to proceed verification: </p>
+
+<%= simple_form_for @tag do |f| %>
+  <%= f.input :code%>
+  <%= f.submit "send code", class: "btn btn-primary" %>
+<% end %>
+
+<% Tag.all.each do |tag| %>
+  <%= tag.code %>
+<% end %>
+
