@@ -1,0 +1,8 @@
+<%= simple_form_for([ restaurant, review ], remote: true) do |form| %>
+  <%= form.input :content %>
+  <%= form.button :submit %>
+<% end %>
+
+<% form_for membership remote: true, id: '#member_form' do |f| %>
+  <%= f.select :permissions, [['none', 0], ['admin', 9]], onchange: '$("#member_form").trigger("submit");' %>
+<% end %>
