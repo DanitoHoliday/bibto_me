@@ -4,6 +4,7 @@ class TagsController < ApplicationController
   def update_registration
     if @tag = Tag.find_by(code: params[:code])
       @tag.registered = true
+      @tag.user = User.first #change to current user
       @tag.save
       redirect_to successful_registration_path
     else
@@ -24,6 +25,18 @@ class TagsController < ApplicationController
   end
 
   def successful_registration
+    @tag = User.first.tags.last #change to current user
+    # if tag.category
+    #   respond_to do |format|
+    #     format.html { redirect_to successful_registration_path(@tag) }
+    #     format.js  # <-- will render `app/views/reviews/create.js.erb`
+    #   end
+    # else
+    #   respond_to do |format|
+    #     format.html { render 'tags/successful_registration' }
+    #     format.js  # <-- idem
+    #   end
+    # end
   end
 
   private
