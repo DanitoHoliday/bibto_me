@@ -1,7 +1,9 @@
 class TagsController < ApplicationController
   before_action :set_tag, only: [:edit, :update, :destroy]
 
-
+  def return
+    @tags = Tag.all
+  end
 
   private
 
