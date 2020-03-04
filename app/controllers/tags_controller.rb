@@ -1,14 +1,22 @@
 class TagsController < ApplicationController
-  before_action :set_tag, only: [:update]
+
 
   def update_registration
     if @tag = Tag.find_by(code: params[:code])
-      @tag.registered = true
-      @tag.user = User.first #change to current user
-      @tag.save
-      redirect_to successful_registration_path
+      #commented out for js testing
+      # if @tag.registered == false
+        @tag.registered = true
+        @tag.user = User.first #change to current user
+        @tag.save
+        render :successful_registration, locals: { tag: @tag }
+      # commented out for js testing
+      # else
+      #   render template: 'pages/registration'
+      #   flash.alert = "Code already registered."
+      # end
     else
       render template: 'pages/registration'
+      flash.alert = "Code not found."
     end
   end
 
@@ -28,21 +36,13 @@ class TagsController < ApplicationController
     end
   end
 
-  def successful_registration
-    @tag = User.first.tags.last #change to current user
-    # if tag.category
-    #   respond_to do |format|
-    #     format.html { redirect_to successful_registration_path(@tag) }
-    #     format.js  # <-- will render `app/views/reviews/create.js.erb`
-    #   end
-    # else
-    #   respond_to do |format|
-    #     format.html { render 'tags/successful_registration' }
-    #     format.js  # <-- idem
-    #   end
-    # end
+  def update
+    @tag = Tag.find(params[:id])
+    @tag.category = params[:category]
+    @tag.save
+    flash[:notice] = "lalalala"
+    render :successful_registration
   end
-
   private
 
   def set_tag
