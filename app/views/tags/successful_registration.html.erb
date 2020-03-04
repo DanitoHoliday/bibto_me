@@ -1,56 +1,43 @@
 <h2>Your code <%= @tag.code %> was successfully registered</h2>
-
 <br>
-
 <h3>Finders of your item can anonymously contact you via:</h3>
-
 <br>
-
 <strong>E-Mail:</strong><%=User.first.email%> <!-- change to current user -->
 <strong>Phone:</strong><%=User.first.phone%> <!-- change to current user -->
 
-<%= simple_form_for @user, :url => edit_user_registration_path, :method => :patch do |f| %>
-  <%= f.input :email %>
-  <%= f.input :phone %>
-  <%= f.button :submit %>
-<% end %>
-
 <%= link_to "Change contact data", edit_user_registration_path, :class => "btn btn-link mt-5" %>
-<br>
 <br>
 
 <h3>Please select a category for your tag:</h3>
 
-<%= link_to 'Laptop', tag_path(tag, id: "Laptop"), method: :patch %>
-<%= link_to 'Phone', tag_path(tag, id: "Phone"), method: :patch %>
-<%= link_to 'Keys', tag_path(tag, id: "Keys"), method: :patch %>
+ <%= simple_form_for @tag do |f| %>
+    <%= f.input :category, as: :radio_buttons, collection: ['laptop', 'key', 'phone'] %>
+ <% end %>
 
-<div class="d-flex justify-content-around mt-5">
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <p class="card-text">Laptop</p>
-    </div>
-  </div>
 
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <p class="card-text">Keys</p>
-    </div>
-  </div>
 
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <p class="card-text">Phone</p>
-    </div>
-  </div>
-</div>
+    <div class="category-choices">
+      <input type="checkbox" class="hidden" value="Laptop">
+      <input type="checkbox" class="hidden" value="Laptop">
+      <input type="checkbox" class="hidden" value="Laptop">
+   </div>
+
 
 <%= link_to "Register another tag", registration_path, :class => "btn btn-success mt-5" %>
 <!-- replace user path by correct (future) path to user dashboard -->
 <%= link_to "Visit your dashboard", registration_path, :class => "btn btn-warning mt-5" %>
+
+
+<%= link_to 'Laptop', tag_path(tag, id: "Laptop"), method: :patch %>
+
+
+<%= form_tag tag_path(@tag), method: :patch do %>
+<%= hidden_field_tag :category, "Laptop" %>
+  <%= submit_tag "Laptop form tag", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to 'Phone', tag_path(tag, id: "Phone"), method: :patch %>
+<%= link_to 'Keys', tag_path(tag, id: "Keys"), method: :patch %>
 
 
 
