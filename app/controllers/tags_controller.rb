@@ -19,7 +19,7 @@ class TagsController < ApplicationController
       redirect_to new_finder_path(tag: @tag)
     else
       if !@tag
-        @error = "wrong tag code! Please insert a valid code."
+        @error = "Wrong tag code! Please insert a valid code."
         render  "pages/return_item", :locals => { :error => @error }
       elsif @tag.registered == false
         @error = "Tag containing this code hasn't been yet registered."

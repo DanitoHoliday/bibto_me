@@ -1,17 +1,36 @@
-<h1>Tag verification for RETURN</h1>
+<div class="container">
+  <div class="my-5 mx-2">
+    <div class="mb-5 pb-4 back-arrow-position-fix">
+      <h3 class="text-center">Return Tag</h3>
+        <%= link_to (image_tag "return.png", class: "btn-go-back"), "#" %>
+    </div>
 
+    <h4 class="mx-3 mt-5 text-center">Please insert the tag ID to proceed verification: </h4>
 
-<p>Please insert the tag ID to proceed verification: </p>
- <p class="text-danger"><%= @error %></p>
- <%= form_tag return_tag_verification_path, method: :post do %>
-  <%= text_field_tag :code,
-    params[:code],
-    required: :true,
-    class: "form-control",
-    placeholder: "Enter your code"
-  %>
-  <%= submit_tag "Send code", class: "btn btn-primary", "data-toggle"=>"modal","data-target"=>"#exampleModal"%>
-<% end %>
+    <div class="mt-5">
+       <h5 class="text-danger">
+        <% if @error != '' %>
+          <i class="fas fa-exclamation-triangle"></i>
+        <% end %>
+        <%= @error %></h5>
+       <%= form_tag return_tag_verification_path, method: :post do %>
+        <%= text_field_tag :code,
+          params[:code],
+          required: :true,
+          class: "bib-form-styling btn-block py-3 px-4 mb-3",
+          placeholder: "HIJKLMNOPQRSTUVWXYZ"
+        %>
+        <%= submit_tag "Send code", class: "btn btn-bib btn-green btn-block py-3"%>
+      <% end %>
+    </div>
+
+    <h4 class="mx-3 mt-5 mb-3 text-center">Or scan QR-code here:</h4>
+    <i class="fas fa-qrcode w-100 text-center text-secondary" style="font-size: 4rem"></i>
+
+    <h5 class="text-center mt-5">Need help?<span style="color: #FDD365">Click here.</span></h5>
+  </div>
+</div>
+
 
 
 
