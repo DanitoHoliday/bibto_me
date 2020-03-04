@@ -7,8 +7,7 @@
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email", class: "bib-form-styling" },
-                placeholder: ('<i class="fas fa-envelope"></i>').html_safe %>
+                input_html: { autocomplete: "email", class: "bib-form-styling" } %>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -19,7 +18,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: "btn btn-bib btn-grey" %>
   </div>
 <% end %>
 
