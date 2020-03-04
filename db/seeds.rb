@@ -7,11 +7,11 @@ puts "Creating admin"
 puts ""
 x = User.create(first_name: "Armin", last_name: "Admin", email: "user@bibto.me", password: "123456", phone: "+49 151 1337 1338", shared_phone: true)
 
-puts "Admin-Name | #{x.first_name} #{x.last_name}"
+puts "Admin-Name     | #{x.first_name} #{x.last_name}"
 puts "Admin-Email    | #{x.email}"
 puts "Admin-password | #{x.password}"
 puts ""
-puts "creating already registered tag for Admin"
+puts "creating already registered tags for Admin"
 puts ""
 
 tag = Tag.new(code: "ABC123", registered: true,  category: "Sticker", user_id: x.id)
@@ -101,3 +101,14 @@ puts ""
   puts "1 | unregistered tag created  -  #{i.code} "
   puts
 end
+
+puts ""
+puts "INSTRUCTION PLEASE READ !!!"
+puts ""
+puts "PLEASE ONLY USE   user@bibto.me   as your primary login"
+puts ""
+puts "Admin and Leon have shared_phone TRUE ... Toni has shared_phone FALSE"
+puts "Please use the tags from Leon and Toni for RETURN test"
+puts "Use unregistered tags to REGISTER"
+puts ""
+puts "Happy developing :)"
