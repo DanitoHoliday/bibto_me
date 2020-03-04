@@ -1,0 +1,19 @@
+<div class="container">
+
+  <br>
+
+  <div class="welcome-container text-center">
+    <h1>Welcome</h1>
+
+    <h3> <%= @user.first_name %> </h3>
+    <p class="text-center"> <%= link_to 'Edit Profile', edit_user_registration_path %> </p>
+  </div>
+
+  <br>
+
+  <br>
+
+  <div class="text-center">
+    <%= link_to "Back to Home", root_path, class: "btn btn-green" %>
+  </div>
+</div>
