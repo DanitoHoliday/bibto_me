@@ -34,5 +34,13 @@
   width: 40px;
   border-radius: 50%;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  // I add the following 2 lines to fix the position of this button on the pages _ by Ivan
+  position: absolute;
+  top: -2px;
+}
+
+// position go-back button fix on the pages _ by Ivan
+.back-arrow-position-fix {
+  position: relative;
 }
 

@@ -1,30 +1,42 @@
-<div class="finder-cont">
-  <h2>You are a hero! </h2>
-  <h2>❤️</h2>
-  <h4>You found <%= @tag.user.first_name %></h4>
-  <% if @tag.user.phone && @tag.user.shared_phone %>
-    <p><%= @tag.user.phone %></p>
-  <% end %>
-
-  <h4>Please contact <%= @tag.user.first_name %> or send him your contact details</h4>
-
-  <%= simple_form_for @finder do |f| %>
-
-    <div class="form-inputs">
-      <%= f.input :phone,
-                  required: false,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :email,
-                  required: false,
-                  hint: "hh" %>
-      <%= f.input :message,
-                  required: false %>
+<div class="container">
+  <div class="my-5 mx-2">
+    <div class="mb-5 pb-4 back-arrow-position-fix">
+      <h3 class="text-center">Contact Details</h3>
+        <%= link_to (image_tag "return.png", class: "btn-go-back"), "#" %>
     </div>
 
-    <div class="form-actions btn btn-primary">
-      <%= f.button :submit, "Share information with owner" %>
+    <h4>
+      You are a hero! ❤️ <br>
+      You have found <%= @tag.user.first_name %>´s bag <br>
+      <% if @tag.user.phone && @tag.user.shared_phone %>
+        Please contact him/her here: <%= @tag.user.phone %>
+      <% end %>
+    </h4>
+
+    <div class="mt-5">
+       <%= simple_form_for @finder do |f| %>
+          <%= f.input :phone,
+                      placeholder: 'Phone number',
+                      label: false,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email", class: "bib-form-styling btn-block py-3 px-4 mb-3" }
+                      %>
+          <%= f.input :email,
+                      label: false,
+                      placeholder: 'Email',
+                      required: false,
+                      input_html: { autocomplete: "email", class: "bib-form-styling btn-block py-3 px-4 mb-3" }
+                       %>
+          <%= f.input :message,
+                      label: false,
+                      placeholder: 'Message',
+                      required: false %>
+
+          <%= f.button :submit, "Share information with owner", class: "btn btn-bib btn-green btn-block py-3" %>
+      <% end %>
     </div>
-  <% end %>
+
+    <h5 class="text-center mt-5">Need help?<span style="color: #FDD365">Click here.</span></h5>
+  </div>
 </div>
-

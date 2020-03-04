@@ -11,6 +11,7 @@ class PagesController < ApplicationController
   end
 
   def return_item
+    @error = ""
   end
 
 end
