@@ -1,17 +1,9 @@
 .landing-page {
-  background-size: cover;
-  background-position: center;
+  // background-size: cover;
+  // background-position: center;
   padding: 80px 10px;
   background-color: $c1;
 }
-
-// .landing-page h1 {
-//   margin: 0;
-//   color: white;
-//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-//   font-size: 32px;
-//   font-weight: bold;
-// }
 
 
 .landing-page #banner-header {
@@ -37,14 +29,18 @@
   color: $white;
   font-size: 30px;
   margin-bottom: 150px;
+
 }
 
-.landing-page #btn-area{
+.landing-page #lp-btn{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: strech;
 }
+
+
+
+
 
 
 
