@@ -1,0 +1,54 @@
+.landing-page {
+  background-size: cover;
+  background-position: center;
+  padding: 80px 10px;
+  background-color: $c1;
+}
+
+// .landing-page h1 {
+//   margin: 0;
+//   color: white;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   font-size: 32px;
+//   font-weight: bold;
+// }
+
+
+.landing-page #banner-header {
+  margin: none;
+}
+
+.landing-page #banner-header h1 {
+  font-family: $logo-font;
+  color: $c3;
+  font-size: 48px;
+  margin: none;
+}
+
+.landing-page #banner-header h3 {
+  font-family: $logo-font;
+  color: $light-grey;
+  font-size: 22px;
+  margin: none;
+}
+
+.landing-page #banner-slogan h2 {
+  margin-top: 70px;
+  color: $white;
+  font-size: 30px;
+  margin-bottom: 150px;
+}
+
+.landing-page #btn-area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: strech;
+}
+
+
+
+
+
+
+
