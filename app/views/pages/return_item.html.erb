@@ -1,13 +1,17 @@
 <h1>Tag verification for RETURN</h1>
 
+
 <p>Please insert the tag ID to proceed verification: </p>
-
-
+ <p class="text-danger"><%= @error %></p>
  <%= form_tag return_tag_verification_path, method: :post do %>
   <%= text_field_tag :code,
     params[:code],
+    required: :true,
     class: "form-control",
     placeholder: "Enter your code"
   %>
-  <%= submit_tag "Send code", class: "btn btn-primary" %>
+  <%= submit_tag "Send code", class: "btn btn-primary", "data-toggle"=>"modal","data-target"=>"#exampleModal"%>
 <% end %>
+
+
+
