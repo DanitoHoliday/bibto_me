@@ -1,11 +1,15 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Asap+Condensed:400,500,600,700|Asap:400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,500,600,700&display=swap');
 
 
 // Define fonts for body and headers
 $body-font: "Asap", "Helvetica", "sans-serif";
 $headers-font: "Questrial", "Helvetica", "sans-serif";
+
+$logo-font: "Comfortaa", "Helvetica", "sans-serif";
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
