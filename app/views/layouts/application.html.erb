@@ -3,18 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>bibto.me | return lost items</title>
+    <meta property="og:title" content="bibto.me | return lost items" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Dont want to lose your beloved belongings? Increase the chance of return with bibto.me! Apply the tags on your items, easily register and get instant notified once found! Losing stuff has never been more relaxed. Just, bring it back to me! Browse our variety of tags as well as many amazing designs now!" />
+    <meta property="og:url" content="https://www.bibto.me" />
+    <meta property="og:image" content="https://res.cloudinary.com/dyuwip9bs/image/upload/c_limit,h_630,w_1200/v1583334055/bibto_banner_og.jpg" />
+
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <div class="main-container">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    </div>
   </body>
 </html>
