@@ -8,7 +8,7 @@ class TagsController < ApplicationController
         @tag.registered = true
         @tag.user = User.first #change to current user
         @tag.save
-        redirect_to successful_registration_path
+        render :successful_registration, locals: { tag: @tag }
       # commented out for js testing
       # else
       #   render template: 'pages/registration'
@@ -36,17 +36,13 @@ class TagsController < ApplicationController
     end
   end
 
-  def successful_registration
-    @tag = User.first.tags.last #change to current user
-    @user = User.first
-  end
-
   def update
-    @tag = User.first.tags.last
-    @tag.category = params[:id]
+    @tag = Tag.find(params[:id])
+    @tag.category = params[:category]
     @tag.save
+    flash[:notice] = "lalalala"
+    render :successful_registration
   end
-
   private
 
   def set_tag
