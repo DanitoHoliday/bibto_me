@@ -1,0 +1,12 @@
+<h1>Your item was found!</h1>
+<br>
+<h3>Thanks to an amazing and honest person, we found your lost item.</h3>
+<br>
+<p>Please get  in touch with the finder to return your item</p>
+<br>
+<p>
+  <%= @finder.email.present? ? "Finder's email:" @finder.email : ''  %>
+  Found your item
+</p>
+
+
