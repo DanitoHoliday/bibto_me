@@ -12,7 +12,7 @@
         Please contact him/her here: <%= @tag.user.phone %>
       <% end %>
     </h4>
-
+  <%# raise %>
     <div class="mt-5">
        <%= simple_form_for @finder do |f| %>
           <%= f.input :phone,
@@ -32,6 +32,7 @@
                       label: false,
                       placeholder: 'Message',
                       required: false %>
+          <%= f.input :tag, :as => :hidden, :input_html => { :value => params[:tag].to_i } %>
 
           <%= f.button :submit, "Share information with owner", class: "btn btn-bib btn-green btn-block py-3" %>
       <% end %>
