@@ -43,6 +43,10 @@ class TagsController < ApplicationController
     flash[:notice] = "lalalala"
     render :successful_registration
   end
+
+  def registration
+  end
+
   private
 
   def set_tag

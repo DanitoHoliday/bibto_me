@@ -23,9 +23,9 @@
    </div>
 
 
-<%= link_to "Register another tag", registration_path, :class => "btn btn-success mt-5" %>
+<%= link_to "Register another tag", tag_registration_path, :class => "btn btn-success mt-5" %>
 <!-- replace user path by correct (future) path to user dashboard -->
-<%= link_to "Visit your dashboard", registration_path, :class => "btn btn-warning mt-5" %>
+<%= link_to "Visit your dashboard", tag_registration_path, :class => "btn btn-warning mt-5" %>
 
 
 <%= link_to 'Laptop', tag_path(tag, id: "Laptop"), method: :patch %>
