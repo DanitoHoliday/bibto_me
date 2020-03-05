@@ -1,14 +1,36 @@
-// Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Asap+Condensed:400,500,600,700|Asap:400,500,600,700&display=swap');
+// Import Google font
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,500,600,700&display=swap');
 
 
 // Define fonts for body and headers
-$body-font: "Asap", "Helvetica", "sans-serif";
+$body-font: "Montserrat", "Helvetica", "sans-serif";
 $headers-font: "Questrial", "Helvetica", "sans-serif";
-
 $logo-font: "Comfortaa", "Helvetica", "sans-serif";
+
+h1 {
+  font-size: 34px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+p {
+  font-size: 26px;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+
+
 
 
 // To use a font file (.woff) uncomment following lines
