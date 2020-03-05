@@ -1,19 +1,15 @@
 class TagsController < ApplicationController
+before_action :authenticate_user!, only: [:update_registration]
 
-
-  def update_registration
-    if @tag = Tag.find_by(code: params[:code])
-      #commented out for js testing
-      if @tag.registered == false
-        @tag.registered = true
-        @tag.user = current_user #change to current user
-        @tag.save
-        render :successful_registration, locals: { tag: @tag }
-      # commented out for js testing
-      else
-        render template: 'pages/registration'
-        flash.alert = "Code already registered."
-      end
+  def update_registration(tag)
+    if @tag.registered == true
+      render template: 'pages/registration'
+      flash.alert = "Code already registered."
+    elsif @tag.registered == false
+      @tag.registered = true
+      @tag.user = current_user
+      @tag.save
+      render :successful_registration, locals: { tag: @tag }
     else
       render template: 'pages/registration'
       flash.alert = "Code not found."
@@ -23,7 +19,7 @@ class TagsController < ApplicationController
   def return_tag_verification
     @tag = Tag.find_by(code: params[:code])
 
-    if @tag && @tag.registered == true
+    if @tag && @tag.registered = true
       redirect_to new_finder_path(tag: @tag)
     else
       if !@tag
@@ -39,17 +35,15 @@ class TagsController < ApplicationController
   def scan_code
     uri = request.original_url
     scanned_code = URI(uri).path.split('/').last
-    @tag = Tag.where(code: scanned_code)
+    @tag = Tag.find_by(code: scanned_code)
     if @tag.registered == true
       return_tag_verification
-    elsif @tag.registered == false && user_signed_in?
-      update_registration
-    else
-      #redirect to new_login_page (+ params(@tag.code)
+    elsif @tag.registered == false
+      update_registration(@tag)
     end
   end
 
-  #need view
+  #need view?
 
   def update
     @tag = Tag.find(params[:id])
