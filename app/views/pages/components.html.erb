@@ -16,6 +16,9 @@
 <h3>H3 Test</h3>
 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
+<h1>FORM STYLING RULES</h1>
+<p>input: mb-3 py-4 px-4 </p>
+
 <p>buttons</p>
   <!-- text buttons -->
   <%= link_to "Register my tag", "#", class: "btn btn-bib btn-green" %>
@@ -37,11 +40,26 @@
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
     <div class="search-form-control form-group">
       <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-      <button name="button" type="submit" class="btn btn-bib btn-green">
+      <button id="search-btn" name="button" type="submit" class="btn btn-bib btn-green">
         <i class="fas fa-search"></i> Search
       </button>
     </div>
   <% end %>
+
+
+<div class="footer mt-5">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-logo">
+    <div class="bib-logo-footer">bibto.me</div>
+    <div class="bib-logo-footer" id="bib-logo-footer-sub">bring it back to me</div>
+  </div>
+</div>
 
 
 
