@@ -1,18 +1,18 @@
 <div class="container">
   <div class="my-5 mx-2">
-    <div class="mb-5 pb-4 back-arrow-position-fix">
-      <h3 class="text-center">Return Tag</h3>
-        <%= link_to (image_tag "return.png", class: "btn-go-back"), "#" %>
+    <div class="pb-4 back-arrow-position-fix">
+      <h2 class="text-center">Return Item</h2>
+        <%= link_to (image_tag "return.png", class: "btn-go-back"), root_path %>
     </div>
 
-    <h4 class="mx-3 mt-5 text-center">Please insert the tag ID to proceed verification: </h4>
+    <p class="">Please insert the tag ID to proceed verification: </p>
 
-    <div class="mt-5">
-       <h5 class="text-danger">
+    <div class="">
+       <p class="text-danger">
         <% if @error != '' %>
           <i class="fas fa-exclamation-triangle"></i>
         <% end %>
-        <%= @error %></h5>
+        <%= @error %></p>
        <%= form_tag return_tag_verification_path, method: :post do %>
         <%= text_field_tag :code,
           params[:code],
@@ -24,10 +24,10 @@
       <% end %>
     </div>
 
-    <h4 class="mx-3 mt-5 mb-3 text-center">Or scan QR-code here:</h4>
+    <p class="text-center">Or scan QR-code here:</p>
     <i class="fas fa-qrcode w-100 text-center text-secondary" style="font-size: 4rem"></i>
 
-    <h5 class="text-center mt-5">Need help?<span style="color: #FDD365">Click here.</span></h5>
+    <div class="text-center text-small">Need help?<span style="color: #FDD365">Click here.</span></div>
   </div>
 </div>
 
