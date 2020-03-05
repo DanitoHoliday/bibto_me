@@ -16,12 +16,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'faker'
-<<<<<<< HEAD
-=======
 gem 'pundit'
 gem 'postmark-rails'
-
->>>>>>> master
 
 group :development do
   gem 'web-console', '>= 3.3.0'

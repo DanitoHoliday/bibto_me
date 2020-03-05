@@ -1,12 +1,16 @@
 class TagRegistersController < ApplicationController
 
-  def update_registration
+  def update
+      @tag.registered = true
       @tag.user = current_user
       @tag.save
-      #redirect to show path
+      redirect_to register_success_path(@tag)
   end
 
-  def show
+  def successful_registration
+  end
+
+  def register_input
   end
 
 end

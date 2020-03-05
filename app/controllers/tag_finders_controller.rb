@@ -7,17 +7,20 @@ before_action :authenticate_user!, except: [:new, :create, :thank_you]
   end
 
   def create
+    @tag = Tag.find(params[:finder][:tag].to_i)
     @finder = Finder.new(finder_params)
+    @finder.tag = @tag
     @finder.save
+    mail = FinderMailer.with(user: @finder.tag.user, finder: @finder, tag: @finder.tag).notification
+    mail.deliver_now
     redirect_to finder_thank_you_path
+  end
+
+  def finder_input
   end
 
   def thank_you
     # @finder = Finder.find(params[:id])
-  end
-
-  def show
-    redirect_to new_finder_path(tag: @tag)
   end
 
   private
