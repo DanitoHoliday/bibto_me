@@ -1,9 +1,14 @@
-<div class="container">
-  <div class="my-5 mx-2">
-    <div class="pb-4 back-arrow-position-fix">
-      <h2 class="text-center">Return Item</h2>
-        <%= link_to (image_tag "return.png", class: "btn-go-back"), root_path %>
-    </div>
+
+<div class="back-arrow-position-fix page-title">
+  <div class="container">
+    <h2 class="text-center">Return Item</h2>
+    <%= link_to (image_tag "return.png", class: "btn-go-back"), root_path %>
+  </div>
+</div>
+
+<div class="container pt-4">
+  <div class="">
+
 
     <p class="">Please insert the tag ID to proceed verification: </p>
 
@@ -17,10 +22,10 @@
         <%= text_field_tag :code,
           params[:code],
           required: :true,
-          class: "bib-form-styling btn-block py-3 px-4 mb-3",
+          class: "bib-form-styling btn-block",
           placeholder: "HIJKLMNOPQRSTUVWXYZ"
         %>
-        <%= submit_tag "Send code", class: "btn btn-bib btn-green btn-block py-3"%>
+        <%= submit_tag "Send code", class: "btn btn-bib btn-green btn-block"%>
       <% end %>
     </div>
 
