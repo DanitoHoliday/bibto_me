@@ -4,11 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     # authorize @user
   end
 
   def update
-    @user = User.first
+    @user = current_user
   end
 end
