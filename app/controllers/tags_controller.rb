@@ -3,7 +3,7 @@ before_action :authenticate_user!, only: [:update_registration]
 
   def update_registration(tag)
     if @tag.registered == true
-      render template: 'pages/registration'
+      render template: #'/registration'
       flash.alert = "Code already registered."
     elsif @tag.registered == false
       @tag.registered = true
@@ -11,7 +11,7 @@ before_action :authenticate_user!, only: [:update_registration]
       @tag.save
       render :successful_registration, locals: { tag: @tag }
     else
-      render template: 'pages/registration'
+      render template: 'tags/registration'
       flash.alert = "Code not found."
     end
   end
@@ -52,6 +52,10 @@ before_action :authenticate_user!, only: [:update_registration]
     flash[:notice] = "Category set"
     render :successful_registration
   end
+
+  def registration
+  end
+
   private
 
   def set_tag

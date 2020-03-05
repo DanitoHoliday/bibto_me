@@ -1,7 +1,9 @@
 require "faker"
 
+Finder.destroy_all
 Tag.destroy_all
 User.destroy_all
+
 puts ""
 puts "Creating admin"
 puts ""
