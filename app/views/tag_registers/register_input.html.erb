@@ -6,7 +6,7 @@
 </div>
 
 <div class="container">
-   <%= form_tag tag_register_path, method: :patch do %>
+   <%= form_tag register_input_path, method: :post do %>
     <%= text_field_tag :code,
       params[:code],
       class: "form-control bib-form-styling",
