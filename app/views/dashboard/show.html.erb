@@ -21,8 +21,7 @@
 
   <div class="text-center">
     <h3>Your registered tags</h3>
-    <% all_tags = Tag.where(user_id: current_user) %>
-    <% all_tags.each do |t| %>
+    <% @user.tags.each do |t| %>
     <div>
       <%= t.code %>
       <%= t.registered? ? "registered tag!" : "" %>
@@ -31,7 +30,7 @@
     <% end %>
   </div>
 
-<!--   <div class="text-center">
+  <div class="text-center">
     <%= link_to "Back to Home", root_path %>
-  </div> -->
+  </div>
 </div>
