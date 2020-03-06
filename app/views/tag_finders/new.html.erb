@@ -14,7 +14,7 @@
     </h4>
   <%# raise %>
     <div class="mt-5">
-       <%= simple_form_for @finder do |f| %>
+       <%= simple_form_for [params[@finder], @tag] do |f| %>
           <%= f.input :phone,
                       placeholder: 'Phone number',
                       label: false,
@@ -32,7 +32,7 @@
                       label: false,
                       placeholder: 'Message',
                       required: false %>
-          <%= f.input :tag, :as => :hidden, :input_html => { :value => params[:tag].to_i } %>
+          <%#= f.input :tag, :as => :hidden, :input_html => { :value => params[:tag] } %>
 
           <%= f.button :submit, "Share information with owner", class: "btn btn-bib btn-green btn-block py-3" %>
       <% end %>

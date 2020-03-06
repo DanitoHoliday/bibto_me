@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   get 'split_users', to: 'splitters#split_users', as: :split_users
   get 'components', to: 'pages#components', as: :components
 
+  resources :tag_registers, only: :edit
+  patch 'tag_registers/update', to: "tag_registers#update", as: :update_register_input
   get 'tag_registration_input', to: "tag_registers#register_input", as: :register_input
-  resources :tag_registers, only: [:edit, :update]
   get 'register_success', to: 'tag_registers#successful_registration', as: :register_success
 
   resources :tag_finders, only: [:new, :create]
