@@ -1,18 +1,19 @@
 class TagFindersController < ApplicationController
-before_action :authenticate_user!, except: [:new, :create, :thank_you]
+before_action :authenticate_user!, except: [:new, :create, :thank_you, :finder_input]
 
    def new
-    @tag = Tag.find(params[:tag])
+    @tag = Tag.find_by(code: params[:code])
     @finder = Finder.new
+    # raise
   end
 
   def create
-    @tag = Tag.find(params[:finder][:tag].to_i)
+    @tag = Tag.find_by(id: params[:format])
     @finder = Finder.new(finder_params)
     @finder.tag = @tag
     @finder.save
-    mail = FinderMailer.with(user: @finder.tag.user, finder: @finder, tag: @finder.tag).notification
-    mail.deliver_now
+    # mail = FinderMailer.with(user: @finder.tag.user, finder: @finder, tag: @finder.tag).notification
+    # mail.deliver_now
     redirect_to finder_thank_you_path
   end
 
