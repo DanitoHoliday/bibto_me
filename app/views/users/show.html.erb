@@ -1,19 +1,29 @@
+<!-- Dashboard -->
+
+
+<div class="page-title">
+  <div class="container">
+    <h2 class="text-center">Welcome</h2>
+    <%= link_to (image_tag "return.png", alt: "alttext", class: "btn-go-back"), :back %>
+  </div>
+</div>
+
 <div class="container">
 
-  <br>
-
   <div class="welcome-container text-center">
-    <h1>Welcome</h1>
 
-    <h3> <%= @user.first_name %> </h3>
-    <p class="text-center"> <%= link_to 'Edit Profile', edit_user_registration_path %> </p>
+    <h2> <%= @user.first_name %> </h2>
+
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-super-large", alt: "avatar-large" %>
+
+    <p class="text-center"> <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-bib btn-green btn-margin", style: "padding: 4px 20px;" %> </p>
   </div>
-
-  <br>
-
-  <br>
 
   <div class="text-center">
-    <%= link_to "Back to Home", root_path, class: "btn btn-green" %>
+    <h3>Your registered tags</h3>
   </div>
+
+<!--   <div class="text-center">
+    <%= link_to "Back to Home", root_path %>
+  </div> -->
 </div>

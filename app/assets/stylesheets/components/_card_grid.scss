@@ -1,0 +1,25 @@
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+
+// for xs and s devices (landscape phones, 576px and up to 767px)
+@media (max-width: 767px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// for m, l and xl devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
