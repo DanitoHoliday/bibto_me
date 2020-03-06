@@ -1,13 +1,13 @@
 <div class="page-title">
   <div class="container">
-    <h2 class="text-center">Good to see you!</h2>
+    <h2 class="text-center">Register Tag</h2>
     <%= link_to (image_tag "return.png", alt: "alttext", class: "btn-go-back"), :back %>
   </div>
 </div>
 
-<div class="container">
-  <h3>To register your tag, please enter your code below</h3>
-     <%= form_tag update_register_input_path, method: "patch" do %>
+<div class="container mt-5">
+  <p class="text-center">To register your tag, please enter your code below:</p>
+     <%= form_tag update_register_input_path, method: :patch do %>
     <%= text_field_tag :code,
       params[:code],
       class: "form-control bib-form-styling",
@@ -15,5 +15,10 @@
     %>
     <%= submit_tag "Register now", class: "btn btn-bib btn-green btn-form btn-margin" %>
   <% end %>
+
+  <p class="text-center mt-3">Or scan QR-code here:</p>
+    <i class="fas fa-qrcode w-100 text-center text-secondary" style="font-size: 4rem"></i>
+
+    <div class="text-center text-small mt-3">Need help? <span style="color: #FDD365">Click here.</span></div>
 
 </div>

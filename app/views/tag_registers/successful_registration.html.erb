@@ -3,7 +3,7 @@
 <!-- <<<<<<< HEAD:app/views/tags/successful_registration.html.erb -->
 
 
- <div class="text-center mb-3">
+ <div class="text-center my-3">
    <%= image_tag "icon_checked_green.svg", alt: "alttext"%>
   </div>
   <h3 class="text-center mb-3">Code: <span style="color: $c1;"><%= @tag.code %></span><br>was successfully registered</h3>
@@ -43,17 +43,18 @@
   </div>
 
   <br>
-
-  <h4>Finders can contact you via:</h4>
-  <div class="d-inline">
-    <strong class="mr-2">Phone:</strong><%=current_user.phone%> <!-- change to current user -->
-  </div>
-  <br>
-  <%= link_to "Change your data", edit_user_registration_path, :class => "ml-0" %>
-  <div>
-    <%= link_to "Register another tag", register_input_path, :class => "btn btn-bib btn-green btn-form my-2" %>
-    <!-- replace user path by correct (future) path to user dashboard -->
-    <%= link_to "Visit your dashboard", user_path(current_user.id), :class => "btn btn-bib btn-grey btn-form my-2" %>
+  <div class="text-center">
+    <h4>Finders can contact you via:</h4>
+    <div class="d-inline">
+      <strong class="mr-2">Phone:</strong><%=current_user.phone%> <!-- change to current user -->
+    </div>
+    <br>
+    <%= link_to "Change your data", edit_user_registration_path, :class => "ml-0" %>
+    <div>
+      <%= link_to "Register another tag", register_input_path, :class => "btn btn-bib btn-green btn-form my-2" %>
+      <!-- replace user path by correct (future) path to user dashboard -->
+      <%= link_to "Visit your dashboard", dashboard_path, :class => "btn btn-bib btn-grey btn-form my-2" %>
+    </div>
   </div>
 </div>
 
