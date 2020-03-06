@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :tags
   has_many :finders, through: :tags
   # has_one_attached :photo
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
 
   private
 
