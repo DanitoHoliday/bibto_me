@@ -21,6 +21,14 @@
 
   <div class="text-center">
     <h3>Your registered tags</h3>
+    <% all_tags = Tag.where(user_id: current_user) %>
+    <% all_tags.each do |t| %>
+    <div>
+      <%= t.code %>
+      <%= t.registered? ? "registered tag!" : "" %>
+      <%= t.category %>
+    </div>
+    <% end %>
   </div>
 
 <!--   <div class="text-center">

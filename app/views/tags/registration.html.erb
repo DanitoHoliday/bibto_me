@@ -1,20 +1,19 @@
-
-
 <div class="page-title">
   <div class="container">
-    <h1>Good to see you!</h1>
-    <h2>To register your tag, please enter your code below</h2>
+    <h2 class="text-center">Good to see you!</h2>
+    <%= link_to (image_tag "return.png", alt: "alttext", class: "btn-go-back"), :back %>
   </div>
 </div>
 
 <div class="container">
+  <h3>To register your tag, please enter your code below</h3>
    <%= form_tag update_registration_path, method: :post do %>
     <%= text_field_tag :code,
       params[:code],
       class: "form-control bib-form-styling",
       placeholder: "Enter your code here"
     %>
-    <%= submit_tag "Register now", class: "btn btn-bib btn-green btn-form" %>
+    <%= submit_tag "Register now", class: "btn btn-bib btn-green btn-form btn-margin" %>
   <% end %>
 
 </div>
