@@ -1,35 +1,52 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password", class: "bib-form-styling" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password", class: "bib-form-styling" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password", class: "bib-form-styling" } %>
+<div class="page-title">
+  <div class="container">
+    <h2 class="text-center">Edit Profile</h2>
+    <%= link_to (image_tag "return.png", alt: "alttext", class: "btn-go-back"), :back %>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update", class: "btn btn-bib btn-grey" %>
-  </div>
-<% end %>
+<div class="container">
 
-<h3>Cancel my account</h3>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <div class="form-inputs">
+      <%= f.input :email, required: true, autofocus: true, input_html: { class: "bib-form-styling"}, label: false %>
 
-<%= link_to "Back", :back %>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+
+      <%= f.input :password,
+                  hint: "leave it blank if you don't want to change it",
+                  required: false,
+                  input_html: { autocomplete: "new-password", class: "bib-form-styling" },
+                  placeholder: "New password",
+                  label: false %>
+      <%= f.input :password_confirmation,
+                  required: false,
+                  input_html: { autocomplete: "new-password", class: "bib-form-styling" },
+                  placeholder: "New password confirmation",
+                  label: false %>
+      <%= f.input :current_password,
+                  hint: "we need your current password to confirm your changes",
+                  required: true,
+                  input_html: { autocomplete: "current-password", class: "bib-form-styling" },
+                  placeholder: "Your current password",
+                  label: false %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Update", class: "btn btn-bib btn-grey btn-form" %>
+    </div>
+  <% end %>
+
+
+  <p class="p-small mt-3">Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+  <%= link_to "Back to Dashboard", user_path(current_user), class: "p-small" %>
+
+
+</div>

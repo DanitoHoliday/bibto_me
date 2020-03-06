@@ -1,24 +1,35 @@
-<h2>Log in</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email", class: "bib-form-styling" },
-                placeholder: "E-mail",
-                label: false %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password", class: "bib-form-styling" },
-                placeholder: ("<i class='fas fa-envelope'></i>").html_safe,
-                label: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+<div class="page-title">
+  <div class="container">
+    <h2 class="text-center">Login</h2>
+    <%= link_to (image_tag "return.png", alt: "alttext", class: "btn-go-back"), :back %>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in", class: "btn btn-bib btn-grey btn-form" %>
-  </div>
-<% end %>
+<div class="container">
 
-<%= render "devise/shared/links" %>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email", class: "bib-form-styling" },
+                  placeholder: "E-mail",
+                  label: false %>
+      <%= f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "current-password", class: "bib-form-styling" },
+                  placeholder: "Password",
+                  label: false %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Log in", class: "btn btn-bib btn-grey btn-form" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+
+</div>
