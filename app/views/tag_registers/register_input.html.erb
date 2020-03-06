@@ -7,7 +7,7 @@
 
 <div class="container">
   <h3>To register your tag, please enter your code below</h3>
-   <%= form_tag update_registration_path, method: :post do %>
+     <%= form_tag update_register_input_path, method: "patch" do %>
     <%= text_field_tag :code,
       params[:code],
       class: "form-control bib-form-styling",
