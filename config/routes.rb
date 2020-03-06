@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: [:show]
+
+  get "/dashboard", to: "dashboard#show"
+
   root to: 'pages#home'
 
   get 'split_users', to: 'splitters#split_users', as: :split_users
