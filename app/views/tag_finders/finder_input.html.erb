@@ -15,24 +15,24 @@
     <div class="">
        <p class="text-danger">
         <% if @error != '' %>
-          <i class="fas fa-exclamation-triangle"></i>
+          <!-- <i class="fas fa-exclamation-triangle"></i> -->
         <% end %>
         <%= @error %></p>
        <%= form_tag new_tag_finder_path, method: :get do %>
         <%= text_field_tag :code,
           params[:code],
           required: :true,
-          class: "bib-form-styling btn-block",
-          placeholder: "HIJKLMNOPQRSTUVWXYZ"
+          class: "bib-form-styling btn-block py-3 pl-3 mb-3",
+          placeholder: "Your code"
         %>
         <%= submit_tag "Send code", class: "btn btn-bib btn-green btn-block"%>
       <% end %>
     </div>
 
-    <p class="text-center">Or scan QR-code here:</p>
+    <p class="text-center mt-5">Or scan QR-code here:</p>
     <i class="fas fa-qrcode w-100 text-center text-secondary" style="font-size: 4rem"></i>
 
-    <div class="text-center text-small">Need help?<span style="color: #FDD365">Click here.</span></div>
+    <div class="text-center text-small mt-3">Need help?<span style="color: #FDD365"> Click here.</span></div>
   </div>
 </div>
 
