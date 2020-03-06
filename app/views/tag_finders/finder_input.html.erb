@@ -18,7 +18,7 @@
           <i class="fas fa-exclamation-triangle"></i>
         <% end %>
         <%= @error %></p>
-       <%= form_tag return_tag_verification_path, method: :post do %>
+       <%= form_tag finder_input_path, method: :post do %>
         <%= text_field_tag :code,
           params[:code],
           required: :true,
