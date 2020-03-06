@@ -21,9 +21,20 @@ h3 {
   font-size: 28px;
 }
 
+
 p {
-  font-size: 26px;
+  font-size: 24px;
 }
+
+.p-small {
+  font-size: 18px;
+}
+// used for additional Infos at the bottom of pages, e.g. "Unhappy? Delete my account!"
+
+.p-big{
+  font-size: 28px;
+}
+// used for landing page explanatory infos_by Anouk
 
 h1, h2, h3, p {
   margin: 0;
