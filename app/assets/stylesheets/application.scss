@@ -30,5 +30,10 @@ body {
   font-size: 22px;
 }
 
-.bg-green {background-color: $c1}
-.text-yellow {color: $c3}
+
+// makes super cool scrolling on a page (landing page)_by Anouk
+html {
+  scroll-behavior: smooth;
+}
+
+

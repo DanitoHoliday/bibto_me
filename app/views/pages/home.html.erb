@@ -1,10 +1,11 @@
-<div class="landing-page">
+
+<div class="landing-page" id="lp-top">
 
   <div class="container" >
 
     <div id="banner-header">
-      <h1>bibto.me</h1>
-      <h3 class="text-white">bring it back to me</h3>
+      <h1 class= "my-0 py-0">bibto.me</h1>
+      <h3 class="text-white my-0 py-0">bring it back to me</h3>
     </div>
     <div id="banner-slogan">
       <h1>Get your lost items returned easy, fast and secure.</h1>
@@ -16,21 +17,32 @@
       <%= link_to "Return item", finder_input_path, class: "btn btn-bib btn-grey mb-5 w-100" %>
     </div>
 
-    <div class= "text-center text-white mt-5">
-      <div class="mb-5">
-        <%= image_tag "icon_QR_sticker.svg", alt: "alttext" %>
+    <p class= "font-yellow p-small text-center mb-0">How does it work?</p>
+    <a href="#explanation">
+      <div id="arrow-down">
+        <%= image_tag "down-arrow.svg", alt: "alttext" %>
+      </div>
+    </a>
+
+    <div id= "explanation" class= "text-center text-white mt-5">
+      <div class="mt-5 mb-5">
+        <%= image_tag "bib_icon_choose.svg", alt: "alttext" %>
         <p class="p-big mt-2">Choose your tag  <br> and get it shipped</p>
       </div>
 
       <div class="mb-5">
-        <%= image_tag "icon_register.svg", alt: "alttext" %>
-        <p class="p-big mt-2">Register your tag <br>and attach it to your item</p>
+        <%= image_tag "bib_icon_register_2.svg", alt: "alttext" %>
+        <p class="p-big mt-2">Register your tag and <br>attach it to your item</p>
       </div>
 
       <div class="mb-5">
-        <%= image_tag "icon_checked.svg", alt: "alttext" %>
-        <p class=" p-big mt-2">When your lost item  <br>is found, get notified</p>
+        <%= image_tag "bib_icon_notification.svg", alt: "alttext" %>
+        <p class=" p-big mt-2">Get notified when <br>your lost item  is found</p>
       </div>
+    </div>
+
+    <div class="text-center">
+      <a class="font-yellow p-small" href="#lp-top"> Back to top</a>
     </div>
 
   </div>
@@ -45,8 +57,8 @@
     <a href="#"><i class="fab fa-linkedin"></i></a> -->
   </div>
   <div class="footer-logo">
-    <div class="bib-logo-footer">bibto.me</div>
-    <div class="bib-logo-footer" id="bib-logo-footer-sub">bring it back to me</div>
+    <p class="bib-logo-footer my-0 py-0 font-d-yellow">bibto.me</p>
+    <p class="bib-logo-footer my-0 py-0" id="bib-logo-footer-sub">bring it back to me</p>
   </div>
 </div>
 
