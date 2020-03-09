@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  get 'split_users', to: 'splitters#split_users', as: :split_users
+  get '/qr/:id', to: 'splitters#split_users', as: :split_users
   get 'components', to: 'pages#components', as: :components
 
   resources :tag_registers, only: :edit
