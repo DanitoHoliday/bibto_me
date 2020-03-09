@@ -21,7 +21,7 @@
 
   <div class="text-center">
     <h3>Your registered tags</h3>
-    <% @user.tags.each do |t| %>
+    <% @tags.each do |t| %>
     <div>
       <%= t.code %>
       <%= t.registered? ? "registered tag!" : "" %>

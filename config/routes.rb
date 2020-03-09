@@ -5,11 +5,12 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  get '/qr/:id', to: 'splitters#split_users', as: :split_users
+  get '/qr/:code', to: 'splitters#split_users', as: :split_users
   get 'components', to: 'pages#components', as: :components
 
   resources :tag_registers, only: :edit
   patch 'tag_registers/update', to: "tag_registers#update", as: :update_register_input
+  patch 'tag_registers/update_category', to: "tag_registers#update_category", as: :update_register_category
   get 'tag_registration_input', to: "tag_registers#register_input", as: :register_input
   get 'register_success', to: 'tag_registers#successful_registration', as: :register_success
 
