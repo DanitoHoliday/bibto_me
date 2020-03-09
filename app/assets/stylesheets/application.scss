@@ -24,6 +24,11 @@ body {
 
 }
 
+
+// Helpers
 .text-small {
   font-size: 22px;
 }
+
+.bg-green {background-color: $c1}
+.text-yellow {color: $c3}
