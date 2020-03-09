@@ -13,31 +13,35 @@
 
 
       <div class="category-card">
-        <%= form_tag update_register_input_path, method: :patch do %>
+        <%= form_tag update_register_category_path, method: :patch do %>
         <%= hidden_field_tag :category, "Laptop" %>
-          <%= submit_tag "Laptop", class: "btn" %>
+        <%= hidden_field_tag :code, @tag.code %>
+        <%= submit_tag "Laptop", class: "btn" %>
         <% end %>
       </div>
 
       <div class="category-card">
-        <%= form_tag update_register_input_path, method: :patch do %>
+        <%= form_tag update_register_category_path, method: :patch do %>
         <%= hidden_field_tag :category, "Phone" %>
-          <%= submit_tag "Phone", class: "btn" %>
+        <%= hidden_field_tag :code, @tag.code %>
+        <%= submit_tag "Phone", class: "btn" %>
         <% end %>
       </div>
 
 
       <div class="category-card">
-        <%= form_tag update_register_input_path, method: :patch do %>
+        <%= form_tag update_register_category_path, method: :patch do %>
         <%= hidden_field_tag :category, "Keys" %>
-          <%= submit_tag "Keys", class: "btn" %>
+        <%= hidden_field_tag :code, @tag.code %>
+        <%= submit_tag "Keys", class: "btn" %>
         <% end %>
       </div>
 
       <div class="category-card">
-        <%= form_tag update_register_input_path, method: :patch do %>
+        <%= form_tag update_register_category_path, method: :patch do %>
         <%= hidden_field_tag :category, "Bag" %>
-          <%= submit_tag "Bag", class: "btn" %>
+        <%= hidden_field_tag :code, @tag.code %>
+        <%= submit_tag "Bag", class: "btn" %>
         <% end %>
       </div>
   </div>

@@ -97,7 +97,7 @@ puts 'Creating 20 unregistered tags...'
 puts ""
 20.times do |i|
   i = Tag.create!(
-    code: Faker::Alphanumeric.alphanumeric(number: 6, min_alpha: 3, min_numeric: 3),
+    code: SecureRandom.hex(3).upcase,
     registered: false
   )
   puts "1 | unregistered tag created  -  #{i.code} "
