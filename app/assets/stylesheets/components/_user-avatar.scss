@@ -1,0 +1,15 @@
+.user-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  color: $c1;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 50px auto 10px auto;
+
+  h4 {
+    margin: 0;
+  }
+}

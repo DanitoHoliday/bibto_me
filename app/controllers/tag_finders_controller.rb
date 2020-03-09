@@ -2,9 +2,20 @@ class TagFindersController < ApplicationController
 before_action :authenticate_user!, except: [:new, :create, :thank_you, :finder_input]
 
    def new
-    @tag = Tag.find_by(code: params[:code])
+      if params.include?(:code)
+        @tag = Tag.find_by(code: params[:code])
+        if @tag.nil?
+          redirect_to finder_input_path
+          flash.alert = "Code not found."
+        end
+      elsif params.include?(:format)
+        @tag = Tag.find_by(id: params[:format])
+        if @tag.nil?
+          redirect_to finder_input_path
+          flash.alert = "Code not found."
+        end
+      end
     @finder = Finder.new
-    # raise
   end
 
   def create
@@ -21,7 +32,6 @@ before_action :authenticate_user!, except: [:new, :create, :thank_you, :finder_i
   end
 
   def thank_you
-    # @finder = Finder.find(params[:id])
   end
 
   private
