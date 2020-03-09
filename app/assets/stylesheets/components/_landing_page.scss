@@ -14,6 +14,7 @@
   font-family: $logo-font;
   color: $c3;
   font-size: 48px;
+  font-weight: 700;
 }
 
 .landing-page #banner-header h3 {
@@ -21,12 +22,13 @@
   color: $light-grey;
   font-size: 22px;
   margin: none;
+  font-weight: 700;
 }
 
 .landing-page #banner-slogan h1 {
   margin-top: 50px;
   color: $white;
-  margin-bottom: 110px;
+  margin-bottom: 100px;
   font-size: 36px;
 
 }
@@ -40,7 +42,36 @@
 #down-angle{
   font-size: 34px;
   text-align: center;
+
 }
+
+#how-it-works{
+  font-size: 20px;
+}
+
+// Animation
+@keyframes jump {
+  0% { top: 0; } 50% { top: 10px; } 100% { top: 0; }
+}
+
+// Button/Arrow
+#arrow-down {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  animation: jump 5s infinite;
+    i {
+      content: '\f0a8';
+      font-family: 'FontAwesome';
+      font-size: 80px;
+      transition: .3s ease-in-out;
+  }
+    i:hover {
+      opacity: 0.7;
+      transition: .3s ease-in-out;
+  }
+}
+
 
 
 

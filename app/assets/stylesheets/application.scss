@@ -27,3 +27,9 @@ body {
 .text-small {
   font-size: 22px;
 }
+
+
+// makes super cool scrolling on a page (landing page)_by Anouk
+html {
+  scroll-behavior: smooth;
+}

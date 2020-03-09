@@ -26,6 +26,7 @@ h4{
 
 a{
   font-size: 22px;
+  text-decoration: none;
 }
 
 p {
@@ -45,6 +46,11 @@ p {
 h1, h2, h3, p {
   margin: 0;
 }
+
+.logo-font{
+  font-family: $logo-font;
+}
+
 
 
 
