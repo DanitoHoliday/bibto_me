@@ -1,8 +1,13 @@
 
-<div class="back-arrow-position-fix page-title">
-  <div class="container">
-    <h2 class="text-center">Return Item</h2>
-    <%= link_to (image_tag "return.png", class: "btn-go-back"), root_path %>
+<div class="page-title">
+  <div class="container mb-2">
+    <div class="d-flex">
+        <%= link_to :back do %>
+        <h2><i class="fas fa-chevron-left text-dark"></i></h2>
+        <% end %>
+      <h2 class="mx-auto">Return Item</h2>
+      <h2><i class="far fa-bell text-white"></i></h2>
+    </div>
   </div>
 </div>
 
@@ -10,7 +15,7 @@
   <div class="">
 
 
-    <p class="">Please insert the tag ID to proceed verification: </p>
+    <p class="text-center mb-5">Please insert the tag ID to proceed verification: </p>
 
     <div class="">
        <p class="text-danger">
@@ -22,17 +27,20 @@
         <%= text_field_tag :code,
           params[:code],
           required: :true,
-          class: "bib-form-styling btn-block py-3 pl-3 mb-3",
-          placeholder: "Your code"
+          class: "bib-form-styling btn-block pl-3 mb-3 text-input",
+            style: "padding: 12px 0",
+          placeholder: "Code here"
         %>
         <%= submit_tag "Send code", class: "btn btn-bib btn-green btn-block"%>
       <% end %>
     </div>
 
-    <p class="text-center mt-5">Or scan QR-code here:</p>
-    <i class="fas fa-qrcode w-100 text-center text-secondary" style="font-size: 4rem"></i>
+    <%= link_to "Or scan QR-code here", root_path, class: "btn btn-bib btn-grey btn-block mt-3" %>
 
-    <div class="text-center text-small mt-3">Need help?<span class="font-d-yellow"> Click here.</span></div>
+    <!-- <p class="text-center mt-5">Or scan QR-code here:</p>
+    <i class="fas fa-qrcode w-100 text-center text-secondary" style="font-size: 4rem"></i> -->
+
+    <div class="text-center text-small mt-5">Need help?<span class="font-d-yellow"> Click here.</span></div>
   </div>
 </div>
 
