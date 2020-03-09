@@ -1,16 +1,14 @@
 class SplittersController < ApplicationController
 
   def split_users
-    uri = request.original_url
-    scanned_code = URI(uri).path.split('/').last
-    @tag = Tag.find_by(code: scanned_code)
+    @tag = Tag.find_by(code: params[:code])
     if @tag.nil?
       redirect_to root_path
       flash.alert = "Code not found or not registered yet."
     elsif @tag.registered == false
-      redirect_to register_success_path(@tag)
+      redirect_to register_input_path(code: @tag.code)
     elsif @tag.registered == true
-      redirect_to new_tag_finder_path(@tag)
+      redirect_to finder_input_path(code: @tag.code)
     end
   end
 end
