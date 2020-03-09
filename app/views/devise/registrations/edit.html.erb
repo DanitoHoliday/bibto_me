@@ -43,10 +43,8 @@
     </div>
   <% end %>
 
-
-  <p class="p-small mt-3">Unhappy? <%= link_to "Cancel my account", registration_path(resource_name),  data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-  <%= link_to "Back to Dashboard", dashboard_path(current_user), class: "p-small" %>
-
+  <div class="text-center mt-3 device-links">
+    <p id="devices-info-text-grey">Unhappy? <%= link_to "Cancel my account", registration_path(resource_name),  data: { confirm: "Are you sure?" }, method: :delete, class: "device-links" %></p>
+  </div>
 
 </div>
