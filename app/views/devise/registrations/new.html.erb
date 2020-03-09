@@ -1,12 +1,18 @@
 
-<div class="page-title">
-  <div class="container">
-    <h2 class="text-center">Sign-Up</h2>
-    <%= link_to (image_tag "return.png", alt: "alttext", class: "btn-go-back"), :back %>
+<div class="page-title bg-green text-white">
+  <div class="container mb-2">
+    <div class="d-flex">
+        <%= link_to :back do %>
+        <h2><i class="fas fa-chevron-left text-white"></i></h2>
+        <% end %>
+      <h2 class="mx-auto">Create Account</h2>
+      <h2><i class="far fa-bell text-green"></i></h2>
+    </div>
   </div>
 </div>
 
 <div class="container">
+  <p class="text-center my-5">Let’s get started!</p>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
@@ -15,27 +21,29 @@
       <%= f.input :email,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "email", class: "bib-form-styling" },
+                  input_html: { autocomplete: "email", class: "bib-form-styling text-input" },
                   placeholder: "E-mail",
                   label: false %>
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password", class: "bib-form-styling" },
+                  input_html: { autocomplete: "new-password", class: "bib-form-styling text-input" },
                   placeholder: "Password",
                   label: false %>
       <%= f.input :password_confirmation,
                   required: true,
-                  input_html: { autocomplete: "new-password", class: "bib-form-styling" },
+                  input_html: { autocomplete: "new-password", class: "bib-form-styling text-input" },
                   placeholder: "Confirm Password",
                   label: false %>
     </div>
 
     <div class="form-actions btn-form">
-      <%= f.button :submit, "Sign up", class: "btn btn-bib btn-grey btn-form" %>
+      <%= f.button :submit, "Sign up", class: "btn btn-bib btn-green btn-form" %>
     </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
+  <div class="text-center mt-3">
+   <%= render "devise/shared/links" %>
+  </div>
 
 </div>

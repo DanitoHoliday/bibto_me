@@ -1,37 +1,44 @@
 
 
-<div class="page-title">
-  <div class="container">
-    <h2 class="text-center">Login</h2>
-    <%= link_to (image_tag "return.png", alt: "alttext", class: "btn-go-back"), :back %>
+<div class="page-title bg-green text-white">
+  <div class="container mb-2">
+    <div class="d-flex">
+        <%= link_to :back do %>
+        <h2><i class="fas fa-chevron-left text-white"></i></h2>
+        <% end %>
+      <h2 class="mx-auto">Login</h2>
+      <h2><i class="far fa-bell text-green"></i></h2>
+    </div>
   </div>
 </div>
 
 <div class="container">
+  <p class="text-center my-5">Welcome back!</p>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs">
       <%= f.input :email,
                   required: false,
                   autofocus: true,
-                  input_html: { autocomplete: "email", class: "bib-form-styling" },
+                  input_html: { autocomplete: "email", class: "bib-form-styling text-input"},
                   placeholder: "E-mail",
-                  label: false %>
+                  label: false%>
       <%= f.input :password,
                   required: false,
-                  input_html: { autocomplete: "current-password", class: "bib-form-styling" },
+                  input_html: { autocomplete: "current-password", class: "bib-form-styling text-input" },
                   placeholder: "Password",
                   label: false %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <%#= f.input :remember_me,
+                  label_html: {class: "text-input"},
+                  as: :boolean if devise_mapping.rememberable?%>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Log in", class: "btn btn-bib btn-grey btn-form" %>
+      <%= f.button :submit, "Login", class: "btn btn-bib btn-green btn-form" %>
     </div>
   <% end %>
 
   <div class="text-center mt-3">
-
    <%= render "devise/shared/links" %>
   </div>
 
