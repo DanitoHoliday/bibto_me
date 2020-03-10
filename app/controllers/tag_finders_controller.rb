@@ -32,6 +32,7 @@ before_action :authenticate_user!, except: [:new, :create, :thank_you, :finder_i
   end
 
   def thank_you
+    @tag = Tag.find_by(id: params[:id])
   end
 
   private

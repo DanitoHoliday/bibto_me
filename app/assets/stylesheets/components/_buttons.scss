@@ -18,8 +18,8 @@
 }
 
 .btn-white {
-  background: $white;
   color: $c2;
+  background-color: $white;
 }
 
 .btn-icon {
@@ -47,5 +47,17 @@
 
 .btn-margin{
   margin: 20px 0px;
+}
+
+.isDisabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  color: white;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.isDisabled:hover {
+  color: white;
 }
 
