@@ -49,3 +49,15 @@
   margin: 20px 0px;
 }
 
+.isDisabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  color: white;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.isDisabled:hover {
+  color: white;
+}
+
