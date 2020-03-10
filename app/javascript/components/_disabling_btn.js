@@ -7,3 +7,6 @@ toggler.addEventListener("click", (event) => {
     reachOutBtn.classList.remove('isDisabled')
   }
 });
+
+export { toggler };
+export { reachOutBtn };
