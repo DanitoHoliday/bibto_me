@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get "/dashboard", to: "dashboard#show"
 
+  post 'twilio/voice' => 'twilio#voice'
+
   root to: 'pages#home'
 
   get '/qr/:code', to: 'splitters#split_users', as: :split_users
