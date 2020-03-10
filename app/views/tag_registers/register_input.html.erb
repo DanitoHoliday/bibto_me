@@ -6,14 +6,20 @@
 </div>
 
 <div class="container mt-5">
-  <p class="text-center">To register your tag, please enter your code below:</p>
+  <p class="text-center">
+    To register your tag, please enter your code below:
+  </p>
      <%= form_tag update_register_input_path, method: :patch do %>
     <%= text_field_tag :code,
       params[:code],
       class: "form-control bib-form-styling",
       placeholder: "Enter your code here"
     %>
-    <%= submit_tag "Register now", class: "btn btn-bib btn-green btn-form btn-margin" %>
+    <%# if current_user == nil %>
+      <%#= submit_tag "Register now",class: "btn btn-bib btn-green btn-form btn-margin disabled" %>
+    <%# else %>
+    <%= submit_tag "Register now",class: "btn btn-bib btn-green btn-form btn-margin" %>
+    <%# end %>
   <% end %>
 
   <p class="text-center mt-3">Or scan the QR-code:</p>
