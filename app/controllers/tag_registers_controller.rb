@@ -1,4 +1,5 @@
 class TagRegistersController < ApplicationController
+  before_action :authenticate_user!, except: [:register_input]
 
   def update
     @tag = Tag.find_by(code: params[:code])
@@ -15,6 +16,7 @@ class TagRegistersController < ApplicationController
   end
 
   def register_input
+    # raise
   end
 
   def update_category
