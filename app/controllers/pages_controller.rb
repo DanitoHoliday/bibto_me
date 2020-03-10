@@ -7,6 +7,12 @@ class PagesController < ApplicationController
    def thank_you
   end
 
+  def the_404
+  end
+
+  def the_500
+  end
+
   def return_item
     @error = ""
   end

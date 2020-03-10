@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  root to: 'pages#home'
+
+  match "/404", :to => "errors#not_found", :via => :all
+  match "/500", :to => "errors#internal_error", :via => :all
   devise_for :users
 
   get "/dashboard", to: "dashboard#show"
 
-  root to: 'pages#home'
 
   get '/qr/:code', to: 'splitters#split_users', as: :split_users
   get 'components', to: 'pages#components', as: :components
