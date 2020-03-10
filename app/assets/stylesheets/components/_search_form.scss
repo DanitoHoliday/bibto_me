@@ -28,7 +28,7 @@
   border-radius: 50px;
   padding-top: 26px;
   padding-bottom: 26px;
-  margin-top: 30px;
+  margin-top: 20px;
   // margin-bottom: 20px;
 }
 
@@ -40,11 +40,14 @@
   padding: 0 15px;
 }
 
+// simple form: for the little tick boxes, e.g. remember me
 .form-check{
  margin-left: 10px;
  margin-top: 5px;
 }
 
+
+// simple form: for the little info text underneath the input forms, e.g. 6 characters minimum
 .form-text{
   margin-left: 15px;
 }
