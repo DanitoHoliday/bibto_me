@@ -51,7 +51,7 @@
 
 // Animation
 @keyframes jump {
-  0% { top: 0; } 50% { top: 10px; } 100% { top: 0; }
+  0% { top: 0; } 50% { top: 20px; } 100% { top: 0; }
 }
 
 // Button/Arrow
@@ -59,7 +59,7 @@
   position: relative;
   margin: 0 auto;
   text-align: center;
-  animation: jump 5s infinite;
+  animation: jump 3s infinite;
     i {
       content: '\f0a8';
       font-family: 'FontAwesome';
