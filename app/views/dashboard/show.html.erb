@@ -26,7 +26,18 @@
     <% @user.tags.each do |t| %>
     <div>
       <div class="text-small text-secondary border-bottom py-2 d-flex justify-content-between">
-        <span><%= t.category %></span>
+        <div>
+          <%= form_tag update_register_category_path, method: :patch do %>
+          <%= hidden_field_tag :code, t.code %>
+          <select name="category_dropdown" onchange="this.form.submit();">
+            <option value="" selected><% t.category %></option>
+            <option value="Bag">Bag</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Keys">Keys</option>
+            <option value="Phone">Phone</option>
+          </select>
+          <% end %>
+        </div>
         <span><%= t.code %></span>
         <%#= t.registered? ? "registered tag!" : "" %>
       </div>
