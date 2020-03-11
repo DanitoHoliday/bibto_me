@@ -28,8 +28,8 @@
       <div class="text-small text-secondary border-bottom py-2 d-flex justify-content-between">
         <div>
           <%= form_tag update_register_category_path, method: :patch do %>
-          <%= hidden_field_tag :code, t.code, id: "code#{t.id}" %>
-          <select name="category_dropdown" class="border-0" onchange="this.form.submit();">
+          <%= hidden_field_tag :code, t.code %>
+          <select name="category_dropdown" class="border-0" style="background-color: white;" onchange="this.form.submit();">
             <option value="" selected><%= t.category %></option>
             <option value="Bag">Bag</option>
             <option value="Laptop">Laptop</option>
