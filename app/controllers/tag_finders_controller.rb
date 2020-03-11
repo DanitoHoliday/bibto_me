@@ -7,15 +7,12 @@ before_action :authenticate_user!, except: [:new, :create, :thank_you, :finder_i
         if @tag.nil?
           @error = "* Code not found"
           render :finder_input
-          # flash.alert = "Code not found."
         end
       elsif params.include?(:format)
         @tag = Tag.find_by(id: params[:format])
         if @tag.nil?
           @error = "* Code not found"
           render :finder_input
-          # redirect_to finder_input_path
-          # flash.alert = "Code not found."
         end
       end
     @finder = Finder.new
