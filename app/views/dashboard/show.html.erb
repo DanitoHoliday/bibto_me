@@ -1,44 +1,51 @@
 <div class="page-title bg-green text-white">
   <div class="container">
     <div class="d-flex justify-content-between">
-        <%= link_to :back do %>
-        <h2><i class="fas fa-chevron-left text-white"></i></h2>
-        <% end %>
+      <%= link_to :back do %>
+      <h2><i class="fas fa-chevron-left text-white"></i></h2>
+      <% end %>
       <h2 class="text-center">Dashboard</h2>
-      <h2><i class="far fa-bell"></i></h2>
-
-      <%#= link_to (image_tag "return.png", alt: "alttext", class: "btn-go-back"), :back %>
+      <h2><i class="far fa-bell text-white"></i></h2>
     </div>
-
     <div class="user-avatar">
       <h4><%= @user.first_name[0] %></h4>
     </div>
     <p class="text-center "> <%= @user.first_name %> <%= @user.last_name %></p>
     <p class="text-center" style="margin-top: -15px">
-    <%= link_to 'Edit Profile', edit_user_registration_path, class: "text-small text-yellow"%>
+      <%= link_to 'Edit Profile', edit_user_registration_path, class: "text-small text-yellow"%>
     </p>
   </div>
 </div>
 <div class="container">
   <div>
     <p class="mt-5"><strong>Registered Tags</strong></p>
-    <% @user.tags.each do |t| %>
+    <% @user.tags.sort.each do |t| %>
     <div>
       <div class="text-small text-secondary border-bottom py-2 d-flex justify-content-between">
         <div>
           <%= form_tag update_register_category_path, method: :patch do %>
           <%= hidden_field_tag :code, t.code, id: "code#{t.id}" %>
-          <select name="category_dropdown" onchange="this.form.submit();">
-            <option value="" selected><% t.category %></option>
+          <select name="category_dropdown" class="border-0" onchange="this.form.submit();">
+            <option value="" selected><%= t.category %></option>
             <option value="Bag">Bag</option>
             <option value="Laptop">Laptop</option>
             <option value="Keys">Keys</option>
             <option value="Phone">Phone</option>
           </select>
+        </div>
+        <div>
+          <% if t.category == "Bag" %>
+          <i class="fas fa-shopping-bag"></i>
+          <% elsif t.category == "Laptop" %>
+          <i class="fas fa-laptop"></i>
+          <% elsif t.category == "Keys" %>
+          <i class="fas fa-key"></i>
+          <% else %>
+          <i class="fas fa-mobile-alt"></i>
+          <% end %>
           <% end %>
         </div>
         <span><%= t.code %></span>
-        <%#= t.registered? ? "registered tag!" : "" %>
       </div>
     </div>
     <% end %>
@@ -46,11 +53,3 @@
 </div>
 
 <%= render "shared/menu" %>
- <!--  <div class="text-center">
-    <%#= link_to "Back to Home", root_path %>
-  </div> -->
-
-  <!-- <div class="welcome-container text-center"></div> -->
-    <%#= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-super-large", alt: "avatar-large" %>
-
-    <!-- <p class="text-center"> <%#= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-bib btn-green btn-margin", style: "padding: 4px 20px;" %> </p> -->
