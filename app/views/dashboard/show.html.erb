@@ -5,7 +5,7 @@
         <h2><i class="fas fa-chevron-left text-white"></i></h2>
         <% end %>
       <h2 class="text-center">Dashboard</h2>
-      <h2><i class="far fa-bell text-white"></i></h2>
+      <h2><i class="far fa-bell"></i></h2>
 
       <%#= link_to (image_tag "return.png", alt: "alttext", class: "btn-go-back"), :back %>
     </div>
@@ -27,7 +27,7 @@
       <div class="text-small text-secondary border-bottom py-2 d-flex justify-content-between">
         <div>
           <%= form_tag update_register_category_path, method: :patch do %>
-          <%= hidden_field_tag :code, t.code %>
+          <%= hidden_field_tag :code, t.code, id: "code#{t.id}" %>
           <select name="category_dropdown" onchange="this.form.submit();">
             <option value="" selected><% t.category %></option>
             <option value="Bag">Bag</option>

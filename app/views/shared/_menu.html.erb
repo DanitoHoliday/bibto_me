@@ -1,4 +1,3 @@
-
 <body>
   <!-- Burger-Menu Icon -->
   <div class="burger-menu">
@@ -16,12 +15,14 @@
 
   <!-- Sidebar Nav -->
   <div id="mySidenav" class="sidenav">
-    <!-- This is just a comment -->
     <div>
-      <a><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "border-bottom" %></a>
-      <a><%= link_to "Dashborad", dashboard_path, class: "border-bottom" %></a>
+      <% if current_user %>
+        <a><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "border-bottom" %></a>
+      <% else %>
+        <a><%= link_to "Login", new_user_session_path, class: "border-bottom" %></a>
+      <% end %>
+      <a><%= link_to "Dashboard", dashboard_path, class: "border-bottom" %></a>
       <a><%= link_to "Create account", new_user_registration_path, class: "border-bottom" %></a>
-      <a><%= link_to "Login", new_user_session_path, class: "border-bottom" %></a>
       <a><%= link_to "Return item", finder_input_path, class: "border-bottom" %></a>
       <a><%= link_to "Register tag", register_input_path, class: "border-bottom" %></a>
       <a><%= link_to "Home", root_path, class: "border-bottom" %></a>
