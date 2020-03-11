@@ -12,7 +12,7 @@
       </div>
       <% if @tag.user.phone && @tag.user.shared_phone %>
           Please contact <%= @tag.user.first_name %> directly: <br> <strong><%= @tag.user.phone %></strong><br>
-          <%= link_to "I will reach out to #{@tag.user.first_name}", finder_thank_you_path(id: @tag), class: "btn btn-bib btn-green btn-form mt-4", id: "reach-out-btn" %>
+          <%= link_to "I will reach out to #{@tag.user.first_name}", finder_thank_you_path(@tag), class: "btn btn-bib btn-green btn-form mt-4", id: "reach-out-btn" %>
 
           <p class="mt-5">
             <div class="checkbox">
