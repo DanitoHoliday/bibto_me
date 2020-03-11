@@ -7,7 +7,7 @@ User.destroy_all
 puts ""
 puts "Creating admin"
 puts ""
-x = User.create(first_name: "Armin", last_name: "Admin", email: "user@bibto.me", password: "123456", phone: "+49 151 1337 1338", shared_phone: true)
+x = User.create(first_name: "Timo", last_name: "Admin", email: "user@bibto.me", password: "123456", phone: "+4916091101291", shared_phone: true)
 
 puts "Admin-Name     | #{x.first_name} #{x.last_name}"
 puts "Admin-Email    | #{x.email}"
@@ -43,7 +43,7 @@ puts ""
 
 ######################
 
-leon = User.create(first_name: "Leon", last_name: "Entrup", email: "leon@bibto.me", password: "123456", phone: "+49 151 3333 3333", shared_phone: true)
+leon = User.create(first_name: "Leon", last_name: "Entrup", email: "leon@bibto.me", password: "123456", phone: "+49 157 7430 7257", shared_phone: true)
 puts "#{leon.first_name} created"
 puts "shared_phone = #{leon.shared_phone}"
 puts""
@@ -93,9 +93,9 @@ puts ""
 
 ######################
 
-puts 'Creating 20 unregistered tags...'
+puts 'Creating 10 unregistered tags...'
 puts ""
-20.times do |i|
+10.times do |i|
   i = Tag.create!(
     code: SecureRandom.hex(3).upcase,
     registered: false
@@ -103,6 +103,19 @@ puts ""
   puts "1 | unregistered tag created  -  #{i.code} "
   puts
 end
+
+puts "###########################"
+puts "### Creating XXXXXX tag ###"
+puts "###########################"
+
+tag = Tag.new(code: "XXXXXX", registered: false,  category: "Tag")
+tag.save
+
+puts "###########################"
+puts "#### Presentation Tag  ####"
+puts "###########################"
+puts "##### XXXXXX created ######"
+puts "###########################"
 
 puts ""
 puts "INSTRUCTION PLEASE READ !!!"

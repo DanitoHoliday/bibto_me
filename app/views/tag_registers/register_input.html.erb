@@ -1,8 +1,14 @@
 <div class="page-title">
-  <div class="container">
-    <h2 class="text-center">Register Tag</h2>
-    <%= link_to (image_tag "return.png", alt: "alttext", class: "btn-go-back"), :back %>
+  <div class="container mb-2">
+    <div class="d-flex">
+        <%= link_to :back do %>
+        <h2><i class="fas fa-chevron-left text-dark"></i></h2>
+        <% end %>
+      <h2 class="mx-auto">Register Tag</h2>
+      <h2><i class="far fa-bell text-white"></i></h2>
+    </div>
   </div>
+</div>
 </div>
 
 <div class="container mt-5">
@@ -12,9 +18,12 @@
      <%= form_tag update_register_input_path, method: :patch do %>
     <%= text_field_tag :code,
       params[:code],
-      class: "form-control bib-form-styling",
+      class: "form-control bib-form-styling text-input",
       placeholder: "Enter your code here"
     %>
+    <% if @error %>
+    <span class="text-danger ml-3 text-input"><%= @error%></span>
+    <% end %>
     <%# if current_user == nil %>
       <%#= submit_tag "Register now",class: "btn btn-bib btn-green btn-form btn-margin disabled" %>
     <%# else %>
@@ -22,11 +31,9 @@
     <%# end %>
   <% end %>
 
-  <p class="text-center mt-3">Or scan the QR-code:</p>
+  <%= link_to "Or scan QR-code here", root_path, class: "btn btn-bib btn-grey btn-block" %>
 
-  <i class="fas fa-qrcode w-100 text-center text-secondary" style="font-size: 4rem"></i>
-
-  <div class="text-center text-small mt-3">Need help?
+  <div class="text-center text-small mt-5">Need help?
     <span class="font-d-yellow">Click here</span>
   </div>
 </div>
