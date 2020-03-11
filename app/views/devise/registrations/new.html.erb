@@ -2,11 +2,15 @@
 <div class="page-title bg-green text-white">
   <div class="container mb-2">
     <div class="d-flex">
-        <%= link_to :back do %>
-        <h2><i class="fas fa-chevron-left text-white"></i></h2>
-        <% end %>
-      <h2 class="mx-auto">Create Account</h2>
-      <h2><i class="far fa-bell text-green"></i></h2>
+        <%= link_to (image_tag "arrow_left.svg", alt: "back button"), :back %>
+        <%#= link_to :back do %>
+          <!-- <h2><i class="fas fa-chevron-left text-white"></i></h2> -->
+        <%# end %>
+      <h2 class="mx-auto align-self-center">Create Account</h2>
+      <div class="text-center align-self-center">
+        <%= link_to (image_tag "bell-53-green.svg", alt: "alttext")%>
+      </div>
+      <!-- <h2><i class="far fa-bell text-green"></i></h2> -->
     </div>
   </div>
 </div>
