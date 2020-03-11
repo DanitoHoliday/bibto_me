@@ -4,7 +4,6 @@ class Tag < ApplicationRecord
   validates :code, presence: true, uniqueness: true
   after_create :set_registration, on: [ :create ]
   has_one_attached :qr
-
   after_create_commit :generate_qr
 
   private
@@ -39,5 +38,4 @@ class Tag < ApplicationRecord
   def set_registration
     self.registered = false
   end
-
 end
