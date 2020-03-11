@@ -1,27 +1,33 @@
 <div class="page-title">
   <div class="container">
+
     <h2 class="text-center">Thanks a lot</h2>
     <%= link_to (image_tag "return.png", alt: "alttext", class: "btn-go-back"), :back %>
+
   </div>
 </div>
 
-
-
 <div class="text-center">
   <% if @tag.user.phone && @tag.user.shared_phone %>
+
     <h4 class="mb-4"> for reaching out to <%=@tag.user.first_name %> <br> (<%=@tag.user.phone%>)! </h4>
     <%= image_tag "https://media.giphy.com/media/wmEFhlivchtxS/giphy.gif", class: "avatar-gif mt-5", alt: "avatar-super-large" %>
     <h4 > You are making the world <br> a better place! </h4>
+
     <div class="color-banner-bottom">
       <h4 class="my-3"> Courious about bibto.me? <%= link_to "Check it out", root_path, class: "btn btn-bib btn-white my-3" %> </h4>
     </div>
+
   <% else %>
+
     <h4 class="mb-4"> for your help! </h4>
     <%= image_tag "https://media.giphy.com/media/wmEFhlivchtxS/giphy.gif", class: "avatar-gif mt-5", alt: "avatar-super-large" %>
     <h4 > You are making the world <br> a better place! </h4>
+
     <div class="color-banner-bottom">
       <h4 class="my-3"> Courious about bibto.me? <%= link_to "Check it out", root_path, class: "btn btn-bib btn-white my-3" %> </h4>
     </div>
+
   <% end %>
 </div>
 

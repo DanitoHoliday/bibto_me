@@ -1,36 +1,40 @@
-
 <div class="page-title">
   <div class="container mb-2">
+
     <div class="d-flex">
-        <%= link_to :back do %>
-        <h2><i class="fas fa-chevron-left text-dark"></i></h2>
-        <% end %>
+      <%= link_to :back do %>
+          <h2><i class="fas fa-chevron-left text-dark"></i></h2>
+      <% end %>
       <h2 class="mx-auto">Return Item</h2>
       <h2><i class="far fa-bell text-white"></i></h2>
     </div>
+
   </div>
 </div>
 
 <div class="container pt-4">
   <div class="">
 
-
     <p class="text-center mb-5">Please insert the tag ID to proceed verification: </p>
 
     <div class="">
-       <%= form_tag new_tag_finder_path, method: :get do %>
-        <%= text_field_tag :code,
-          params[:code],
 
-          class: "bib-form-styling btn-block pl-3 text-input",
-            style: "padding: 12px 0",
-          placeholder: "Code here"
-        %>
-        <% if @error %>
-          <span class="text-danger ml-3 text-input"><%= @error%></span>
-        <% end %>
-        <%= submit_tag "Send code", class: "btn btn-bib btn-green btn-block mt-3"%>
+      <p class="text-danger">
+      <% if @error != '' %>
+          <!-- <i class="fas fa-exclamation-triangle"></i> -->
       <% end %>
+      <%= @error %></p>
+
+      <%= form_tag new_tag_finder_path, method: :get do %>
+        <%= text_field_tag :code,
+            params[:code],
+            required: :true,
+            class: "bib-form-styling btn-block pl-3 mb-3 text-input",
+            style: "padding: 12px 0",
+            placeholder: "Code here" %>
+        <%= submit_tag "Send code", class: "btn btn-bib btn-green btn-block"%>
+      <% end %>
+
     </div>
 
     <%= link_to "Or scan QR-code here", root_path, class: "btn btn-bib btn-grey btn-block mt-3" %>
@@ -43,5 +47,3 @@
 </div>
 
 <%= render "shared/menu" %>
-
-
