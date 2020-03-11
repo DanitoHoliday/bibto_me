@@ -19,20 +19,17 @@
 
     <div class="">
 
-      <p class="text-danger">
-      <% if @error != '' %>
-          <!-- <i class="fas fa-exclamation-triangle"></i> -->
-      <% end %>
-      <%= @error %></p>
-
       <%= form_tag new_tag_finder_path, method: :get do %>
         <%= text_field_tag :code,
             params[:code],
             required: :true,
-            class: "bib-form-styling btn-block pl-3 mb-3 text-input",
+            class: "bib-form-styling btn-block pl-3 text-input",
             style: "padding: 12px 0",
             placeholder: "Code here" %>
-        <%= submit_tag "Send code", class: "btn btn-bib btn-green btn-block"%>
+            <% if @error %>
+              <span class="text-danger ml-3 text-input"><%= @error%></span>
+            <% end %>
+        <%= submit_tag "Send code", class: "btn btn-bib btn-green btn-block mt-3"%>
       <% end %>
 
     </div>
