@@ -22,18 +22,23 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email", class: "bib-form-styling text-input" },
-                  placeholder: "E-mail",
+                  placeholder: "E-mail*",
+                  label: false %>
+      <%= f.input :phone,
+                  required: false,
+                  input_html: { autocomplete: "phone", class: "bib-form-styling text-input" },
+                  placeholder: "Phone",
                   label: false %>
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password", class: "bib-form-styling text-input" },
-                  placeholder: "Password",
+                  placeholder: "Password*",
                   label: false %>
       <%= f.input :password_confirmation,
                   required: true,
-                  input_html: { autocomplete: "new-password", class: "bib-form-styling text-input" },
-                  placeholder: "Confirm Password",
+                  input_html: { autocomplete: "password", class: "bib-form-styling text-input" },
+                  placeholder: "Confirm Password*",
                   label: false %>
     </div>
 
