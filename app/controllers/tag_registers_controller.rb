@@ -6,13 +6,12 @@ class TagRegistersController < ApplicationController
     if @tag.nil?
       @error = "* Code not found"
       #flash[:alert] = "Code not found."
-
       render :register_input
     elsif @tag.registered == false
       @tag.registered = true
       @tag.user = current_user
       @tag.save
-      redirect_to register_success_path
+      redirect_to register_success_path(tag: @tag)
     elsif @tag.registered == true
       # flash.alert = "Code is already registered."
       @error = "* Code is already registered"
@@ -38,7 +37,7 @@ class TagRegistersController < ApplicationController
   end
 
   def successful_registration
-    @tag = current_user.tags.last
+    @tag = Tag.find(params[:tag])
   end
 
 end
