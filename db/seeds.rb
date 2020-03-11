@@ -43,7 +43,7 @@ puts ""
 
 ######################
 
-leon = User.create(first_name: "Leon", last_name: "Entrup", email: "leon@bibto.me", password: "123456", phone: "+49 151 3333 3333", shared_phone: true)
+leon = User.create(first_name: "Leon", last_name: "Entrup", email: "leon@bibto.me", password: "123456", phone: "+49 157 7430 7257", shared_phone: true)
 puts "#{leon.first_name} created"
 puts "shared_phone = #{leon.shared_phone}"
 puts""
