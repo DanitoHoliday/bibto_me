@@ -18,6 +18,7 @@
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs">
+      <%= f.error :email %>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
