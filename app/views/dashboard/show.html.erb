@@ -11,9 +11,9 @@
     </div>
 
     <div class="user-avatar">
-      <h4><%= @user.first_name[0] %></h4>
+      <h4><%= @user.first_name[0] unless @user.first_name.nil? %></h4>
     </div>
-    <p class="text-center "> <%= @user.first_name %> <%= @user.last_name %></p>
+    <p class="text-center "> <%= @user.first_name unless @user.first_name.nil? %> <%= @user.last_name unless @user.last_name.nil? %></p>
     <p class="text-center" style="margin-top: -15px">
     <%= link_to 'Edit Profile', edit_user_registration_path, class: "text-small text-yellow"%>
     </p>

@@ -2,14 +2,16 @@
 <div class="page-title">
   <div class="container">
     <h2 class="text-center">Forgot password?</h2>
-    <%= link_to (image_tag "return.png", alt: "alttext", class: "btn-go-back"), :back %>
+    <div>
+      <%= link_to (image_tag "return.png", alt: "alttext", class: "btn-go-back"), :back %>
+    </div>
   </div>
 </div>
 
 
-<div class="container">
+<div class="container text-center">
 
-  <p>Please enter your e-mail and we will send you instructions on how to reset your password </p>
+  <p>Please enter your e-mail <br> and we will send you instructions on how to <br> reset your password </p>
 
   <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= f.error_notification %>
@@ -24,7 +26,7 @@
     </div>
 
     <div class="form-actions btn-form">
-      <%= f.button :submit, "Send me reset password instructions", class: "btn btn-bib btn-grey btn-form" %>
+      <%= f.button :submit, "Send!", class: "btn btn-bib btn-grey btn-form" %>
     </div>
   <% end %>
 

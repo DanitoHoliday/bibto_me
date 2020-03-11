@@ -13,9 +13,23 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :email,
+      <%= f.input :first_name,
                   autofocus: true,
                   required: true,
+                  hint: "Your name",
+                  placeholder: "Name",
+                  input_html: { class: "bib-form-styling"},
+                  label: false %>
+      <%= f.input :phone,
+                  required: true,
+                  hint: "Your phone",
+                  placeholder: "Phone",
+                  input_html: { class: "bib-form-styling"},
+                  label: false %>
+      <%= f.input :email,
+                  required: true,
+                  hint: "Your e-mail",
+                  placeholder: "E-mail",
                   input_html: { class: "bib-form-styling"},
                   label: false %>
 
@@ -23,13 +37,13 @@
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
 
-      <%= f.input :password,
+      <%#= f.input :password,
                   hint: "leave it blank if you don't want to change it",
                   required: false,
                   input_html: { autocomplete: "new-password", class: "bib-form-styling" },
                   placeholder: "New password",
                   label: false %>
-      <%= f.input :password_confirmation,
+      <%#= f.input :password_confirmation,
                   required: false,
                   input_html: { autocomplete: "new-password", class: "bib-form-styling" },
                   placeholder: "New password confirmation",
@@ -52,4 +66,6 @@
   </div>
 </div>
 
-<%= render "shared/menu" %>
+<div class="text-center mt-3">
+  <%= render "shared/menu" %>
+</div>
