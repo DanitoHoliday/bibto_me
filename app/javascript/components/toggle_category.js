@@ -1,4 +1,3 @@
-
 const toggleCategories =() => {
   const cards = document.querySelectorAll('.category-card')
   cards.forEach(card => {
