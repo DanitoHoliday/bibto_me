@@ -12,7 +12,8 @@
   </div>
 </div>
 
-<div class="container pt-4">
+
+<div class="container pt-4 text-center">
 <div class="text-center mt-3 mb-5">
   <%= image_tag "heart-in-hand.gif", class: "mb-4" %>
 </div>
@@ -30,21 +31,15 @@
             <% if @error %>
               <span class="text-danger ml-3 text-input"><%= @error%></span>
             <% end %>
-        <%= submit_tag "Send code", class: "btn btn-bib btn-green btn-block mt-3"%>
+        <%= submit_tag "Send code", class: "btn btn-bib btn-green mt-3", style: "width: 90%;" %>
       <% end %>
 
-
-
-    <%= link_to "Or scan QR-code here", root_path, class: "btn btn-bib btn-grey btn-block mt-3" %>
+    <%#= link_to "Or scan QR-code here", root_path, class: "btn btn-bib btn-grey btn-block mt-3" %>
 
 
     <!-- <p class="text-center mt-5">Or scan QR-code here:</p>
     <i class="fas fa-qrcode w-100 text-center text-secondary" style="font-size: 4rem"></i> -->
     <h5 class="text-center mt-5 need-help">Need help? <span class="help-color">Click here.</span></h5>
-
-
-
-
 </div>
 
 <%= render "shared/menu" %>
