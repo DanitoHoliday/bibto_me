@@ -2,49 +2,67 @@
 
   <div class="container" >
 
-    <div id="banner-header">
-      <h1 class= "my-0 py-0">bibto.me</h1>
-      <h3 class="text-white my-0 py-0">bring it back to me</h3>
+    <div class="svg-logo">
+      <%= image_tag("landing-logo-with-text.svg", :alt => "") %>
     </div>
+
     <div id="banner-slogan">
       <h1>Get your lost items returned easy, fast and secure.</h1>
     </div>
 
     <div id="lp-btn">
-
       <%= link_to "Register my tag", register_input_path, class: "btn btn-bib btn-white mb-3 w-100" %>
       <%= link_to "Return item", finder_input_path, class: "btn btn-bib btn-grey mb-5 w-100" %>
     </div>
 
+    <br>
+    <br>
+    <br>
+    <br>
+
     <p class= "font-yellow p-small text-center mb-0">How does it work?</p>
+
     <a href="#explanation">
       <div id="arrow-down">
         <%= image_tag "down-arrow.svg", alt: "alttext" %>
       </div>
     </a>
 
-    <div id= "explanation" class= "text-center text-white mt-5">
-      <div class="mt-5 mb-5">
-        <%= image_tag "bib_icon_choose.svg", alt: "alttext" %>
-        <p class="p-big mt-2">Choose your tag <br>and get it shipped</p>
+    <br>
+    <br>
+
+  </div>
+</div>
+
+<div class="bg-white">
+
+    <div id= "explanation" class= "text-center text-white mt-5 container lp-about">
+      <div class="mt-5 mb-3 pt-5 pb-5" style="background-color: rgba(0, 0, 0, 0.04); border-radius: 5px">
+        <%= image_tag "bib_icon_buy_green.svg", alt: "alttext" %>
+        <p class="p-big mt-2">Buy tags</p>
+        <!-- Choose your tag <br>and get it shipped -->
       </div>
 
-      <div class="mb-5">
-        <%= image_tag "bib_icon_register_2.svg", alt: "alttext" %>
-        <p class="p-big mt-2">Register your tag and <br>attach it to your item</p>
+      <div class="mb-3 pt-5 pb-5" style="background-color: rgba(0, 0, 0, 0.04); border-radius: 5px">
+        <%= image_tag "bib_icon_register_green.svg", alt: "alttext" %>
+        <p class="p-big mt-2">Register tags</p>
+        <!-- Register your tag and <br>attach it to your item -->
       </div>
 
-      <div class="mb-5">
-        <%= image_tag "bib_icon_notification.svg", alt: "alttext" %>
-        <p class=" p-big mt-2">Get notified when <br>your lost item  is found</p>
+      <div class="mb-3 pt-5 pb-5" style="background-color: rgba(0, 0, 0, 0.04); border-radius: 5px">
+        <%= image_tag "bib_icon_notify_green.svg", alt: "alttext" %>
+        <p class=" p-big mt-2">Get notified</p>
+        <!-- Get notified when <br>your lost item  is found -->
       </div>
     </div>
+
+    <br>
 
     <div class="text-center">
       <a class="font-yellow p-small" href="#lp-top"> Back to top</a>
     </div>
 
-  </div>
+    <br>
 </div>
 
 <div class="footer">
@@ -52,9 +70,10 @@
     <a href="#"><i class="fab fa-github"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
     <a href="#"><i class="fab fa-facebook"></i></a>
-<!--     <a href="#"><i class="fab fa-twitter"></i></a>
+    <!-- <a href="#"><i class="fab fa-twitter"></i></a>
     <a href="#"><i class="fab fa-linkedin"></i></a> -->
   </div>
+
   <div class="footer-logo">
     <p class="bib-logo-footer my-0 py-0 font-d-yellow">bibto.me</p>
     <p class="bib-logo-footer my-0 py-0" id="bib-logo-footer-sub">bring it back to me</p>
