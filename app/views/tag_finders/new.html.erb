@@ -1,31 +1,40 @@
-<div class="container">
-  <div class="my-5 mx-2">
-
-    <div class="pb-4 back-arrow-position-fix">
-      <h3 class="text-center">You are a hero!</h3>
-      <%= link_to (image_tag "return.png", class: "btn-go-back"), :back %>
+<div class="page-title bg-green text-white">
+  <div class="container mb-2">
+    <div class="d-flex">
+      <%= link_to :back do %>
+          <h2><i class="fas fa-chevron-left text-white"></i></h2>
+      <% end %>
+      <h2 class="mx-auto">You are a hero!</h2>
+      <h2><i class="far fa-bell text-green"></i></h2>
     </div>
+  </div>
+</div>
 
+
+<div class="container">
     <h4 class="text-center">
 
-      <div class="mb-4">
-        <%= image_tag "heart.gif", class: "mb-4" %> <br>
-        You have found <%= @tag.user.first_name %>´s bag <br>
-      </div>
+    <div class="mb-4">
+      <%= image_tag "heart.gif", class: "mb-4" %> <br>
+      You have found <%= @tag.user.first_name %>´s bag <br>
+    </div>
 
-      <% if @tag.user.phone && @tag.user.shared_phone %>
-          Please contact <%= @tag.user.first_name %> directly: <br> <strong><%= @tag.user.phone %></strong><br>
-          <%= link_to "I will reach out to #{@tag.user.first_name}", finder_thank_you_path(@tag), class: "btn btn-bib btn-green btn-form mt-4", id: "reach-out-btn" %>
+    <% if @tag.user.phone && @tag.user.shared_phone %>
+      Please contact
+      <%= @tag.user.first_name %>
+      directly: <br>
+      <strong><%= @tag.user.phone %></strong><br>
+      <%= link_to "I will reach out to #{@tag.user.first_name}", finder_thank_you_path(@tag), class: "btn btn-bib btn-green btn-form mt-4", id: "reach-out-btn" %>
 
-          <p class="mt-5">
-            <div class="checkbox">
-              <label id="checky" class="switch">
-                <input type="checkbox" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                <span class="slider round"></span>
-                </label>
-                I want to get contacted!
-            </div>
-          </p>
+      <p class="mt-5">
+        <div class="checkbox">
+          <label id="checky" class="switch">
+            <input type="checkbox" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <span class="slider round"></span>
+            </label>
+            I want to get contacted!
+        </div>
+      </p>
           <div class="collapse" id="collapseExample">
             <div class="card card-body">
               Leave your contact info & get contacted by <%= @tag.user.first_name %>
