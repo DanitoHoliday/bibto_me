@@ -10,7 +10,7 @@
 
       <div class="mb-4">
         <%= image_tag "heart.gif", class: "mb-4" %> <br>
-        You have found <%= @tag.user.first_name %>´s bag <br>
+        You have found <%= @tag.user.first_name %>´s <%= @tag.category %> <br>
       </div>
 
       <% if @tag.user.phone && @tag.user.shared_phone %>
@@ -22,8 +22,8 @@
               <label id="checky" class="switch">
                 <input type="checkbox" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 <span class="slider round"></span>
-                </label>
-                I want to get contacted!
+              </label>
+              I want to get contacted!
             </div>
           </p>
           <div class="collapse" id="collapseExample">
