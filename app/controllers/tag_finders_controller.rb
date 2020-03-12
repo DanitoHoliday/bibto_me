@@ -4,13 +4,13 @@ before_action :authenticate_user!, except: [:new, :create, :thank_you, :finder_i
    def new
       if params.include?(:code)
         @tag = Tag.find_by(code: params[:code.downcase])
-        if @tag.nil?
+        if @tag.nil? || @tag.user.nil?
           @error = "* Code not found"
           render :finder_input
         end
       elsif params.include?(:format)
         @tag = Tag.find_by(id: params[:format])
-        if @tag.nil?
+        if @tag.nil? || @tag.user.nil?
           @error = "* Code not found"
           render :finder_input
         end
