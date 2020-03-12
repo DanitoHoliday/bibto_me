@@ -27,11 +27,11 @@
     <%# if current_user == nil %>
       <%#= submit_tag "Register now",class: "btn btn-bib btn-green btn-form btn-margin disabled" %>
     <%# else %>
-    <%= submit_tag "Register now",class: "btn btn-bib btn-green btn-form btn-margin" %>
+    <%= submit_tag "Register now",class: "btn btn-bib btn-green btn-form btn-margin", style: "font-weight: 300;" %>
     <%# end %>
   <% end %>
 
-  <%= link_to "Or scan QR-code here", root_path, class: "btn btn-bib btn-grey btn-block" %>
+  <%= link_to "Or scan QR-code here", root_path, class: "btn btn-bib btn-grey btn-block", style: "font-weight: 300;" %>
 
   <div class="text-center text-small mt-5">Need help?
     <span class="help-color">Click here</span>

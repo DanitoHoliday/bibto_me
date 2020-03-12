@@ -1,11 +1,11 @@
 <div class="container">
 
- <div class="text-center mb-3 mt-5">
+ <div class="text-center mb-3 mt-4">
    <%= image_tag "icon_checked_green.svg", alt: "alttext"%>
   </div>
   <h4 class="text-center mb-3 mt-1"><strong>Your code <span style="color: $c1;"><%= @tag.code %></span><br>was successfully registered</strong></h4>
   <h4 class="text-center" style="margin-top: 20px;">Which item you want to secure?</h4>
-  <div class="category-grid mt-5">
+  <div class="category-grid mt-3">
 
 
       <div class="category-card <%= @tag.category == 'Laptop' ? 'active' : '' %>">
