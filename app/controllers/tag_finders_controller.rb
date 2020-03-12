@@ -3,7 +3,7 @@ before_action :authenticate_user!, except: [:new, :create, :thank_you, :finder_i
 
    def new
       if params.include?(:code)
-        @tag = Tag.find_by(code: params[:code])
+        @tag = Tag.find_by(code: params[:code.downcase])
         if @tag.nil?
           @error = "* Code not found"
           render :finder_input
