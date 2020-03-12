@@ -1,7 +1,7 @@
 class SplittersController < ApplicationController
 
   def split_users
-    @tag = Tag.find_by(code: params[:code])
+    @tag = Tag.find_by(code: params[:code.downcase])
     if @tag.nil?
       redirect_to root_path
       flash.alert = "Code not found or not registered yet."
