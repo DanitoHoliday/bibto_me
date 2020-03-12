@@ -70,7 +70,7 @@
     <% else %>
       Leave your contact info <br> - or a message - <br> & get contacted by <%= @tag.user.first_name %>
 
-      <div class="mt-1">
+      <div class="container mt-1">
         <%= simple_form_for [@tag, @finder] do |f| %>
           <%= f.error_notification %>
           <%= f.input :phone,
