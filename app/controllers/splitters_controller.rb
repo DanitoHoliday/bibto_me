@@ -1,5 +1,5 @@
 class SplittersController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: :split_users
   def split_users
     @tag = Tag.find_by(code: params[:code.downcase])
     if @tag.nil?
