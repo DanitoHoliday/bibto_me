@@ -1,12 +1,3 @@
-<!-- <style>
-  .colorchange {
-    background-color: green;
-  }
-
-</style> -->
-
-  <body>
-
 <div class="container">
 
  <div class="text-center mb-3 mt-5">
@@ -17,39 +8,39 @@
   <div class="category-grid mt-5">
 
 
-      <div class="category-card">
+      <div class="category-card <%= @tag.category == 'Laptop' ? 'active' : '' %>">
         <i class="fas fa-laptop"></i>
         <%= form_tag update_register_category_path, method: :patch do %>
         <%= hidden_field_tag :category, "Laptop" %>
         <%= hidden_field_tag :code, @tag.code %>
-        <%= submit_tag "Laptop", class: "btn" %>
+        <%= submit_tag "Laptop", class: "btn #{@tag.category == 'Laptop' ? 'active' : ''}"%>
         <% end %>
       </div>
 
-      <div class="category-card">
+      <div class="category-card <%= @tag.category == 'Phone' ? 'active' : '' %>">
         <i class="fas fa-mobile-alt"></i>
         <%= form_tag update_register_category_path, method: :patch do %>
         <%= hidden_field_tag :category, "Phone" %>
         <%= hidden_field_tag :code, @tag.code %>
-        <%= submit_tag "Phone", class: "btn" %>
+        <%= submit_tag "Phone", class: "btn #{@tag.category == 'Phone' ? 'active' : ''}" %>
         <% end %>
       </div>
 
-      <div class="category-card">
+      <div class="category-card <%= @tag.category == 'Keys' ? 'active' : '' %>">
         <i class="fas fa-key"></i>
         <%= form_tag update_register_category_path, method: :patch do %>
         <%= hidden_field_tag :category, "Keys" %>
         <%= hidden_field_tag :code, @tag.code %>
-        <%= submit_tag "Keys", class: "btn" %>
+        <%= submit_tag "Keys", class: "btn #{@tag.category == 'Keys' ? 'active' : ''}" %>
         <% end %>
       </div>
 
-      <div class="category-card">
+      <div class="category-card <%= @tag.category == 'Bag' ? 'active' : '' %>">
         <i class="fas fa-shopping-bag"></i>
         <%= form_tag update_register_category_path, method: :patch do %>
         <%= hidden_field_tag :category, "Bag" %>
         <%= hidden_field_tag :code, @tag.code %>
-        <%= submit_tag "Bag", class: "btn" %>
+        <%= submit_tag "Bag", class: "btn #{@tag.category == 'Bag' ? 'active' : ''}" %>
         <% end %>
       </div>
   </div>
@@ -68,14 +59,13 @@
         <h4 class="">Finders can see your <br> phone number:
         <i class="far fa-check-circle" style="color: #008767; font-size: 25px; margin-left: 8px;"></i></h4>
         </div>
-        <%=current_user.phone%>
+        <h5><%=current_user.phone%></h5>
       <% else %>
       <div class="d-flex align-center justify-content-center align-items-center">
         <h4 class="mr-2">Finders can't see your <br> phone number:<i class="far fa-times-circle" style="color: red; font-size: 25px; margin-left: 8px;"></i></h4>
       </div>
       <% end %>
     </div>
-    <br>
     <%= link_to "Want to change this setting?", edit_user_registration_path, style: "font-size: 14px;" %>
     <div>
       <%= link_to "Register another tag", register_input_path, :class => "btn btn-bib btn-green btn-form mt-4", style: "font-weight: 100; width: 80%; height: 50px;" %>
@@ -87,19 +77,6 @@
 </div>
 
 <%= render "shared/menu" %>
-
-<!--   <script>
-      function myFunction() {
-      var card = document.querySelector('.category-card')
-      card.addEventListener("click",function(){
-      card.style.backgroundColor = "red";});
-}
-  </script> -->
-
-
-
-  </body>
-
 
 
 
