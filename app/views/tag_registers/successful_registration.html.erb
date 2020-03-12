@@ -1,10 +1,19 @@
+<!-- <style>
+  .colorchange {
+    background-color: green;
+  }
+
+</style> -->
+
+  <body>
+
 <div class="container">
 
  <div class="text-center mb-3 mt-5">
    <%= image_tag "icon_checked_green.svg", alt: "alttext"%>
   </div>
   <h4 class="text-center mb-3 mt-1"><strong>Your code <span style="color: $c1;"><%= @tag.code %></span><br>was successfully registered</strong></h4>
-  <h4 class="text-center">Where will you put it?</h4>
+  <h4 class="text-center" style="margin-top: 20px;">Which item you want to secure?</h4>
   <div class="category-grid mt-5">
 
 
@@ -45,7 +54,7 @@
       </div>
   </div>
 
-  <div class="text-center mt-5">
+  <div class="text-center mt-4">
     <div class="d-inline">
 
  <!--    <div class="custom-control custom-switch">
@@ -55,29 +64,41 @@
     </div> -->
 
       <% if current_user.shared_phone == true %>
-        <div class="d-flex align-center justify-content-center align-items-center">
-        <h4 class="">Allow finders direct call: </h4>
-        <i class="far fa-check-circle" style="color: #008767;"></i>
+        <div class="align-center justify-content-center align-items-center">
+        <h4 class="">Finders can see your <br> phone number:
+        <i class="far fa-check-circle" style="color: #008767; font-size: 25px; margin-left: 8px;"></i></h4>
         </div>
         <%=current_user.phone%>
       <% else %>
       <div class="d-flex align-center justify-content-center align-items-center">
-        <h4 class="mr-2">Allow finders a direct call:</h4><i class="far fa-times-circle" style="color: red;"></i>
+        <h4 class="mr-2">Finders can't see your <br> phone number:<i class="far fa-times-circle" style="color: red; font-size: 25px; margin-left: 8px;"></i></h4>
       </div>
       <% end %>
     </div>
     <br>
-    <%= link_to "Too private? Change this setting.", edit_user_registration_path, style: "font-size: 12px;" %>
+    <%= link_to "Want to change this setting?", edit_user_registration_path, style: "font-size: 14px;" %>
     <div>
-      <%= link_to "Register another tag", register_input_path, :class => "btn btn-bib btn-green btn-form mt-5", style: "font-weight: 100;" %>
+      <%= link_to "Register another tag", register_input_path, :class => "btn btn-bib btn-green btn-form mt-4", style: "font-weight: 100; width: 80%; height: 50px;" %>
       <!-- replace user path by correct (future) path to user dashboard -->
-      <%= link_to "Visit your dashboard", dashboard_path, :class => "btn btn-bib btn-grey btn-form my-2", style: "font-weight: 100;" %>
+      <%= link_to "Visit your dashboard", dashboard_path, :class => "btn btn-bib btn-grey btn-form my-2", style: "font-weight: 100; width: 80%; height: 50px;" %>
     </div>
 
   </div>
 </div>
 
 <%= render "shared/menu" %>
+
+<!--   <script>
+      function myFunction() {
+      var card = document.querySelector('.category-card')
+      card.addEventListener("click",function(){
+      card.style.backgroundColor = "red";});
+}
+  </script> -->
+
+
+
+  </body>
 
 
 

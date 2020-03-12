@@ -49,6 +49,12 @@
   font-size: 20px;
 }
 
+.lp-about {
+  p {
+  color: $c2;
+  }
+}
+
 // Animation
 @keyframes jump {
   0% { top: 0; } 50% { top: 20px; } 100% { top: 0; }
