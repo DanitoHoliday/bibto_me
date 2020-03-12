@@ -2,7 +2,7 @@ class TagRegistersController < ApplicationController
   before_action :authenticate_user!, except: [:register_input]
 
   def update
-    @tag = Tag.find_by(code: params[:code])
+    @tag = Tag.find_by(code: params[:code].downcase)
     if @tag.nil?
       @error = "* Code not found"
       #flash[:alert] = "Code not found."
@@ -23,7 +23,7 @@ class TagRegistersController < ApplicationController
   end
 
   def update_category
-    @tag = Tag.find_by(code: params[:code])
+    @tag = Tag.find_by(code: params[:code.upcase])
 
     if params.include?(:category_dropdown)
       @tag.update(category: params[:category_dropdown])
