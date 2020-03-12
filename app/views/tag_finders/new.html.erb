@@ -2,33 +2,38 @@
   <div class="my-5 mx-2">
 
     <div class="pb-4 back-arrow-position-fix">
-      <h3 class="text-center">You are a hero!</h3>
+      <h2 class="text-center">You are a hero!</h2>
       <%= link_to (image_tag "return.png", class: "btn-go-back"), :back %>
     </div>
 
     <h4 class="text-center">
 
-      <div class="mb-4">
-        <%= image_tag "heart.gif", class: "mb-4" %> <br>
-        You have found <%= @tag.user.first_name %>´s <%= @tag.category %> <br>
+      <div class="my-4">
+        <%= image_tag "heart.gif", class: "mb-4" %>
       </div>
+
+      <div class="my-5">
+        You have found <%= @tag.user.first_name %>´s <%= @tag.category %>
+      </div>
+
 
       <% if @tag.user.phone && @tag.user.shared_phone %>
           Please contact <%= @tag.user.first_name %> directly: <br> <strong><%= @tag.user.phone %></strong><br>
-          <%= link_to "I will reach out to #{@tag.user.first_name}", finder_thank_you_path(@tag), class: "btn btn-bib btn-green btn-form mt-4", id: "reach-out-btn" %>
-
-          <p class="mt-5">
+          <div class="container">
+            <%= link_to "I will reach out to #{@tag.user.first_name}", finder_thank_you_path(@tag), class: "btn btn-bib btn-green btn-form mt-4", id: "reach-out-btn" %>
+          </div>
+          <div class="mt-5">
             <div class="checkbox">
               <label id="checky" class="switch">
                 <input type="checkbox" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 <span class="slider round"></span>
               </label>
-              I want to get contacted!
+                  <h4 class="mb-2">Share my contact info with <%= @tag.user.first_name %>!</h4>
             </div>
-          </p>
+          </div>
           <div class="collapse" id="collapseExample">
             <div class="card card-body">
-              Leave your contact info & get contacted by <%= @tag.user.first_name %>
+              Leave your contact info & <br> get contacted by <%= @tag.user.first_name %>
               <div class="mt-1">
                 <%= simple_form_for [@tag, @finder] do |f| %>
                               <%= f.error_notification %>
@@ -49,7 +54,7 @@
                               label: false,
                               placeholder: 'Message',
                               input_html: { class: "bib-form-styling text-input" },
-                              required: false
+                              required: true
                               %>
                   <%= f.input :tag, :as => :hidden, :input_html => { :value => params[:format] } %>
 
@@ -93,7 +98,7 @@
       </div>
     <% end %>
 
-    <h5 class="text-center mt-5">Need help?<span class="font-d-yellow">Click here.</span></h5>
+    <h5 class="text-center mt-5 need-help">Need help? <span class="help-color">Click here.</span></h5>
 
   </div>
 </div>
