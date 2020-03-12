@@ -1,3 +1,12 @@
+<style>
+  .colorchange {
+    background-color: green;
+  }
+
+</style>
+
+  <body>
+
 <div class="container">
 
  <div class="text-center mb-3 mt-5">
@@ -78,6 +87,18 @@
 </div>
 
 <%= render "shared/menu" %>
+
+  <script>
+      function myFunction() {
+      var card = document.querySelector('.category-card')
+      card.addEventListener("click",function(){
+      card.style.backgroundColor = "red";});
+}
+  </script>
+
+
+
+  </body>
 
 
 

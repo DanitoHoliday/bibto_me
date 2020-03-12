@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :tags
   has_many :finders, through: :tags
-  # has_one_attached :photo
+  has_one_attached :photo
   # after_create :send_welcome_email
 
   private

@@ -23,7 +23,7 @@ class TagRegistersController < ApplicationController
   end
 
   def update_category
-    @tag = Tag.find_by(code: params[:code.upcase])
+    @tag = Tag.find_by(code: params[:code.downcase])
 
     if params.include?(:category_dropdown)
       @tag.update(category: params[:category_dropdown])
