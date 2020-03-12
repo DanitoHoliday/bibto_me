@@ -10,19 +10,18 @@
   </div>
 </div>
 
-
 <div class="container mt-5">
   <p class="text-center">
     To register your tag, please enter your code below:
   </p>
-     <%= form_tag update_register_input_path, method: :patch do %>
-    <%= text_field_tag :code,
+    <%= form_tag update_register_input_path, method: :patch do %>
+      <%= text_field_tag :code,
       params[:code],
       class: "form-control bib-form-styling text-input",
       placeholder: "Enter your code here"
     %>
     <% if @error %>
-    <span class="text-danger ml-3 text-input"><%= @error%></span>
+      <span class="text-danger ml-3 text-input"><%= @error%></span>
     <% end %>
     <%# if current_user == nil %>
       <%#= submit_tag "Register now",class: "btn btn-bib btn-green btn-form btn-margin disabled" %>
@@ -31,15 +30,12 @@
     <%# end %>
   <% end %>
 
-  <%= link_to "Or scan QR-code here", root_path, class: "btn btn-bib btn-grey btn-block", style: "font-weight: 300;" %>
+  <%= link_to "QR code scanner", root_path, class: "btn btn-bib btn-grey btn-block", style: "font-weight: 300;" %>
 
-  <div class="text-center text-small mt-5">Need help?
-    <span class="help-color">Click here</span>
-  </div>
+  <h5 class="text-center need-help">Need help? <span class="help-color">Click here.</span></h5>
 </div>
 
 <%= render "shared/menu" %>
 
-<script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
 
 
