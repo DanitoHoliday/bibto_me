@@ -1,9 +1,9 @@
-<style>
+<!-- <style>
   .colorchange {
     background-color: green;
   }
 
-</style>
+</style> -->
 
   <body>
 
@@ -78,9 +78,9 @@
     <br>
     <%= link_to "Want to change this setting?", edit_user_registration_path, style: "font-size: 14px;" %>
     <div>
-      <%= link_to "Register another tag", register_input_path, :class => "btn btn-bib btn-green btn-form mt-4", style: "font-weight: 100;" %>
+      <%= link_to "Register another tag", register_input_path, :class => "btn btn-bib btn-green btn-form mt-4", style: "font-weight: 100; width: 80%; height: 50px;" %>
       <!-- replace user path by correct (future) path to user dashboard -->
-      <%= link_to "Visit your dashboard", dashboard_path, :class => "btn btn-bib btn-grey btn-form my-2", style: "font-weight: 100;" %>
+      <%= link_to "Visit your dashboard", dashboard_path, :class => "btn btn-bib btn-grey btn-form my-2", style: "font-weight: 100; width: 80%; height: 50px;" %>
     </div>
 
   </div>
@@ -88,13 +88,13 @@
 
 <%= render "shared/menu" %>
 
-  <script>
+<!--   <script>
       function myFunction() {
       var card = document.querySelector('.category-card')
       card.addEventListener("click",function(){
       card.style.backgroundColor = "red";});
 }
-  </script>
+  </script> -->
 
 
 
