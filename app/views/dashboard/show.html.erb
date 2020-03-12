@@ -1,4 +1,4 @@
-<div class="page-title bg-green text-white">
+<div class="page-title">
   <div class="container">
     <div class="d-flex justify-content-between">
       <%= link_to root_path do %>
@@ -19,36 +19,47 @@
 <div class="container">
   <div>
     <p class="mt-5"><strong>Registered Tags</strong></p>
-    <% @user.tags.sort.each do |t| %>
-    <div>
-      <div class="text-small text-secondary border-bottom py-2 d-flex justify-content-between">
-        <div>
-          <%= form_tag update_register_category_path, method: :patch do %>
-          <%= hidden_field_tag :code, t.code %>
+
+    <% @user.tags.each do |t| %>
+      <div class="d-flex justify-content-between border-bottom py-2">
+        <span class="text-small"><%= t.category %></span>
+        <span class="text-small"><%= t.code %></span>
+      </div>
+    <% end %>
+
+
+    <!-- Danny's code -->
+
+    <%# @user.tags.sort.each do |t| %>
+    <!-- <div>
+      <div class="text-small text-secondary border-bottom py-2 d-flex justify-content-between"> -->
+        <!-- <div>
+          <%#= form_tag update_register_category_path, method: :patch do %>
+          <%#= hidden_field_tag :code, t.code %>
           <select name="category_dropdown" class="border-0" style="background-color: white;" onchange="this.form.submit();">
-            <option value="" selected><%= t.category %></option>
+            <option value="" selected><%#= t.category %></option>
             <option value="Bag">Bag</option>
             <option value="Laptop">Laptop</option>
             <option value="Keys">Keys</option>
             <option value="Phone">Phone</option>
           </select>
-        </div>
-        <div>
-          <% if t.category == "Bag" %>
-          <i class="fas fa-shopping-bag"></i>
-          <% elsif t.category == "Laptop" %>
-          <i class="fas fa-laptop"></i>
-          <% elsif t.category == "Keys" %>
-          <i class="fas fa-key"></i>
-          <% else %>
-          <i class="fas fa-mobile-alt"></i>
-          <% end %>
-          <% end %>
-        </div>
-        <span><%= t.code %></span>
+        </div> -->
+        <!-- <div> -->
+          <%# if t.category == "Bag" %>
+            <!-- <i class="fas fa-shopping-bag"></i> -->
+          <%# elsif t.category == "Laptop" %>
+            <!-- <i class="fas fa-laptop"></i> -->
+          <%# elsif t.category == "Keys" %>
+            <!-- <i class="fas fa-key"></i> -->
+          <%# else %>
+            <!-- <i class="fas fa-mobile-alt"></i> -->
+          <%# end %>
+          <%# end %>
+        <!-- </div>
+        <span><%#= t.code %></span>
       </div>
-    </div>
-    <% end %>
+    </div> -->
+    <%# end %>
   </div>
 </div>
 
