@@ -26,7 +26,7 @@ tag.save
 puts "Tag #2 created #{tag.category} ||  #{tag.code}"
 puts ""
 
-tag = Tag.new(code: "a1b2c3", registered: true,  category: "Laptop", user_id: x.id)
+tag = Tag.new(code: "lwgn12", registered: true,  category: "Laptop", user_id: x.id)
 tag.save
 puts "Tag #3 created #{tag.category} ||  #{tag.code}"
 puts ""
@@ -105,16 +105,18 @@ puts ""
 end
 
 puts "###########################"
-puts "### Creating 'xxxxxx' tag ###"
+puts "## Creating special tags ##"
 puts "###########################"
 
 tag = Tag.new(code: "xxxxxx", registered: false)
 tag.save
+tag = Tag.new(code: "a1b2c3", registered: false)
+tag.save
 
-puts "###########################"
 puts "#### Presentation Tag  ####"
 puts "###########################"
-puts "##### XXXXXX created ######"
+puts "##### xxxxxx created ######"
+puts "##### a1b2c3 created ######"
 puts "###########################"
 
 puts ""

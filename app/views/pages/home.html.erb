@@ -1,3 +1,33 @@
+<style>
+  .typing {
+        position: relative;
+        line-height: 24px;
+        display: inline-block;
+        color: #FFF;
+        min-width: 1px;
+        min-height: 24px;
+      }
+      .typing:after {
+        content: "";
+        position: absolute;
+        top: 5%;
+        right: -2px;
+        width: 1px;
+        height: 90%;
+        border-right: 2px solid #FFF;
+        animation: blink .5s infinite ease;
+      }
+      @keyframes blink{
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1%;
+        }
+      }
+</style>
+
+<body>
 <div class="landing-page" id="lp-top">
 
   <div class="container" >
@@ -7,7 +37,10 @@
     </div>
 
     <div id="banner-slogan">
-      <h1>Get your lost items returned easy, fast and secure.</h1>
+      <h1>
+        Get your lost items returned <div id="typing" class="typing"></div>
+      </h1>
+      <br>
     </div>
 
     <div id="lp-btn">
@@ -86,7 +119,37 @@
 
 <%= render "shared/menu" %>
 
+<script>
+var typeString = ['easy.  ', 'fast.  ', 'secure.  '];
+var  i = 0;
+var count = 0
+var selectedText = '';
+var text = '';
+(function type() {
+  if (count == typeString.length) {
+    count = 0;
+  }
+  selectedText = typeString[count];
+  text = selectedText.slice(0, ++i);
+  document.getElementById('typing').innerHTML = text;
+  if (text.length === selectedText.length) {
+    count++;
+    i = 0;
+  }
+  setTimeout(type, 250);
+}());
 
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+</script>
+
+</body>
 
 
 
