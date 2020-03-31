@@ -1,12 +1,14 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-}
+.navbar {
+  margin:0;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  li {
+    display: inline-block;
+    list-style-type: none;
+  }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+
+  // BREAKPOINTS
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }

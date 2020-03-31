@@ -1,1 +1,123 @@
 // Specific CSS for your home-page
+section:not(:first-child) {
+  padding: 4rem 0;
+
+  // BREAKPOINTS
+  @include media-breakpoint-down(sm) {
+    padding: 2rem 0;
+  }
+}
+
+
+.home {
+  &-header {
+    height: 100vh;
+  }
+
+  &-banner {
+    margin-top: 6rem;
+
+    .title {
+      font-weight: 600;
+      color: $dark-blue;
+      margin-bottom: 2rem;
+      line-height: 1.4;
+      // BREAKPOINT
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+    }
+
+    .iphone-mockup-container {
+      display: flex;
+      justify-content: center;
+
+      .iphone-mockup {
+        width: 10rem;
+        margin-top: -2.5rem;
+      }
+      // BREAKPOINT
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
+
+    // BREAKPOINTS
+    @include media-breakpoint-down(sm) {
+        margin-top: 3rem;
+      }
+    .btn {
+      @include media-breakpoint-down(sm) {
+        width: 85%;
+      }
+    }
+  }
+}
+
+
+.section-3 {
+  .w-40 {
+    width: 40%;
+
+    // BREAKPOINT
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
+
+    h2, p, a, .border-span {
+      text-align: center;
+    }
+  }
+
+  .image-container {
+    width: 60%;
+    text-align: center;
+
+    .image {
+      width: 80%;
+    }
+  }
+
+  h2 {
+    color: $white;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .border-span {
+    width: 30%;
+    border-bottom: 4px solid $light-blue;
+    margin: 1.2rem 0;
+
+    // BREAKPOINT
+    @include media-breakpoint-down(md) {
+      margin: 1rem auto;
+    }
+
+  }
+}
+
+
+.carousel-inner {
+  p {
+    padding: 0 10rem;
+
+    // BREAKPOINT
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
+  }
+
+  .quote-author {
+    font-size: .6rem;
+    margin-top: .6rem;
+    font-weight: 600;
+    color: $black;
+    text-transform: capitalize;
+  }
+}
+
+
+

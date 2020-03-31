@@ -1,13 +1,36 @@
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm col-md-4 footer-logo-container">
+        <%= image_tag("logo-white.png", alt: "Bibtome Logo", class: "logo logo-white") %>
+        <p>Get your lost items returned easily, faster and securely. </p>
+      </div>
+      <div class="col-sm col-md-4 gutter-max">
+        <h4>company</h4>
+        <a href="#">about us</a>
+        <a href="#">team</a>
+        <a href="#">contact details</a>
+      </div>
+      <div class="col-sm col-md-4 gutter-max">
+        <h4>legal</h4>
+        <a href="#">security</a>
+        <a href="#">privacy</a>
+        <a href="#">terms & conditions</a>
+      </div>
+      <div class="col-sm col-md-4">
+        <h4>social media</h4>
+        <ul>
+          <li>
+            <a href="#"><%= image_tag("facebook-icon.png", alt: "facebook icon", class: "s-media-icons")%></a>
+          </li>
+          <li>
+            <a href="#"><%= image_tag("instagram-icon.png", alt: "facebook icon", class: "s-media-icons")%></a>
+          </li>
+          <li>
+            <a href="#"><%= image_tag("linkedin-icon.png", alt: "facebook icon", class: "s-media-icons")%></a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="footer-logo">
-    <div class="bib-logo-footer">bibto.me</div>
-    <div class="bib-logo-footer" id="bib-logo-footer-sub">bring it back to me</div>
-  </div>
-</div>
+</footer>
