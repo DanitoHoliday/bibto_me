@@ -1,5 +1,10 @@
 .s-media-icons {
   width: 1rem;
+
+  // BREAKPOINT
+  @include media-breakpoint-down(sm) {
+    width: 1.5rem;
+  }
 }
 
 

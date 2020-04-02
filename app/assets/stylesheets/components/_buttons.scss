@@ -1,21 +1,37 @@
 .btn {
   text-transform: uppercase;
   font-size: .6rem;
+  font-weight: 600;
   letter-spacing: .5px;
+  padding-top: .7rem;
+  padding-bottom: .7rem;
 
-
-// BREAKPOINTS
+  // BREAKPOINT
   @include media-breakpoint-down(sm) {
     display: block;
     width: 50%;
     font-size: .8rem;
-    padding: .7rem 0;
+    // padding: .7rem 0;
     margin: 1rem auto 0 auto;
+  }
+
+
+  // BREAKPOINTS
+  &-outline-primary, &-primary {
+    @include media-breakpoint-down(sm) {
+      border-width: 2px;
+    }
   }
 
   &-margin-helper {
     @include media-breakpoint-up(lg) {
-        margin-top: 5rem;
+      margin-top: 5rem;
+    }
+  }
+
+  &-size-helper {
+    @include media-breakpoint-only(xs) {
+      width: 74%;
     }
   }
 }

@@ -4,7 +4,7 @@ section:not(:first-child) {
 
   // BREAKPOINTS
   @include media-breakpoint-down(sm) {
-    padding: 2rem 0;
+    padding: 3rem 0;
   }
 }
 
@@ -15,13 +15,15 @@ section:not(:first-child) {
   }
 
   &-banner {
-    margin-top: 6rem;
+    margin-top: 5rem;
 
     .title {
+      font-size:1.6rem;
       font-weight: 600;
       color: $dark-blue;
       margin-bottom: 2rem;
       line-height: 1.4;
+
       // BREAKPOINT
       @include media-breakpoint-down(sm) {
         text-align: center;
@@ -35,7 +37,8 @@ section:not(:first-child) {
 
       .iphone-mockup {
         width: 10rem;
-        margin-top: -2.5rem;
+        height: 20rem;
+        margin-top: -1.6rem;
       }
       // BREAKPOINT
       @include media-breakpoint-down(sm) {
@@ -46,12 +49,28 @@ section:not(:first-child) {
 
     // BREAKPOINTS
     @include media-breakpoint-down(sm) {
-        margin-top: 3rem;
-      }
-    .btn {
-      @include media-breakpoint-down(sm) {
-        width: 85%;
-      }
+      margin-top: 3rem;
+    }
+  }
+}
+
+
+.card-gallery {
+
+  .btn-primary {
+    margin-top: 1rem;
+    // BREAKPOINT
+    @include media-breakpoint-only(xs) {
+      display: none;
+    }
+  }
+
+  .btn-outline-primary {
+    display: none;
+
+    // BREAKPOINT
+    @include media-breakpoint-only(xs) {
+      display: block;
     }
   }
 }
@@ -62,18 +81,31 @@ section:not(:first-child) {
     width: 40%;
 
     // BREAKPOINT
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-only(xs) {
       width: 100%;
     }
 
-    h2, p, a, .border-span {
-      text-align: center;
+    h2, p, a {
+      @include media-breakpoint-only(xs) {
+        text-align: center;
+      }
+    }
+
+    h2 {
+      // BREAKPOINT
+      @include media-breakpoint-only(xs) {
+        font-size: 1.4rem;
+      }
     }
   }
 
   .image-container {
     width: 60%;
     text-align: center;
+
+    @include media-breakpoint-only(xs) {
+      display: none;
+    }
 
     .image {
       width: 80%;
@@ -92,7 +124,7 @@ section:not(:first-child) {
     margin: 1.2rem 0;
 
     // BREAKPOINT
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-only(xs) {
       margin: 1rem auto;
     }
 
@@ -102,11 +134,8 @@ section:not(:first-child) {
 
 .carousel-inner {
   p {
-    padding: 0 10rem;
-
-    // BREAKPOINT
-    @include media-breakpoint-down(sm) {
-      padding: 0;
+    @include media-breakpoint-up(lg) {
+      padding: 0 10rem;
     }
   }
 
@@ -116,8 +145,23 @@ section:not(:first-child) {
     font-weight: 600;
     color: $black;
     text-transform: capitalize;
+
+    // BREAKPOINT
+    @include media-breakpoint-only(xm) {
+      font-size: .9rem;
+    }
   }
 }
+
+.carousel-indicators {
+  position: relative;
+  margin-top: 1rem;
+  li {
+    background-color: $dark-blue;
+  }
+}
+
+
 
 
 

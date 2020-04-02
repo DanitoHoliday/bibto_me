@@ -21,13 +21,16 @@ html {
 }
 
 h1 {
+  font-weight: 100;
+  letter-spacing: .5px;
+
   // BREAKPOINTS
   @include media-breakpoint-only(sm) {
     font-size: 2rem;
   }
 
-  @include media-breakpoint-only(xm) {
-    font-size: 1.8rem;
+  @include media-breakpoint-only(xs) {
+    font-size: 1.7rem;
   }
 }
 
@@ -38,19 +41,22 @@ h2 {
 
   // BREAKPOINT
   @include media-breakpoint-down(sm) {
-    // margin-bottom: 1.5rem;
+    // margin-bottom: 1.3rem;
+    font-size: 1.6rem;
   }
 }
 
 
 h3 {
   font-size: .9rem;
-  margin: 1rem 2rem;
+  margin: 1rem 0;
   font-weight: 500;
 
   // BREAKPOINT
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-only(xs) {
     text-align: center;
+    font-size: 1.2rem;
+    margin: 1rem .6rem;
   }
 }
 
@@ -58,14 +64,21 @@ h3 {
 h4 {
   font-size: .7rem;
   text-align: left;
+
+  // BREAKPOINT
+  @include media-breakpoint-only(xs) {
+    font-size: 1.15rem;
+  }
 }
+
 
 p {
   margin: 0;
 
-    // BREAKPOINT
+  // BREAKPOINT
   @include media-breakpoint-down(sm) {
     text-align: center;
+    font-size: 1.2rem;
   }
 }
 
@@ -74,6 +87,7 @@ p {
   font-weight: 600;
   display: block;
   margin-top: .6rem;
+  font-family: 'Montserrat', 'Poppins', sans-serif;
 
   &:hover {
     text-decoration: none;
@@ -82,9 +96,18 @@ p {
   // BREAKPOINT
   @include media-breakpoint-down(sm) {
     text-align: center;
+    font-size: 1rem;
+
   }
 }
 
+
+.d-none-helper {
+  // BREAKPOINT
+  @include media-breakpoint-down(sm) {
+    display: none !important;
+  }
+}
 
 
 // BREAKPOINTS FOR ALL THE OTHER CLASSES
@@ -106,10 +129,90 @@ p {
   }
 }
 
-.image-container {
-  @include media-breakpoint-down(md) {
-    display: none;
-  }
+
+.custom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-column-gap: 2rem;
+  grid-row-gap: 3rem;
 }
+
+// MEDIA-QUERIES
+// ** Tablet **
+@media only screen and (min-width: 425px) and (max-width: 834px) {
+  h3, h4, p, .link, .quote-author, .footer h4 {
+    font-size: 1rem;
+  }
+
+  .card-gallery h4 {
+    font-size: .8rem;
+  }
+
+
+  .footer a {
+    font-size: .9rem;
+  }
+
+  .footer ul {
+    width: 70%;
+  }
+
+
+
+  .container {
+    padding: 0 2rem;
+  }
+
+
+  .home-header {
+    height: 55vh;
+  }
+
+
+  .carousel-inner p {
+    padding: 0 4rem;
+  }
+
+
+  .get-start .link{
+    font-family: 'Montserrat', sans-serif;
+  }
+
+
+  .btn {
+    font-size: .6rem;
+  }
+
+
+  .section-3 {
+
+    .w-40 {
+      width: 100%;
+
+      h2, p, a {
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+
+    .image-container {
+      display: none;
+    }
+
+    .border-span {
+      margin: 1rem auto;
+    }
+  }
+
+}
+
+
+
+
+
+
 
 

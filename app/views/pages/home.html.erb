@@ -4,20 +4,20 @@
     <div class="container d-flex justify-content-between align-items-center pt-4">
       <%= image_tag("logo-blue.png", alt: "Bibtome Logo", class: "logo logo-blue")%>
       <ul class="navbar">
-        <li><%= link_to "login", new_user_session_path, class: "btn" %></li>
-        <li><%= link_to "sign up", new_user_session_path, class: "btn btn-primary" %></li>
+        <li><%= link_to "Einloggen", new_user_session_path, class: "btn text-primary" %></li>
+        <li><%= link_to "Registrieren", new_user_session_path, class: "btn btn-primary py-2" %></li>
       </ul>
     </div>
 
     <!-- Hero/banner -->
-    <div class="container home-banner">
+    <div class="container container-margin-helper home-banner">
       <div class="row">
-        <div class="col-xm col-sm col-lg-6">
-          <h1 class="title">Get your lost items <br> returned easily,<br> faster and securely. </h1>
-          <%= link_to "register tag", register_input_path, class: "btn btn-outline-primary" %>
-          <%= link_to "return item", finder_input_path, class: "btn btn-primary" %>
+        <div class="info col-md-6">
+          <h1 class="title">Bekomme deine verlorene Gegenstände <b>schnell</b>, <b>einfach</b> und <b>sicher</b> zurück. </h1>
+          <%= link_to "Tag registrieren", register_input_path, class: "btn btn-outline-primary btn-size-helper" %>
+          <%= link_to "Gegenstand zurückgeben", finder_input_path, class: "btn btn-primary btn-size-helper" %>
         </div>
-        <div class="col-xm col-sm col-lg-6 iphone-mockup-container">
+        <div class="col-md-6 iphone-mockup-container">
           <%= image_tag("iphone-mockup.png", alt: "Bibtome app on iphone-mockup", class: "iphone-mockup")%>
         </div>
       </div>
@@ -28,31 +28,31 @@
   <!-- How it works Section -->
   <section class="bg-white">
     <div class="container">
-      <h2>How it works?</h2>
-      <div class="row">
-        <div class="col-sm col-md-4 gutter-max">
+      <h2>Wie es funktioniert?</h2>
+      <div class="custom-grid">
+        <div class="gutter-max">
           <div class="circle circle-pink">
             <%= image_tag("spaceship.png", alt: "Choose your tag icon", class: "c-icon")%>
           </div>
-          <h3>Choose your tag and get it shipped</h3>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-          <a href="#" class="link">Learn more <span class="ml-1">&#8594;</span></a>
+          <h3>QR-Tag aussuchen und geliefert bekommen</h3>
+          <p>In unserem Shop findest du verschiedene Tags – vom Sticker bis zum Schlüsselanhänger. Such dir einen aus und wir liefern ihn zu dir nach Hause.</p>
+          <a href="#" class="link">Mehr erfahren <span class="ml-1">&#8594;</span></a>
         </div>
-        <div class="col-sm col-md-4 gutter-max">
+        <div class="gutter-max">
           <div class="circle circle-blue">
             <%= image_tag("badge.png", alt: "Register your tag", class: "c-icon")%>
           </div>
-          <h3>Register your tag and attach it to your item</h3>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-          <a href="#" class="link">Learn more <span class="ml-1">&#8594;</span></a>
+          <h3>QR-Tag registrieren und an Gegenstand anbringen</h3>
+          <p>Scanne oder tippe deinen Code hier auf der Website ein, um deinen Code zu registrieren. Befestige ihn dann an einem Gegenstand, den du ungern verlieren möchtest. Fertig.</p>
+          <a href="#" class="link">Mehr erfahren <span class="ml-1">&#8594;</span></a>
         </div>
-        <div class="col-sm col-md-4">
+        <div class="">
           <div class="circle circle-green">
             <%= image_tag("bell.png", alt: "Get notified", class: "c-icon")%>
           </div>
-          <h3>Get notified when your lost item is found</h3>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-          <a href="#" class="link">Learn more <span class="ml-1">&#8594;</span></a>
+          <h3>Benachrichtigt werden, wenn der verlorene Gegenstand gefunden wurde</h3>
+          <p>Wenn jemand deinen Gegenstand findet, kann er den Code mit seinem Telefon scannen und sich anschließend entweder anonym oder mit seinen Kontaktdaten bei dir melden. Du erhältst daraufhin eine Benachrichtigung.</p>
+          <a href="#" class="link">Mehr erfahren <span class="ml-1">&#8594;</span></a>
         </div>
       </div>
     </div>
@@ -60,15 +60,15 @@
 
 
   <!-- Tag Gallery/Cards Section -->
-  <section>
+  <section class="card-gallery">
     <div class="container container-margin-helper text-center">
-      <h3 class="mb-5">Get stylish keychain tags and labels for diverse items.</h3>
+      <h3 class="mb-5">Hol dir Custom Schlüsselanhänger-Tags und Sticker für deine Gegenstände.</h3>
       <div class="row">
         <div class="col-sm col-md-4 gutter-min">
           <div class="card border-0">
             <%= image_tag("laptop-img.jpg", alt: "Laptop image", class: "card-img-top")%>
             <div class="card-body">
-              <h4 class="card-title">Sticker for smartphones, laptops, etc</h4>
+              <h4 class="card-title">Sticker für Smartphones, Laptops, etc.</h4>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@
           <div class="card border-0">
             <%= image_tag("keys-img.jpg", alt: "Keys image", class: "card-img-top")%>
             <div class="card-body">
-              <h4 class="card-title">Sticker for smartphones, laptops, etc</h4>
+              <h4 class="card-title">Anhänger für deine Schlüssel</h4>
             </div>
           </div>
         </div>
@@ -84,12 +84,15 @@
           <div class="card border-0">
             <%= image_tag("iphone-img.jpg", alt: "Iphone image", class: "card-img-top")%>
             <div class="card-body">
-              <h4 class="card-title">Sticker for smartphones, laptops, etc</h4>
+              <h4 class="card-title">Anhänger für deine Tasche, Koffer, etc</h4>
             </div>
           </div>
         </div>
       </div>
-      <%= link_to "Get a free tag", finder_input_path, class: "btn btn-primary btn-colr-helper" %>
+      <h3 class="text-danger mt-5">- Nur für begrenzte Zeit -</h3>
+      <p>Sicher dir einen kostenlosen Tag, um unseren Service auszuprobieren.</p>
+      <%= link_to "Kostenlosen Tag bestellen", finder_input_path, class: "btn btn-primary" %>
+      <%= link_to "Kostenlosen Tag bestellen", finder_input_path, class: "btn btn-outline-primary btn-size-helper" %>
     </div>
   </section>
 
@@ -98,10 +101,10 @@
   <section class="bg-primary">
     <div class="section-3 container d-flex">
       <div class="w-40 text-left ">
-        <h2>Bibtome increases the <br> chances of returned lost <br> items by 90%.</h2>
+        <h2>Mit Bibto.me erhöhst du <br class="d-none-helper"> die Chance, deine verlorenen Gegenstände <br class="d-none-helper"> zurückzubekommen, um 90%</h2>
         <div class="border-span"></div>
-        <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-        <a href="#" class="link">Learn more <span class="ml-1">&#8594;</span></a>
+        <p class="text-white">Wir haben es ausprobiert: 90% der Finder scannen unsere Tags und sorgen dafür, dass verlorene Dinge wieder zum Besitzer kommen.</p>
+        <a href="#" class="link">Mehr erfahren <span class="ml-1">&#8594;</span></a>
       </div>
       <div class="image-container">
         <%= image_tag("car-key-img.jpg", alt: "Women holding a car keys", class: "image")%>
@@ -113,70 +116,59 @@
   <!-- Data Privacy Section -->
   <section class="bg-white">
     <div class="container">
-      <h2>We protect your data privacy</h2>
+      <h2>Wir schützen deine Privatsphäre</h2>
       <div class="row">
         <div class="col-sm gutter-max">
           <div class="d-flex circle-container">
             <div class="circle circle-blue m-0">
               <%= image_tag("ic_filter_1.png", alt: "For finders icon", class: "c-icon ic-filter")%>
             </div>
-            <h3 class="ml-4">For finders</h3>
+            <h3 class="ml-4">Für Finder</h3>
           </div>
-          <p class="mt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.</p>
-          <a href="#" class="link">Learn more about finders privacy <span class="ml-1">&#8594;</span></a>
+          <p class="mt-3">Du hast die Wahl: Gib dem Besitzer deine Telefonnummer, deine E-Mail oder hinterlasse eine anonyme Nachricht.</p>
+          <a href="#" class="link">Erfahre mehr über den Datenschutz für Finder <span class="ml-1">&#8594;</span></a>
         </div>
         <div class="col-sm">
           <div class="d-flex circle-container">
             <div class="circle circle-pink m-0">
               <%= image_tag("ic_filter_2.png", alt: "For owners icon", class: "c-icon ic-filter")%>
             </div>
-            <h3 class="ml-4">For owners</h3>
+            <h3 class="ml-4">Für Besitzer</h3>
           </div>
-          <p class="mt-3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.</p>
-          <a href="#" class="link">Learn more about owners privacy <span class="ml-1">&#8594;</span></a>
+          <p class="mt-3">Als Besitzer kannst du entscheiden, ob du direkt via Telefon kontaktiert werden möchtest oder ob die Finder ihre Kontaktdaten lieber für dich hinterlassen.</p>
+          <a href="#" class="link">Erfahre mehr über den Datenschutz für Besitzer <span class="ml-1">&#8594;</span></a>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- Testimonial slide-show Section -->
+  <!-- Testimonial slide-show/carousel Section -->
   <section>
     <div class="container">
-      <h2 class="mb-4">What people are saying</h2>
+      <h2 class="mb-4">Was Leute sagen über uns</h2>
 
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-
         <div class="carousel-inner text-center">
           <div class="carousel-item active">
-            <p class="d-block w-100">“Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.“</p>
+            <p class="d-block w-100">“Ich habe meinen Schlüssel wohl im Park verloren. Ich hatte gehofft, dass ihn jemand findet und meinen Tag scannt - und tatsächlich. Noch am gleichen Abend erhielt ich eine Nachricht vom Finder und habe meinen Schlüssel zurückbekommen! Zum Glück musste ich keinen Schlüsseldienst bestellen, danke Bibito.me.“</p>
             <div class="quote-author">- Danny F.</div>
           </div>
           <div class="carousel-item">
-            <p class="d-block w-100 ">“Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.“</p>
+            <p class="d-block w-100 ">“Ich habe meinen Schlüssel wohl im Park verloren. Ich hatte gehofft, dass ihn jemand findet und meinen Tag scannt - und tatsächlich. Noch am gleichen Abend erhielt ich eine Nachricht vom Finder und habe meinen Schlüssel zurückbekommen! Zum Glück musste ich keinen Schlüsseldienst bestellen, danke Bibito.me.“</p>
             <div class="quote-author">- Jan F.</div>
           </div>
           <div class="carousel-item">
-            <p class="d-block w-100 ">“Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.“</p>
+            <p class="d-block w-100 ">“Ich habe meinen Schlüssel wohl im Park verloren. Ich hatte gehofft, dass ihn jemand findet und meinen Tag scannt - und tatsächlich. Noch am gleichen Abend erhielt ich eine Nachricht vom Finder und habe meinen Schlüssel zurückbekommen! Zum Glück musste ich keinen Schlüsseldienst bestellen, danke Bibito.me.“</p>
             <div class="quote-author">- Anouk E.</div>
           </div>
         </div>
 
-        <!-- CAROUSEL FUNCTIONALITIES COMMENTED BELLOW -->
-
-        <!-- <ol class="carousel-indicators">
+        <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators text-danger" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon text-danger" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a> -->
       </div>
     </div>
   </section>
@@ -184,15 +176,18 @@
 
 
   <!-- Get started Section -->
-  <section class="bg-white">
+  <section class="get-start bg-white">
     <div class="container text-center">
-      <h2 class="mb-4">Get started</h2>
-      <p>Get started today with our FREE tag!</p>
-      <%= link_to "sign up", new_user_session_path, class: "btn btn-primary my-4" %>
-      <h4 class="text-center">Have more questions? <a href="#" class="link d-inline">Click here.</a></h4 class="text-center">
+      <h2 class="mb-4">Jetzt absichern</h2>
+      <p>Mit einem kostenlosen Tag. Nur noch 100 Stück übrig</p>
+      <%= link_to "Registrieren", new_user_session_path, class: "btn btn-primary my-4" %>
+      <h4 class="text-center">
+        Noch Fragen? <%= link_to "Hier klicken.", finder_input_path, class: "link d-inline" %>
+      </h4>
     </div>
   </section>
 
+<%#= link_to "Hier klicken.", finder_input_path, class: "link" %>
 
 
   <!-- Shared Footer -->

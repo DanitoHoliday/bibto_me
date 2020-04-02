@@ -4,7 +4,7 @@
 
   // BREAPOINT
     @include media-breakpoint-down(sm) {
-      padding: 3rem 0;
+      padding: 4rem 0;
     }
 
   h4{
@@ -14,20 +14,14 @@
     text-transform: capitalize;
 
     // BREAPOINT
-    @include media-breakpoint-down(sm) {
-      font-size: 1rem;
+    @include media-breakpoint-only(xs) {
+      font-size: 1.2rem;
       text-align:center;
     }
   }
 
   p{
     color: $light-grey;
-
-    // BREAPOINT
-    @include media-breakpoint-down(sm) {
-      font-size: 1rem;
-      text-align:center;
-    }
   }
 
   a {
@@ -45,7 +39,7 @@
 
     // BREAPOINT
     @include media-breakpoint-down(sm) {
-      font-size: 1rem;
+      font-size: 1.2rem;
       text-align:center;
     }
   }
@@ -62,19 +56,19 @@
 
 
     // BREAPOINTS
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-only(xs) {
       margin: 0 auto;
       width: 40%;
     }
 
-    @include media-breakpoint-down(md) {
-      width: 40%;
-    }
+    // @include media-breakpoint-down(md) {
+    //   width: 40%;
+    // }
   }
 
 
   &-logo-container {
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-only(xs) {
       display: none;
     }
   }
