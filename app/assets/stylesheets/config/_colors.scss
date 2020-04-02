@@ -1,46 +1,19 @@
-// Define variables for your color scheme
+// Color scheme
+$black: #222;
 
-// For example:
-$red: #FD1015;
-$blue: #167FFB;
-$yellow: #FFC65A;
-$orange: #E67E22;
-$green: #1EDD88;
-$gray: #0E0000;
-$light-gray: #F4F4F4;
-
-$c1: #008767;
-$c2: #017D5E;
-$c3: #FFDA79;
-$c4: #EDB834;
-$c5: rgba(253, 211, 101, 0.7); // transparent of c3-l
 $white: #FFFFFF;
-$light-grey: #9E9E9E;
-$dark-grey: #4F4F4F;
 
-.font-yellow{
-  color: $c3;
-}
+$grey: #7F7F7F;
+$light-grey: #F9F9F9;
 
-.font-d-yellow{
-  color: $c4;
-}
+$green: #98A886;
 
-.text-green {color: $c1 !important}
-.text-yellow {color: $c3}
+$red: #eb4559;
 
+$pink: #FCA6A6;
 
-// old colors:
-// $c1: #6BC490
-// $c2: #5AA378
-// $c3: #FDD365
-// $c4: #EDB834
+$dark-blue: #3F4C6B;
+$dark-blue-1: #28334F;
+$light-blue: #91A2CB;
 
 
-// #286348
-// #346154
-// #3C5679
-// #227D65
-// #00846F
-// #018760
-// #018766

@@ -1,82 +1,82 @@
-.landing-page {
-  // background-size: cover;
-  // background-position: center;
-  padding: 40px 10px;
-  background-color: $c1;
-}
+// .landing-page {
+//   // background-size: cover;
+//   // background-position: center;
+//   padding: 40px 10px;
+//   background-color: $c1;
+// }
 
 
-.landing-page #banner-header {
-  margin: 0;
-}
+// .landing-page #banner-header {
+//   margin: 0;
+// }
 
-.landing-page #banner-header h1 {
-  font-family: $logo-font;
-  color: $c3;
-  font-size: 48px;
-  font-weight: 700;
-}
+// .landing-page #banner-header h1 {
+//   font-family: $logo-font;
+//   color: $c3;
+//   font-size: 48px;
+//   font-weight: 700;
+// }
 
-.landing-page #banner-header h3 {
-  font-family: $logo-font;
-  color: $light-grey;
-  font-size: 22px;
-  margin: none;
-  font-weight: 700;
-}
+// .landing-page #banner-header h3 {
+//   font-family: $logo-font;
+//   color: $light-grey;
+//   font-size: 22px;
+//   margin: none;
+//   font-weight: 700;
+// }
 
-.landing-page #banner-slogan h1 {
-  margin-top: 40px;
-  color: $white;
-  margin-bottom: 60px;
-  font-size: 36px;
+// .landing-page #banner-slogan h1 {
+//   margin-top: 40px;
+//   color: $white;
+//   margin-bottom: 60px;
+//   font-size: 36px;
 
-}
+// }
 
-.landing-page #lp-btn{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+// .landing-page #lp-btn{
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
 
-#down-angle{
-  font-size: 34px;
-  text-align: center;
+// #down-angle{
+//   font-size: 34px;
+//   text-align: center;
 
-}
+// }
 
-#how-it-works{
-  font-size: 20px;
-}
+// #how-it-works{
+//   font-size: 20px;
+// }
 
-.lp-about {
-  p {
-  color: $c2;
-  }
-}
+// .lp-about {
+//   p {
+//   color: $c2;
+//   }
+// }
 
-// Animation
-@keyframes jump {
-  0% { top: 0; } 50% { top: 20px; } 100% { top: 0; }
-}
+// // Animation
+// @keyframes jump {
+//   0% { top: 0; } 50% { top: 20px; } 100% { top: 0; }
+// }
 
-//Button/Arrow
-#arrow-down {
-  position: relative;
-  margin: 0 auto;
-  text-align: center;
-  animation: jump 3s infinite;
-    i {
-      content: '\f0a8';
-      font-family: 'FontAwesome';
-      font-size: 80px;
-      transition: .3s ease-in-out;
-  }
-    i:hover {
-      opacity: 0.7;
-      transition: .3s ease-in-out;
-  }
-}
+// //Button/Arrow
+// #arrow-down {
+//   position: relative;
+//   margin: 0 auto;
+//   text-align: center;
+//   animation: jump 3s infinite;
+//     i {
+//       content: '\f0a8';
+//       font-family: 'FontAwesome';
+//       font-size: 80px;
+//       transition: .3s ease-in-out;
+//   }
+//     i:hover {
+//       opacity: 0.7;
+//       transition: .3s ease-in-out;
+//   }
+// }
 
 
 

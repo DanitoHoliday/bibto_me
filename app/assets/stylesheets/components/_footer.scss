@@ -1,49 +1,80 @@
 .footer {
-  background: lightgrey;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 20px;
-  color: rgba(0,0,0,0.3);
-}
-.footer-links {
-  display: flex;
-  align-items: center;
-}
-.footer-links a {
-  color: $c2;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
-}
-.footer-links a:hover {
-  color: $light-grey;
-}
-.footer .fa-heart {
-  color: $dark-grey;
-}
+  background-color: $dark-blue-1;
+  padding: 4rem 0;
 
-.footer-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  align-content: center;
-  margin-top: none;
-  margin-bottom: none;
+  // BREAPOINT
+    @include media-breakpoint-down(sm) {
+      padding: 4rem 0;
+    }
+
+  h4{
+    color: $white;
+    font-size: .8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+
+    // BREAPOINT
+    @include media-breakpoint-only(xs) {
+      font-size: 1.2rem;
+      text-align:center;
+    }
+  }
+
+  p{
+    color: $light-grey;
+  }
+
+  a {
+    display: block;
+    font-weight: 100;
+    text-transform: capitalize;
+    font-size: .7rem;
+    line-height: 2;
+    color: $light-grey;
+
+    &:hover {
+      color: $light-blue;
+      text-decoration: none;
+    }
+
+    // BREAPOINT
+    @include media-breakpoint-down(sm) {
+      font-size: 1.2rem;
+      text-align:center;
+    }
+  }
+
+  ul{
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+
+    li{
+      list-style-type: none;
+    }
+
+
+    // BREAPOINTS
+    @include media-breakpoint-only(xs) {
+      margin: 0 auto;
+      width: 40%;
+    }
+
+    // @include media-breakpoint-down(md) {
+    //   width: 40%;
+    // }
+  }
+
+
+  &-logo-container {
+    @include media-breakpoint-only(xs) {
+      display: none;
+    }
+  }
+
+  .row {
+    margin: 0 auto;
+  }
+
 }
-
-// ------------------------
-
-.bib-logo-footer {
-  font-family: $logo-font;
-  font-weight: bold;
-  font-size: 26px;
-}
-
-#bib-logo-footer-sub {
-  font-size: 12px;
-  color: $c2;
-}
-
-

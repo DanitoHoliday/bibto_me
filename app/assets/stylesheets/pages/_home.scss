@@ -1,1 +1,167 @@
 // Specific CSS for your home-page
+section:not(:first-child) {
+  padding: 4rem 0;
+
+  // BREAKPOINTS
+  @include media-breakpoint-down(sm) {
+    padding: 3rem 0;
+  }
+}
+
+
+.home {
+  &-header {
+    height: 100vh;
+  }
+
+  &-banner {
+    margin-top: 5rem;
+
+    .title {
+      font-size:1.6rem;
+      font-weight: 600;
+      color: $dark-blue;
+      margin-bottom: 2rem;
+      line-height: 1.4;
+
+      // BREAKPOINT
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+    }
+
+    .iphone-mockup-container {
+      display: flex;
+      justify-content: center;
+
+      .iphone-mockup {
+        width: 10rem;
+        height: 20rem;
+        margin-top: -1.6rem;
+      }
+      // BREAKPOINT
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
+
+    // BREAKPOINTS
+    @include media-breakpoint-down(sm) {
+      margin-top: 3rem;
+    }
+  }
+}
+
+
+.card-gallery {
+
+  .btn-primary {
+    margin-top: 1rem;
+    // BREAKPOINT
+    @include media-breakpoint-only(xs) {
+      display: none;
+    }
+  }
+
+  .btn-outline-primary {
+    display: none;
+
+    // BREAKPOINT
+    @include media-breakpoint-only(xs) {
+      display: block;
+    }
+  }
+}
+
+
+.section-3 {
+  .w-40 {
+    width: 40%;
+
+    // BREAKPOINT
+    @include media-breakpoint-only(xs) {
+      width: 100%;
+    }
+
+    h2, p, a {
+      @include media-breakpoint-only(xs) {
+        text-align: center;
+      }
+    }
+
+    h2 {
+      // BREAKPOINT
+      @include media-breakpoint-only(xs) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .image-container {
+    width: 60%;
+    text-align: center;
+
+    @include media-breakpoint-only(xs) {
+      display: none;
+    }
+
+    .image {
+      width: 80%;
+    }
+  }
+
+  h2 {
+    color: $white;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .border-span {
+    width: 30%;
+    border-bottom: 4px solid $light-blue;
+    margin: 1.2rem 0;
+
+    // BREAKPOINT
+    @include media-breakpoint-only(xs) {
+      margin: 1rem auto;
+    }
+
+  }
+}
+
+
+.carousel-inner {
+  p {
+    @include media-breakpoint-up(lg) {
+      padding: 0 10rem;
+    }
+  }
+
+  .quote-author {
+    font-size: .6rem;
+    margin-top: .6rem;
+    font-weight: 600;
+    color: $black;
+    text-transform: capitalize;
+
+    // BREAKPOINT
+    @include media-breakpoint-only(xm) {
+      font-size: .9rem;
+    }
+  }
+}
+
+.carousel-indicators {
+  position: relative;
+  margin-top: 1rem;
+  li {
+    background-color: $dark-blue;
+  }
+}
+
+
+
+
+

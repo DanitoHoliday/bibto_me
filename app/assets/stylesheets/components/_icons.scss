@@ -1,0 +1,51 @@
+.s-media-icons {
+  width: 1rem;
+
+  // BREAKPOINT
+  @include media-breakpoint-down(sm) {
+    width: 1.5rem;
+  }
+}
+
+
+.circle {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  text-align: right;
+  margin: 0 auto;
+
+  &-pink {
+    background-color: $pink;
+  }
+
+  &-blue {
+    background-color: $light-blue;
+  }
+
+  &-green {
+    background-color: $green;
+  }
+
+  .c-icon {
+    width: 2rem;
+    margin-right: -.8rem;
+  }
+
+  .ic-filter {
+    opacity: .5;
+  }
+}
+
+
+.circle-container {
+
+  // BREAKPOINT
+  @include media-breakpoint-down(sm) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+

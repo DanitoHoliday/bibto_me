@@ -1,67 +1,8 @@
-// Import Google font
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,500,600,700&display=swap');
+// Google Fonts Imports
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,400i,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600&display=swap');
 
-
-// Define fonts for body and headers
-$body-font: "Montserrat", "Helvetica", "sans-serif";
-$headers-font: "Questrial", "Helvetica", "sans-serif";
-$logo-font: "Comfortaa", "Helvetica", "sans-serif";
-
-h1 {
-  font-size: 34px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-h3 {
-  font-size: 26px;
-}
-h4{
-  font-size: 24px;
-}
-
-a{
-  font-size: 22px;
-  text-decoration: none;
-}
-
-p {
-  font-size: 24px;
-}
-
-.p-small {
-  font-size: 18px;
-}
-// used for additional Infos at the bottom of pages, e.g. "Unhappy? Delete my account!"
-
-.p-big{
-  font-size: 28px;
-}
-// used for landing page explanatory infos_by Anouk
-
-h1, h2, h3, p {
-  margin: 0;
-}
-
-.logo-font{
-  font-family: $logo-font;
-}
-
-
-
-
-
-
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+// Fonts for body and headers
+$body-font: "Montserrat", "Poppins", "sans-serif";
+$headers-font: "Poppins", "Open sans", "sans-serif";
