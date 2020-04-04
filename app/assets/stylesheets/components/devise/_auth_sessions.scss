@@ -1,4 +1,9 @@
 .auth-session {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   @include media-breakpoint-only(xs) {
     height: 90vh;
   }
@@ -7,7 +12,7 @@
     background-color: $white;
     width: 50%;
     padding: 2rem 4rem;
-    margin: 3rem auto;
+    // margin: 3rem auto;
 
     h2 {
       text-align: left;
@@ -37,8 +42,13 @@
       }
     }
 
-    .btn {
-      // width: 100%;
+    .info-container {
+      margin-top: 2rem;
+
+      span {
+        font-size: .7rem;
+        color: $light-blue;
+      }
     }
 
     @include media-breakpoint-down(sm) {
