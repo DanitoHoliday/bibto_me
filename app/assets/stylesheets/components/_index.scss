@@ -1,25 +1,15 @@
 // Import your components CSS files here.
-@import "logo";
-@import "icons";
+@import "custom_styles";
+@import "logo/logo";
+@import "icons/icons";
 
-
-@import "alert";
-@import "avatar";
+@import "alerts/alert";
+// @import "avatars/avatar";
+// @import "avatars/user-avatar";
 @import "navbar";
-@import "buttons";
-@import "search_form";
-@import "footer";
-@import "landing_page";
-@import "menu";
-@import "page_structure";
-@import "card_grid";
-@import "card";
-@import "svg";
-@import "category-grid";
-@import "category-card";
-@import "user-avatar";
-@import "device_links";
-@import "unfolder";
-@import "color_banner";
-@import "need_help";
-@import "typing-effect"
+@import "buttons/buttons";
+@import "footer/footer";
+@import "menu/menu";
+@import "devise";
+@import "utilities/unfolder";
+@import "utilities/typing-effect";
