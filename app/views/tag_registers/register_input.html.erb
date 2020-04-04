@@ -1,41 +1,30 @@
-<div class="page-title ">
-  <div class="container mb-2">
-    <div class="d-flex">
-        <%= link_to :back do %>
-          <h2><i class="fas fa-chevron-left text-white"></i></h2>
-        <% end %>
-      <h2 class="mx-auto">Register Tag</h2>
-      <h2><i class="far fa-bell text-green"></i></h2>
-    </div>
+<!-- Shared Footer -->
+<%= render "shared/navbar_shared" %>
+
+<div class="auth-session">
+  <div class="auth-session-container">
+    <h2>Register Tag</h2>
+    <p>To register your tag, please enter your code below:</p>
+
+    <%= form_tag update_register_input_path, method: :patch do %>
+      <%= text_field_tag :code,
+                  params[:code],
+              placeholder: "Enter your code here",
+                    class: "form-inputs"%>
+      <% if @error %>
+        <%= @error %>
+      <% end %>
+      <%# if current_user == nil %>
+        <%#= submit_tag "Register now",class: "btn btn-bib btn-green btn-form btn-margin disabled" %>
+      <%# else %>
+      <%= submit_tag "Register now",class: "btn btn-primary" %>
+      <%# end %>
+    <% end %>
   </div>
 </div>
 
-<div class="container mt-5">
-  <p class="text-center">
-    To register your tag, please enter your code below:
-  </p>
-    <%= form_tag update_register_input_path, method: :patch do %>
-      <%= text_field_tag :code,
-      params[:code],
-      class: "form-control bib-form-styling text-input",
-      placeholder: "Enter your code here"
-    %>
-    <% if @error %>
-      <span class="text-danger ml-3 text-input"><%= @error%></span>
-    <% end %>
-    <%# if current_user == nil %>
-      <%#= submit_tag "Register now",class: "btn btn-bib btn-green btn-form btn-margin disabled" %>
-    <%# else %>
-    <%= submit_tag "Register now",class: "btn btn-bib btn-green btn-form btn-margin", style: "font-weight: 300;" %>
-    <%# end %>
-  <% end %>
-
-  <%= link_to "QR code scanner", root_path, class: "btn btn-bib btn-grey btn-block", style: "font-weight: 300;" %>
-
-  <h5 class="text-center need-help">Need help? <span class="help-color">Click here.</span></h5>
-</div>
-
-<%= render "shared/menu" %>
+<!-- Shared Footer -->
+<%= render "shared/footer" %>
 
 
 

@@ -3,8 +3,16 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
-  background-color: #85C1B2;
-  color: $grey;
+  background-color: $white;
   border: none;
-  border-radius: 50px;
+
+  &-info {
+    color: $light-blue;
+    border-left: 4px solid $light-blue;
+  }
+
+  &-warning {
+    color: $red;
+    border-left: 4px solid $red;
+  }
 }
