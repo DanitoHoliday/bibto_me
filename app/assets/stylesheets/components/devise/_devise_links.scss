@@ -1,0 +1,12 @@
+.devise-links {
+  margin-top: 2rem;
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  @include media-breakpoint-only(xs) {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
