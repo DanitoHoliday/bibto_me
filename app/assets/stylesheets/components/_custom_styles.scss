@@ -121,14 +121,52 @@ p {
 }
 
 
-// MEDIA-QUERIES
-// ** Phone **
-// @media only screen(max-width: 414px) {
-//   h1 {
-//     font-size: 1.7rem;
-//   }
+.info-container {
+  margin-top: 2rem;
 
-// }
+  span {
+    font-size: .7rem;
+    color: $light-blue;
+  }
+}
+
+
+.errors {
+  font-size: .7rem;
+  color: $red;
+  margin-bottom: .5rem;
+}
+
+
+.successfully-registration {
+  .info-container {
+    margin-top: 0;
+    margin-bottom: 1.8rem;
+  }
+
+  .auth-session-container {
+    width: 52%;
+  }
+
+  .radio-box-container {
+    display: flex;
+    margin: 1rem 0 1.5rem;
+
+    .radio-boxs {
+      width: 50%;
+
+      h4 {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .buttons-container {
+    margin-top: 2.5rem;
+  }
+}
+
 
 // ** Tablet **
 @media only screen and (min-width: 425px) and (max-width: 834px) {

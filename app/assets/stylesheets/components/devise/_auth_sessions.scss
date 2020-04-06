@@ -19,7 +19,7 @@
     }
 
     .form-inputs {
-      margin-top: 2rem;
+      margin-top: .5rem;
 
       .form-control {
         font-size: .7rem;
@@ -42,14 +42,6 @@
       }
     }
 
-    .info-container {
-      margin-top: 2rem;
-
-      span {
-        font-size: .7rem;
-        color: $light-blue;
-      }
-    }
 
     @include media-breakpoint-down(sm) {
       width: 100%;
