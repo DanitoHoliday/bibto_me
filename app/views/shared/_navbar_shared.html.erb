@@ -1,12 +1,12 @@
 <nav class="shared-navbar">
   <div class="container larger-devices d-flex justify-content-between align-items-center">
       <%= link_to root_path do %>
-        <%= image_tag("logo-white.png", alt: "Bibtome Logo", class: "logo logo-blue")%>
+        <%= image_tag("logo-blue.png", alt: "Bibtome Logo", class: "logo logo-blue")%>
       <% end %>
       <ul class="navbar">
-        <li><%= link_to "Tag registrieren", register_input_path, class: "btn text-white" %></li>
-        <li><%= link_to "Zurückgeben", finder_input_path, class: "btn text-white" %></li>
-        <li><%= link_to "Registrieren", new_user_session_path, class: "btn btn-light" %></li>
+        <li><%= link_to "Tag registrieren", register_input_path, class: "btn" %></li>
+        <li><%= link_to "Zurückgeben", finder_input_path, class: "btn" %></li>
+        <li><%= link_to "Registrieren", new_user_session_path, class: "btn btn-primary" %></li>
       </ul>
     </div>
     <!-- Display only in xs-devices -->

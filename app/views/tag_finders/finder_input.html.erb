@@ -1,3 +1,41 @@
+<!-- Shared Navbar -->
+<%= render "shared/navbar_shared" %>
+
+<div class="auth-session h-full">
+  <div class="auth-session-container">
+    <h3 class="mb-4">Return Item</h3>
+    <p>Please insert the tag ID to proceed verification:</p>
+
+    <div class="form-inputs">
+      <%= form_tag new_tag_finder_path, method: :get do %>
+        <div class="errors">
+          <% if @error %>
+            <%= @error %>
+          <% end %>
+        </div>
+        <%= text_field_tag :code,
+                    params[:code],
+                   required: :true,
+                placeholder: "Enter your code here",
+                      class: "form-control mb-2"%>
+        <%= submit_tag "Send code",class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <!-- <div class="info-container">
+      <%#= image_tag("info-primary-icon.svg", alt: "Information icon", class: "info-icon")%>
+      <span>We will verify if the code inserted is registered in our database.</span>
+    </div> -->
+  </div>
+</div>
+
+<!-- Shared Footer -->
+<%= render "shared/footer" %>
+
+
+
+
+
+
 <div class="page-title">
   <div class="container mb-2">
     <div class="d-flex">

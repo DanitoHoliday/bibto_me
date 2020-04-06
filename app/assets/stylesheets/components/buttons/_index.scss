@@ -1,29 +1,30 @@
 .btn {
-  // text-transform: uppercase;
-  font-size: .7rem;
-  font-weight: 500;
+  text-transform: uppercase;
+  // font-family: "Lato", "sans-serif";
+  font-size: .5rem;
+  // font-weight: 500;
 
   // BREAKPOINT
-  @include media-breakpoint-down(sm) {
-    display: block;
-    width: 50%;
-    font-size: 1.1rem;
-    margin: 1rem auto 0 auto;
-    padding: .7rem 0;
-  }
+  // @include media-breakpoint-down(sm) {
+  //   display: block;
+  //   width: 50%;
+  //   font-size: 1.1rem;
+  //   margin: 1rem auto 0 auto;
+  //   padding: .7rem 0;
+  // }
 
 
   // BREAKPOINTS
   &-outline-primary, &-primary {
-    @include media-breakpoint-down(sm) {
-      border-width: 2px;
-    }
+    // @include media-breakpoint-down(sm) {
+    //   border-width: 2px;
+    // }
   }
 
   &-margin-helper {
-    @include media-breakpoint-up(lg) {
-      margin-top: 5rem;
-    }
+    // @include media-breakpoint-up(lg) {
+    //   margin-top: 5rem;
+    // }
   }
 
   &-size-helper {
