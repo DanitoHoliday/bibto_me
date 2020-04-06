@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-before_action :authenticate_user!, only: [:update_registration]
+  before_action :authenticate_user!, only: [:update_registration]
 
   def update_registration(tag)
     if @tag.registered == true

@@ -6,6 +6,20 @@ class Tag < ApplicationRecord
   has_one_attached :qr
   after_create_commit :generate_qr
 
+  # SUDO Code
+  # def new
+  # end
+
+  # def create
+  # end
+
+  # send a post API JSON to monkeyQR
+  # Url = bibto.me/qr/generated code
+  # Stylign static
+
+  # then get a GET with the logo
+  # save it temporarly and upload it to cloudinary
+
   private
 
   def generate_qr
@@ -22,7 +36,7 @@ class Tag < ApplicationRecord
       module_px_size: 6,
       resize_exactly_to: false,
       resize_gte_to: false,
-      size: 600
+      size: 100
     )
 
     file = Tempfile.new(["qr-#{self.code}", ".png"])
