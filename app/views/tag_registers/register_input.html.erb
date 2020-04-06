@@ -1,20 +1,22 @@
-<!-- Shared Footer -->
+<!-- Shared Navbar -->
 <%= render "shared/navbar_shared" %>
 
 <div class="auth-session h-full">
   <div class="auth-session-container">
-    <h2 class="mb-4">Register Tag</h2>
+    <h3 class="mb-4">Register Tag</h3>
     <p>To register your tag, please enter your code below:</p>
 
     <div class="form-inputs">
       <%= form_tag update_register_input_path, method: :patch do %>
+        <div class="errors">
+          <% if @error %>
+            <%= @error %>
+          <% end %>
+        </div>
         <%= text_field_tag :code,
                     params[:code],
                 placeholder: "Enter your code here",
                       class: "form-control mb-2"%>
-        <% if @error %>
-          <%= @error %>
-        <% end %>
         <%# if current_user == nil %>
           <%#= submit_tag "Register now",class: "btn btn-bib btn-green btn-form btn-margin disabled" %>
         <%# else %>
@@ -23,7 +25,7 @@
       <% end %>
     </div>
     <div class="info-container">
-      <%= image_tag("info-icon", alt: "Information icon", class: "info-icon")%>
+      <%= image_tag("info-primary-icon.svg", alt: "Information icon", class: "info-icon")%>
       <span>By registering your tag, you are insuring your belongs.</span>
     </div>
   </div>
