@@ -1,15 +1,22 @@
 // Import your components CSS files here.
-@import "custom_styles";
-@import "logo/logo";
-@import "icons/icons";
+@import "alerts";
+@import "avatars";
 
-@import "alerts/alert";
-// @import "avatars/avatar";
-// @import "avatars/user-avatar";
-@import "navbar";
-@import "buttons/buttons";
-@import "footer/footer";
-@import "menu/menu";
+@import "buttons";
+
+@import "custom_styles";
+
+@import "footer";
+
+@import "dashboard/dashboard";
 @import "devise";
-@import "utilities/unfolder";
-@import "utilities/typing-effect";
+
+@import "icons";
+
+@import "logo";
+
+@import "menu";
+
+@import "navbar";
+
+@import "utilities";
