@@ -4,8 +4,11 @@
     <div class="container d-flex justify-content-between align-items-center pt-4">
       <%= image_tag("logo-blue.png", alt: "Bibtome Logo", class: "logo logo-blue")%>
       <ul class="navbar">
+        <!-- For testing  -->
+        <a><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "border-bottom" %></a>
+
         <li><%= link_to "Einloggen", new_user_session_path, class: "btn text-primary" %></li>
-        <li><%= link_to "Registrieren", new_user_session_path, class: "btn btn-primary py-2" %></li>
+        <li><%= link_to "Registrieren", new_user_registration_path, class: "btn btn-primary" %></li>
       </ul>
     </div>
 
@@ -114,7 +117,7 @@
 
 
   <!-- Data Privacy Section -->
-  <section class="bg-white">
+  <section class="bg-white ">
     <div class="container">
       <h2>Wir schützen deine Privatsphäre</h2>
       <div class="row">
@@ -144,7 +147,7 @@
 
 
   <!-- Testimonial slide-show/carousel Section -->
-  <section>
+  <section class="carousel-section">
     <div class="container">
       <h2 class="mb-4">Was Leute sagen über uns</h2>
 

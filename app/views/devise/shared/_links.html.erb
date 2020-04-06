@@ -1,29 +1,29 @@
 
 
-<div class="text-center mt-3">
+<div class="devise-links">
   <%- if controller_name != 'sessions' %>
-    Already registered? <%= link_to "Log in", new_session_path(resource_name), class: 'device-links' %><br />
+    Bereits registriert? <%= link_to "Einloggen", new_session_path(resource_name) %><br />
   <% end %>
 
   <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-    Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name), class: 'device-links'%><br />
+    Noch kein Konto? <%= link_to "Registrieren", new_registration_path(resource_name)%><br />
   <% end %>
 
   <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-    Forgot your password? <%= link_to "Get help", new_password_path(resource_name), class: 'device-links' %><br />
+    Passwort vergessen? <%= link_to "Hilfe anfordern", new_password_path(resource_name) %><br />
   <% end %>
 
   <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-    Didn't receive a confirmation?<%= link_to "Get confirmation instructions", new_confirmation_path(resource_name), class: 'device-links' %><br />
+    Didn't receive a confirmation?<%= link_to "Get confirmation instructions", new_confirmation_path(resource_name) %><br />
   <% end %>
 
   <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-    Didn't receive unlock infos?<%= link_to "Get unlock instructions?", new_unlock_path(resource_name), class: 'device-links' %><br />
+    Didn't receive unlock infos?<%= link_to "Get unlock instructions?", new_unlock_path(resource_name)%><br />
   <% end %>
 
   <%- if devise_mapping.omniauthable? %>
     <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: 'device-links' %><br />
+      <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)%><br />
     <% end %>
   <% end %>
 

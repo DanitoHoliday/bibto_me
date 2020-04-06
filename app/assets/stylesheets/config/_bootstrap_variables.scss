@@ -6,7 +6,7 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $light-grey;
+$body-bg:                 $dark-grey;
 $font-size-base: .8rem;
 
 $container-max-widths: (
@@ -21,8 +21,10 @@ $container-max-widths: (
 $body-color: $grey;
 $headings-color: $black;
 $primary:    $dark-blue;
-$secondary:    $dark-blue-1;
+$secondary:  $dark-blue-1;
 $danger:     $red;
+$success:    $green-success;
+$light:      $white;
 
 
 $info:       yellow;

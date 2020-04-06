@@ -3,7 +3,7 @@ section:not(:first-child) {
   padding: 4rem 0;
 
   // BREAKPOINTS
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-only(xs) {
     padding: 3rem 0;
   }
 }
@@ -12,6 +12,7 @@ section:not(:first-child) {
 .home {
   &-header {
     height: 100vh;
+    background-color: $light-grey;
   }
 
   &-banner {
@@ -56,6 +57,7 @@ section:not(:first-child) {
 
 
 .card-gallery {
+  background-color: $light-grey;
 
   .btn-primary {
     margin-top: 1rem;
@@ -131,35 +133,40 @@ section:not(:first-child) {
   }
 }
 
+.carousel-section {
+  background-color: $light-grey;
 
-.carousel-inner {
-  p {
-    @include media-breakpoint-up(lg) {
-      padding: 0 10rem;
+  .carousel-inner {
+
+    p {
+      @include media-breakpoint-up(lg) {
+        padding: 0 10rem;
+      }
+    }
+
+    .quote-author {
+      font-size: .6rem;
+      margin-top: .6rem;
+      font-weight: 600;
+      color: $black;
+      text-transform: capitalize;
+
+      // BREAKPOINT
+      @include media-breakpoint-only(xm) {
+        font-size: .9rem;
+      }
     }
   }
 
-  .quote-author {
-    font-size: .6rem;
-    margin-top: .6rem;
-    font-weight: 600;
-    color: $black;
-    text-transform: capitalize;
-
-    // BREAKPOINT
-    @include media-breakpoint-only(xm) {
-      font-size: .9rem;
+  .carousel-indicators {
+    position: relative;
+    margin-top: 1rem;
+    li {
+      background-color: $dark-blue;
     }
   }
 }
 
-.carousel-indicators {
-  position: relative;
-  margin-top: 1rem;
-  li {
-    background-color: $dark-blue;
-  }
-}
 
 
 

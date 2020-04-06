@@ -1,58 +1,58 @@
-<div class="page-title">
-  <div class="container mb-2">
-    <div class="d-flex">
-        <%= link_to :back do %>
-          <h2><i class="fas fa-chevron-left text-white"></i></h2>
-        <% end %>
-      <h2 class="mx-auto ">Create Account</h2>
-      <h2><i class="far fa-bell text-green"></i></h2>
-    </div>
-  </div>
-</div>
+<!-- Shared Navbar -->
+<%= render "shared/navbar_shared" %>
 
-<div class="container">
-  <p class="text-center my-5">Let’s get started!</p>
+<div class="auth-session">
+  <div class="auth-session-container">
+    <h3>Konto erstellen</h3>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs">
       <%= f.input :first_name,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "email", class: "bib-form-styling text-input" },
-                  placeholder: "Your name*",
+                  input_html: { autocomplete: "email" },
+                  placeholder: "Name*",
                   label: false %>
       <%= f.input :email,
                   required: true,
-                  input_html: { autocomplete: "email", class: "bib-form-styling text-input" },
+                  input_html: { autocomplete: "email" },
                   placeholder: "E-mail*",
                   label: false %>
       <%= f.input :phone,
                   required: false,
-                  input_html: { autocomplete: "phone", class: "bib-form-styling text-input" },
-                  placeholder: "Phone",
+                  input_html: { autocomplete: "phone" },
+                  placeholder: "Telefon",
                   label: false %>
       <%= f.input :password,
                   required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password", class: "bib-form-styling text-input" },
-                  placeholder: "Password*",
+                  hint: ("#{@minimum_password_length} Zeichen mindestens" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" },
+                  placeholder: "Passwort*",
                   label: false %>
       <%= f.input :password_confirmation,
                   required: true,
-                  input_html: { autocomplete: "password", class: "bib-form-styling text-input" },
-                  placeholder: "Confirm Password*",
+                  input_html: { autocomplete: "password" },
+                  placeholder: "Passwort bestätigen*",
                   label: false %>
     </div>
 
-    <div class="form-actions btn-form">
-      <%= f.button :submit, "Sign up", class: "btn btn-bib btn-green btn-form" %>
+    <div class="form-actions d-flex justify-content-between">
+      <%= f.button :submit, "Registrieren", class: "btn btn-primary" %>
+      <!-- Shared Links -->
+      <div class="d-flex align-items-center">
+        Bereits registriert?
+        <%= link_to "Einloggen", new_session_path(resource_name), class: "ml-1" %>
+      </div>
     </div>
   <% end %>
 
-  <div class="text-center mt-3">
-   <%= render "devise/shared/links" %>
+
+
   </div>
-  <%= render "shared/menu" %>
 </div>
+
+<!-- Shared Footer -->
+<%= render "shared/footer" %>
+

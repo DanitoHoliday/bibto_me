@@ -1,0 +1,22 @@
+<nav class="shared-navbar">
+  <div class="container larger-devices d-flex justify-content-between align-items-center">
+      <%= link_to root_path do %>
+        <%= image_tag("logo-white.png", alt: "Bibtome Logo", class: "logo logo-blue")%>
+      <% end %>
+      <ul class="navbar">
+        <li><%= link_to "Tag registrieren", register_input_path, class: "btn text-white" %></li>
+        <li><%= link_to "Zurückgeben", finder_input_path, class: "btn text-white" %></li>
+        <li><%= link_to "Registrieren", new_user_session_path, class: "btn btn-light" %></li>
+      </ul>
+    </div>
+    <!-- Display only in xs-devices -->
+    <div class="container xs-devices">
+      <div class="d-flex justify-content-between">
+          <%= link_to :back do %>
+            <h2><i class="fas fa-chevron-left text-white"></i></h2>
+          <% end %>
+        <h2 class="mx-auton text-white">Anmelden</h2>
+        <h2><i class="far fa-bell text-primary"></i></h2>
+      </div>
+    </div>
+</nav>

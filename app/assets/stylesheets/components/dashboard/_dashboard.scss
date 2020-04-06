@@ -1,0 +1,79 @@
+.dashboard {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+
+  &-container {
+    width: 50%;
+
+    p {
+      font-size: .7rem;
+    }
+
+
+    .profile-container {
+      display: flex;
+      margin-bottom: 3rem;
+      align-items: center;
+
+      .user-info {
+        margin-left: 3rem;
+        width: 70%;
+
+        h3 {
+          margin: 0 0 .6rem;
+        }
+
+        .contact-details {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .btn {
+          font-size: .6rem;
+          padding: .4rem;
+          margin-top: .8rem;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+
+    .tag-info-container {
+      width: 100%;
+
+      h3 {
+        margin-top: 0;
+        padding: 0;
+      }
+
+      h4 {
+        margin-top: 1rem;
+      }
+
+      p {
+        border-bottom: .5px solid $grey;
+        padding: .5rem 0;
+      }
+
+      .tag-info {
+        display: flex;
+
+        &-header {
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+
+        .item {
+          width: 25%;
+
+          &:first-child, &:last-child {
+            width: 12%;
+          }
+        }
+      }
+    }
+  }
+}
