@@ -4,23 +4,23 @@ html {
 }
 
 h1 {
-  font-weight: 100;
-  letter-spacing: .5px;
+  font-weight: 700;
+  // letter-spacing: .5px;
 
   // BREAKPOINTS
-  @include media-breakpoint-only(sm) {
-    font-size: 2rem;
-  }
+  // @include media-breakpoint-only(sm) {
+  //   font-size: 2rem;
+  // }
 
-  @include media-breakpoint-only(xs) {
-    font-size: 1.7rem;
-  }
+  // @include media-breakpoint-only(xs) {
+  //   font-size: 1.7rem;
+  // }
 }
 
 h2 {
   text-align: center;
   margin-bottom: 2.5rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 
   // BREAKPOINT
   @include media-breakpoint-down(sm) {
@@ -31,9 +31,8 @@ h2 {
 
 
 h3 {
-  font-size: .9rem;
+  font-size: .8rem;
   margin: 1rem 0;
-  font-weight: 500;
 
   // BREAKPOINT
   @include media-breakpoint-only(xs) {
@@ -67,10 +66,10 @@ p {
 
 
 .link {
-  font-weight: 600;
+  font-weight: 500;
   display: block;
   margin-top: .6rem;
-  font-family: 'Montserrat', 'Poppins', sans-serif;
+  font-family: 'Prompt', 'Poppins', sans-serif;
 
   &:hover {
     text-decoration: none;
@@ -141,7 +140,7 @@ p {
 .successfully-registration {
   .info-container {
     margin-top: 0;
-    margin-bottom: 1.8rem;
+    margin-bottom: 2.5rem;
   }
 
   .auth-session-container {
@@ -163,7 +162,7 @@ p {
   }
 
   .buttons-container {
-    margin-top: 2.5rem;
+    margin-top: 1.8rem;
   }
 }
 
@@ -209,9 +208,9 @@ p {
   }
 
 
-  .btn {
-    font-size: .6rem;
-  }
+  // .btn {
+  //   font-size: .6rem;
+  // }
 
 
   .section-3 {

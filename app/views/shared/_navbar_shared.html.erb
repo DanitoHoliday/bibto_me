@@ -6,7 +6,20 @@
       <ul class="navbar">
         <li><%= link_to "Tag registrieren", register_input_path, class: "btn" %></li>
         <li><%= link_to "Zurückgeben", finder_input_path, class: "btn" %></li>
-        <li><%= link_to "Registrieren", new_user_session_path, class: "btn btn-primary" %></li>
+        <li><%= link_to "Über uns", root_path, class: "btn text-primary" %></li>
+        <li><%= link_to "Team", root_path, class: "btn text-primary" %></li>
+        <li><%= link_to "Kontakt", root_path, class: "btn text-primary" %></li>
+        <% if user_signed_in? %>
+          <div class="btn-group">
+            <div class="user-avatar small " >
+              <h4><%= current_user.first_name[0] unless current_user.first_name.nil? %></h4>
+            </div>
+          </div>
+          <i class="fas fa-ellipsis-v dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+          <%= render "shared/dropdown" %>
+        <% else %>
+          <li><%= link_to "Registrieren", new_user_registration_path, class: "btn btn-primary" %></li>
+        <% end %>
       </ul>
     </div>
     <!-- Display only in xs-devices -->
@@ -20,3 +33,14 @@
       </div>
     </div>
 </nav>
+
+<!-- <div class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Right-aligned menu
+  </button>
+  <div class="dropdown-menu dropdown-menu-right">
+    <button class="dropdown-item" type="button">Action</button>
+    <button class="dropdown-item" type="button">Another action</button>
+    <button class="dropdown-item" type="button">Something else here</button>
+  </div>
+</div> -->

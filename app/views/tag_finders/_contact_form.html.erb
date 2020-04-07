@@ -1,4 +1,4 @@
-<h3>Leave your contact info & get contacted by <%= @tag.user.first_name %></h3>
+<p>Leave your contact info & get contacted by <%= @tag.user.first_name %></p>
 
 <%= simple_form_for [@tag, @finder] do |f| %>
   <%= f.error_notification %>
@@ -19,8 +19,6 @@
                 required: false
                 %>
     <%= f.input :tag, :as => :hidden, :input_html => { :value => params[:format] } %>
+    <%= f.button :submit, "Share my contact info", class: "btn btn-primary mb-4" %>
 ​  </div>
-  <div class="form-actions">
-    <%= f.button :submit, "Share my contact info", class: "btn btn-bib btn-primary" %>
-  </div>
 <% end %>

@@ -1,18 +1,17 @@
 <!-- Shared Navbar -->
 <%= render "shared/navbar_shared" %>
 
-<div class="container">
-  <div class="">
+<div class="auth-session h-full bg-white" style="overflow: scroll;">
+  <div class="auth-session-container">
     <h2>You are a hero!</h2>
-    <h3>You have found <%= @tag.user.first_name %>´s <%= @tag.category %>.</h3>
+    <h4>You have found <%= @tag.user.first_name %>´s <%= @tag.category %>.</h4>
 
     <% if @tag.user.phone && @tag.user.shared_phone %>
-        <p>Please contact <%= @tag.user.first_name %> directly:</p>
-        <p><%= @tag.user.phone %></p>
-        <%= link_to "I will reach out to #{@tag.user.first_name}", finder_thank_you_path(@tag), class: "btn btn-primary" %>
-        <h3>OR</h3>
-        <div class="checkbox">
-          <label id="checky" class="switch">
+        <p>Contact <%= @tag.user.first_name %> directly: <%= @tag.user.phone %></p>
+        <%= link_to "I will reach out to #{@tag.user.first_name}", finder_thank_you_path(@tag), class: "btn btn-primary mt-2" %>
+        <h4 class="mt-3">OR</h4>
+        <div class="checkbox d-flex align-items-center">
+          <label id="checky" class="switch mr-2">
             <input type="checkbox" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
             <span class="slider round"></span>
           </label>
@@ -27,7 +26,5 @@
   </div>
 </div>
 
-<!-- Shared Footer -->
-<%= render "shared/footer" %>
 
 

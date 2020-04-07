@@ -1,8 +1,8 @@
 <!-- Shared Navbar -->
 <%= render "shared/navbar_shared" %>
 
-<div class="auth-session h-full successfully-registration">
-  <div class="auth-session-container">
+<div class="auth-session h-full successfully-registration bg-white">
+  <div class="auth-session-container ml-5 mt-5">
     <div class="info-container">
       <%= image_tag("info-success-icon", alt: "Information icon", class: "info-icon")%>
       <span class="text-success">Your tag with ID <%= @tag.code %> was successfully registered</span>
@@ -50,9 +50,6 @@
 
   </div>
 </div>
-
-<!-- Shared Footer -->
-<%= render "shared/footer" %>
 
 
 

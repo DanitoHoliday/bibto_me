@@ -3,7 +3,7 @@
 
 <div class="auth-session bg-white">
   <div class="auth-session-container">
-    <h3>Anmelden</h3>
+    <h2>Anmelden</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= f.error_notification %>
@@ -20,8 +20,8 @@
                     input_html: { autocomplete: "current-password"},
                     placeholder: "Password",
                     label: false %>
-        <%#= f.input :remember_me,
-                    label_html: {class: "text-input"},
+        <%= f.input :remember_me,
+                    label_html: {class: "checkbox"},
                     as: :boolean if devise_mapping.rememberable?%>
       </div>
 
@@ -33,12 +33,9 @@
 
     <!-- Shared Links -->
     <%= render "devise/shared/links" %>
-
   </div>
 </div>
 
-<!-- Shared Footer -->
-<%= render "shared/footer" %>
 
 
 

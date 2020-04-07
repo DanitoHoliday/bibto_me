@@ -1,9 +1,9 @@
 <!-- Shared Navbar -->
 <%= render "shared/navbar_shared" %>
 
-<div class="auth-session">
+<div class="auth-session bg-white">
   <div class="auth-session-container">
-    <h3>Edit account details</h3>
+    <h2>Edit account details</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
@@ -31,7 +31,7 @@
         <% end %>
 
         <%= f.input :current_password,
-                    hint: "we need your current password to confirm your changes",
+                    hint: "we need your current password to confirm your changes.",
                     required: true,
                     input_html: { autocomplete: "current-password" },
                     placeholder: "Your current password",
@@ -49,9 +49,6 @@
     </div>
   </div>
 </div>
-
-<!-- Shared Footer -->
-<%= render "shared/footer" %>
 
 
 
