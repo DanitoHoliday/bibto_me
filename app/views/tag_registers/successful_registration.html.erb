@@ -11,32 +11,26 @@
     <p>Please, select the item you do like to associate to your tag:</p>
 
     <div class="radio-box-container">
-      <%# form_tag update_register_category_path, method: :patch do %>
         <div class="radio-boxs">
           <h4>
-            <%= radio_button_tag :category, "Laptop", false %>
+           <%= form_tag update_register_category_path, method: :patch do %>
+            <%= hidden_field_tag :code, @tag.code %>
+            <%= radio_button_tag :item_select, "Laptop", false, :onclick => "this.parentNode.submit();" %>
             <%= image_tag("laptop-icon", alt: "Laptop icon", class: "category-icon")%>
             Laptop
-          </h4>
-          <h4>
-            <%= radio_button_tag :category, "Phone", false %>
-            <%= image_tag("phone-icon", alt: "Laptop icon", class: "category-icon")%>
+            <%= radio_button_tag :item_select, "Phone", false, :onclick => "this.parentNode.submit();" %>
+            <%= image_tag("phone-icon", alt: "Phone icon", class: "category-icon")%>
             Phone
-          </h4>
-        </div>
-        <div class="radio-boxs">
-          <h4>
-            <%= radio_button_tag :category, "Keys", false %>
-            <%= image_tag("key-icon", alt: "Laptop icon", class: "category-icon")%>
+            <br>
+            <%= radio_button_tag :item_select, "Keys", false, :onclick => "this.parentNode.submit();" %>
+            <%= image_tag("key-icon", alt: "Keys icon", class: "category-icon")%>
             Keys
-          </h4>
-          <h4>
-            <%= radio_button_tag :category, "Bag", false %>
-            <%= image_tag("backpack-icon", alt: "Laptop icon", class: "category-icon")%>
+            <%= radio_button_tag :item_select, "Bag", false, :onclick => "this.parentNode.submit();" %>
+            <%= image_tag("backpack-icon", alt: "Bag icon", class: "category-icon")%>
             Bag
+            <% end %>
           </h4>
         </div>
-      <%# end %>
     </div>
 
     <h3 class="mb-0">By default finders can see your phone number.</h3>
@@ -53,6 +47,14 @@
 
 <!-- Shared Footer -->
 <%= render "shared/footer" %>
+
+<script>
+  const category_switch = $(document).on("click", "[data-behavior=submit-on-click]", function() {
+    $form = $(this).closest('form'); // select the form
+    $form.submit(); // submit it
+    console.log("Hello")
+});
+</script>
 
 
 
