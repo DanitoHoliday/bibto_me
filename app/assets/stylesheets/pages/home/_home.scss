@@ -135,18 +135,18 @@ section:not(:first-child) {
 
 .carousel-section {
   background-color: $light-grey;
+  padding: 3rem 0 !important;
 
   .carousel-inner {
 
     p {
-      @include media-breakpoint-up(lg) {
-        padding: 0 10rem;
+        padding: 0 5rem;
       }
-    }
 
     .quote-author {
-      font-size: .6rem;
+      font-size: .8rem !important;
       margin-top: .6rem;
+      margin-bottom: 1rem;
       font-weight: 600;
       color: $black;
       text-transform: capitalize;
@@ -160,7 +160,8 @@ section:not(:first-child) {
 
   .carousel-indicators {
     position: relative;
-    margin-top: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
 
     li {
       background-color: $dark-blue;
