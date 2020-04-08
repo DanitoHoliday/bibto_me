@@ -23,12 +23,11 @@
 
   <body id="body">
     <div class="main-container">
-    <%= render 'shared/flashes' %>
-    <%#= render 'shared/navbar' %>
-    <%= yield %>
-    <%#= render 'shared/footer' %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+      <%= render 'shared/footer' %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
     </div>
   </body>
 </html>

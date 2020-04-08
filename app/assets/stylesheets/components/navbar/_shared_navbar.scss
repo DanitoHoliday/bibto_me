@@ -1,5 +1,7 @@
 .shared-navbar {
-  background-color: $primary;
+  background-color: $white;
+  border-bottom: 2px solid $light-grey;
+
 
   .larger-devices {
     @include media-breakpoint-only(xs) {

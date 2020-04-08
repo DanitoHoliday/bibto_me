@@ -161,8 +161,12 @@ section:not(:first-child) {
   .carousel-indicators {
     position: relative;
     margin-top: 1rem;
+
     li {
       background-color: $dark-blue;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
     }
   }
 }
