@@ -1,7 +1,4 @@
 Rails.application.configure do
-  config.action_mailer.delivery_method     = :postmark
-  config.action_mailer.postmark_settings   = { api_token: Rails.application.credentials.postmark_api_token }
-
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
