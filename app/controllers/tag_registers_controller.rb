@@ -30,8 +30,8 @@ class TagRegistersController < ApplicationController
       redirect_to dashboard_path
       flash[:notice] = "Category #{params[:category_dropdown]} assigned"
     else
-      @tag.update(category: params[:category])
-      redirect_to register_success_path(tag: @tag)
+      @tag.update(category: params[:item_select])
+
 
     end
   end
