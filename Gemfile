@@ -18,7 +18,6 @@ gem 'webpacker'
 gem 'faker'
 gem 'pundit'
 gem 'postmark-rails'
-
 gem 'cloudinary', '~> 1.12.0'
 gem 'rqrcode'
 gem 'twilio-ruby'
