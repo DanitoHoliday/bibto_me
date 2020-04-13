@@ -1,6 +1,6 @@
 class TestMailer < ActionMailer::Base
 
-  def hello
+    def hello
     mail(
       :subject => 'Hello from Postmark',
       :to  => 'hello@bibto.me',
