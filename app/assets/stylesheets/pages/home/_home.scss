@@ -2,21 +2,34 @@
 section:not(:first-child) {
   padding: 4rem 0;
 
-  // BREAKPOINTS
-  @include media-breakpoint-only(xs) {
+  @include media-breakpoint-down(sm) {
     padding: 3rem 0;
   }
 }
 
+.container {
+  @include media-breakpoint-between(xs, sm) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 
 .home {
   &-header {
     height: 100vh;
     background-color: $light-grey;
+    @include media-breakpoint-down(sm) {
+      background-color: $dark-blue;
+    }
   }
+
 
   &-banner {
     margin-top: 5rem;
+    @include media-breakpoint-down(sm) {
+      margin-top: 1rem;
+    }
+
 
     .title {
       font-size:1.6rem;
@@ -24,13 +37,55 @@ section:not(:first-child) {
       color: $dark-blue;
       margin-bottom: 2rem;
       line-height: 1.4;
-
-      // BREAKPOINT
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-only(xs) {
         text-align: center;
-        margin-bottom: 3rem;
+        margin: 10rem 1rem 3rem;
+        padding: 0 1rem;
+        color: $white;
+      }
+      @include media-breakpoint-down(sm) {
+        font-family: "Quicksand", "Lato", "sans-serif";
+        font-size: 2.5rem;
+      }
+      @include media-breakpoint-only(sm) {
+        margin:2rem 0;
+        color: $white;
       }
     }
+
+    .info {
+      @include media-breakpoint-only(xs) {
+        padding: 0;
+      }
+
+      .btn {
+        @include media-breakpoint-only(sm) {
+          width: auto;
+          display: inline-block;
+          padding-right: 1rem;
+          padding-left: 1rem;
+        }
+
+        @include media-breakpoint-only(xs) {
+          width: 76%;
+        }
+      }
+
+      .btn-primary {
+        @include media-breakpoint-down(sm) {
+          background-color: $white;
+          color: $dark-blue;
+        }
+      }
+
+      .btn-outline-primary {
+        @include media-breakpoint-down(sm) {
+          border-color: $white;
+          color: $white;
+        }
+      }
+    }
+
 
     .iphone-mockup-container {
       display: flex;
@@ -41,16 +96,9 @@ section:not(:first-child) {
         height: 20rem;
         margin-top: -1.6rem;
       }
-      // BREAKPOINT
       @include media-breakpoint-down(sm) {
         display: none;
       }
-    }
-
-
-    // BREAKPOINTS
-    @include media-breakpoint-down(sm) {
-      margin-top: 3rem;
     }
   }
 }
@@ -59,20 +107,16 @@ section:not(:first-child) {
 .card-gallery {
   background-color: $light-grey;
 
-  .btn-primary {
-    margin-top: 1rem;
-    // BREAKPOINT
-    @include media-breakpoint-only(xs) {
-      display: none;
+  .col-sm:not(:nth-child(2)) {
+    @include media-breakpoint-only(sm) {
+      padding: 0;
     }
   }
 
-  .btn-outline-primary {
-    display: none;
-
-    // BREAKPOINT
+  .btn {
     @include media-breakpoint-only(xs) {
-      display: block;
+      width: 76%;
+      margin-top: 1rem;
     }
   }
 }
@@ -81,22 +125,24 @@ section:not(:first-child) {
 .section-3 {
   .w-40 {
     width: 40%;
-
-    // BREAKPOINT
-    @include media-breakpoint-only(xs) {
+    @include media-breakpoint-down(sm) {
       width: 100%;
     }
 
     h2, p, a {
-      @include media-breakpoint-only(xs) {
+      @include media-breakpoint-down(sm) {
         text-align: center;
       }
     }
 
     h2 {
-      // BREAKPOINT
-      @include media-breakpoint-only(xs) {
+      @include media-breakpoint-down(sm) {
         font-size: 1.4rem;
+        line-height: 2rem;
+      }
+      @include media-breakpoint-only(sm) {
+        padding-right: 3rem;
+        padding-left: 3rem;
       }
     }
   }
@@ -104,8 +150,7 @@ section:not(:first-child) {
   .image-container {
     width: 60%;
     text-align: center;
-
-    @include media-breakpoint-only(xs) {
+    @include media-breakpoint-down(sm) {
       display: none;
     }
 
@@ -124,12 +169,9 @@ section:not(:first-child) {
     width: 30%;
     border-bottom: 4px solid $light-blue;
     margin: 1.2rem 0;
-
-    // BREAKPOINT
-    @include media-breakpoint-only(xs) {
+    @include media-breakpoint-down(sm) {
       margin: 1rem auto;
     }
-
   }
 }
 
@@ -138,9 +180,11 @@ section:not(:first-child) {
   padding: 3rem 0 !important;
 
   .carousel-inner {
-
     p {
         padding: 0 5rem;
+        @include media-breakpoint-down(sm) {
+          padding: 0;
+        }
       }
 
     .quote-author {
@@ -150,10 +194,8 @@ section:not(:first-child) {
       font-weight: 600;
       color: $black;
       text-transform: capitalize;
-
-      // BREAKPOINT
-      @include media-breakpoint-only(xm) {
-        font-size: .9rem;
+      @include media-breakpoint-down(sm) {
+        font-size: 1.1rem !important;
       }
     }
   }
@@ -172,6 +214,16 @@ section:not(:first-child) {
   }
 }
 
+
+.get-start {
+  .container {
+    .btn {
+      @include media-breakpoint-only(xs) {
+        width: 76%;
+      }
+    }
+  }
+}
 
 
 

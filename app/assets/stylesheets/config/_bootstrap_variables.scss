@@ -10,6 +10,7 @@ $body-bg:                 $dark-grey;
 $font-size-base: .8rem;
 
 $container-max-widths: (
+  xs: 320px,
   sm: 540px,
   md: 820px,
   lg: 960px,
@@ -24,7 +25,7 @@ $primary:    $dark-blue;
 $secondary:  $dark-blue-1;
 $danger:     $red;
 $success:    $green-success;
-$light:      $white;
+$light:      $light-grey;
 $info:       $light-blue;
 // $warning:    $orange;
 

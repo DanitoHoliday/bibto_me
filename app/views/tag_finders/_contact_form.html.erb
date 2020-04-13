@@ -1,4 +1,4 @@
-<p>Leave your contact info & get contacted by <%= @tag.user.first_name %></p>
+<p class="mb-2 text-center">Leave your contact info & get contacted by <%= @tag.user.first_name %></p>
 
 <%= simple_form_for [@tag, @finder] do |f| %>
   <%= f.error_notification %>

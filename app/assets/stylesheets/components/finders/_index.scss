@@ -1,0 +1,84 @@
+.finder-contact {
+  overflow: scroll;
+
+  input {
+    &:checked+.slider {
+      background-color: $light-blue;
+
+      &:before {
+        -webkit-transform: translateX(.8rem);
+        transform: translateX(.8rem);
+      }
+    }
+  }
+
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 2rem;
+    height: 1rem;
+    @include media-breakpoint-down(sm) {
+      width: 3.7rem;
+      height: 1.8rem;
+    }
+  }
+
+
+  .slider, .slider:before {
+    position: absolute;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider {
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+
+    &:before {
+      content: "";
+      height: .8rem;
+      width: .8rem;
+      left: 4px;
+      top: 1.5px;
+      background-color: $white;
+      @include media-breakpoint-down(sm) {
+        height: 1.6rem;
+        width: 1.6rem;
+      }
+    }
+
+    &.round {
+      border-radius: 34px;
+
+      &:before {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .auth-session-container {
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .switch-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+
+      .share-contact {
+        margin-bottom: .5rem;
+        @include media-breakpoint-down(sm) {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
