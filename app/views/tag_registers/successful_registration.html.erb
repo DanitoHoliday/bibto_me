@@ -1,36 +1,37 @@
 <!-- Shared Navbar -->
 <%= render "shared/navbar_shared" %>
 
-<div class="auth-session h-full successfully-registration">
+<div class="auth-session h-full successfully-registration bg-white">
   <div class="auth-session-container">
     <div class="info-container">
       <%= image_tag("info-success-icon", alt: "Information icon", class: "info-icon")%>
-      <span class="text-success">Your tag with ID <%= @tag.code %> was successfully registered</span>
+      <span class="text-success">Your tag with ID <b><%= @tag.code.upcase %></b> was successfully registered</span>
     </div>
     <h3 class="mb-0">Which item do you want to secure?</h3>
-    <p>Please, select the item you do like to associate to your tag:</p>
+    <p class="mb-2">Please, select the item you do like to associate to your tag:</p>
+
 
     <div class="radio-box-container">
-        <div class="radio-boxs">
-          <h4>
-           <%= form_tag update_register_category_path, method: :patch do %>
-            <%= hidden_field_tag :code, @tag.code %>
-            <%= radio_button_tag :item_select, "Laptop", false, :onclick => "this.parentNode.submit();" %>
-            <%= image_tag("laptop-icon", alt: "Laptop icon", class: "category-icon")%>
-            Laptop
-            <%= radio_button_tag :item_select, "Phone", false, :onclick => "this.parentNode.submit();" %>
-            <%= image_tag("phone-icon", alt: "Phone icon", class: "category-icon")%>
-            Phone
-            <br>
-            <%= radio_button_tag :item_select, "Keys", false, :onclick => "this.parentNode.submit();" %>
-            <%= image_tag("key-icon", alt: "Keys icon", class: "category-icon")%>
-            Keys
-            <%= radio_button_tag :item_select, "Bag", false, :onclick => "this.parentNode.submit();" %>
-            <%= image_tag("backpack-icon", alt: "Bag icon", class: "category-icon")%>
-            Bag
-            <% end %>
-          </h4>
-        </div>
+      <div class="radio-boxs">
+        <%= form_tag update_register_category_path, method: :patch do %>
+          <%= hidden_field_tag :code, @tag.code %>
+          <%= radio_button_tag :item_select, "Laptop", false, :onclick => "this.parentNode.submit();" %>
+          <%= image_tag("laptop-icon", alt: "Laptop icon", class: "category-icon")%>
+          <span>Laptop</span>
+          <div class="divider"></div>
+          <%= radio_button_tag :item_select, "Phone", false, :onclick => "this.parentNode.submit();" %>
+          <%= image_tag("phone-icon", alt: "Phone icon", class: "category-icon")%>
+          <span>Phone</span>
+          <div class="divider"></div>
+          <%= radio_button_tag :item_select, "Keys", false, :onclick => "this.parentNode.submit();" %>
+          <%= image_tag("key-icon", alt: "Keys icon", class: "category-icon")%>
+          <span>Keys</span>
+          <div class="divider"></div>
+          <%= radio_button_tag :item_select, "Bag", false, :onclick => "this.parentNode.submit();" %>
+          <%= image_tag("backpack-icon", alt: "Bag icon", class: "category-icon")%>
+          <span>Bag</span>
+        <% end %>
+      </div>
     </div>
 
     <h3 class="mb-0">By default finders can see your phone number.</h3>
@@ -41,7 +42,6 @@
       <!-- replace user path by correct (future) path to user dashboard -->
       <%= link_to "Visit your dashboard", dashboard_path, class: "btn btn-outline-primary" %>
     </div>
-
   </div>
 </div>
 
@@ -49,82 +49,6 @@
 <%= render "shared/footer" %>
 
 
-
-
-<!--###################### OLD CODE #################-->
-
-<!-- <div class="container">
-
- <div class="text-center mb-3 mt-4">
-   <%#= image_tag "icon_checked_green.svg", alt: "alttext"%>
-  </div>
-  <h4 class="text-center mb-3 mt-1"><strong>Your code <span style="color: $c1;"><%#= @tag.code %></span><br>was successfully registered</strong></h4>
-  <h4 class="text-center" style="margin-top: 20px;">Which item you want to secure?</h4>
-  <div class="category-grid mt-3">
-
-
-      <div class="category-card <%#= @tag.category == 'Laptop' ? 'active' : '' %>">
-        <i class="fas fa-laptop"></i>
-        <%#= form_tag update_register_category_path, method: :patch do %>
-        <%#= hidden_field_tag :category, "Laptop" %>
-        <%#= hidden_field_tag :code, @tag.code %>
-        <%#= submit_tag "Laptop", class: "btn #{@tag.category == 'Laptop' ? 'active' : ''}"%>
-        <%# end %>
-      </div>
-
-      <div class="category-card <%#= @tag.category == 'Phone' ? 'active' : '' %>">
-        <i class="fas fa-mobile-alt"></i>
-        <%#= form_tag update_register_category_path, method: :patch do %>
-        <%#= hidden_field_tag :category, "Phone" %>
-        <%#= hidden_field_tag :code, @tag.code %>
-        <%#= submit_tag "Phone", class: "btn #{@tag.category == 'Phone' ? 'active' : ''}" %>
-        <%# end %>
-      </div>
-
-      <div class="category-card <%#= @tag.category == 'Keys' ? 'active' : '' %>">
-        <i class="fas fa-key"></i>
-        <%#= form_tag update_register_category_path, method: :patch do %>
-        <%#= hidden_field_tag :category, "Keys" %>
-        <%#= hidden_field_tag :code, @tag.code %>
-        <%#= submit_tag "Keys", class: "btn #{@tag.category == 'Keys' ? 'active' : ''}" %>
-        <%# end %>
-      </div>
-
-      <div class="category-card <%#= @tag.category == 'Bag' ? 'active' : '' %>">
-        <i class="fas fa-shopping-bag"></i>
-        <%#= form_tag update_register_category_path, method: :patch do %>
-        <%#= hidden_field_tag :category, "Bag" %>
-        <%#= hidden_field_tag :code, @tag.code %>
-        <%#= submit_tag "Bag", class: "btn #{@tag.category == 'Bag' ? 'active' : ''}" %>
-        <%# end %>
-      </div>
-  </div>
-
-  <div class="text-center mt-4">
-    <div class="d-inline">
-      <%# if current_user.shared_phone == true %>
-        <div class="align-center justify-content-center align-items-center">
-        <h4 class="">Finders can see your <br> phone number:
-        <i class="far fa-check-circle" style="color: #008767; font-size: 25px; margin-left: 8px;"></i></h4>
-        </div>
-        <h5><%#=current_user.phone%></h5>
-      <%# else %>
-      <div class="d-flex align-center justify-content-center align-items-center">
-        <h4 class="mr-2">Finders can't see your <br> phone number:<i class="far fa-times-circle" style="color: red; font-size: 25px; margin-left: 8px;"></i></h4>
-      </div>
-      <%# end %>
-    </div>
-    <%#= link_to "Want to change this setting?", edit_user_registration_path, style: "font-size: 14px;" %>
-    <div>
-      <%#= link_to "Register another tag", register_input_path, :class => "btn btn-bib btn-green btn-form mt-4", style: "font-weight: 100; width: 80%; height: 50px;" %>
-      <!-- replace user path by correct (future) path to user dashboard -->
-      <%#= link_to "Visit your dashboard", dashboard_path, :class => "btn btn-bib btn-grey btn-form my-2", style: "font-weight: 100; width: 80%; height: 50px;" %>
-   <!--  </div>
-
-  </div>
-</div> -->
-
-<%#= render "shared/menu" %>
 
 
 
