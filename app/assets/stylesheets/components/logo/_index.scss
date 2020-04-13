@@ -1,15 +1,27 @@
 .logo {
   margin-left: -18px;
   width: 6rem;
+  // display: none;
+  @include media-breakpoint-down(sm) {
+    width: 8rem;
+  }
 
   &-white {
     margin-left: -10px;
     margin-top: -1rem;
+    @include media-breakpoint-down(sm) {
+      // display: block;
+      margin: .5rem 0 0 -1rem;
+    }
   }
 
-  // BREAKPOINTS
-  @include media-breakpoint-down(sm) {
-      width: 14rem;
-      margin: 0 auto;
-  }
+  // &-blue {
+  //   @include media-breakpoint-up(sm) {
+  //     display: block;
+  //   }
+  //   @include media-breakpoint-only(sm) {
+  //     display: none;
+  //   }
+  // }
+
 }

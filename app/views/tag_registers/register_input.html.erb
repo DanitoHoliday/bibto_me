@@ -1,10 +1,10 @@
 <!-- Shared Navbar -->
 <%= render "shared/navbar_shared" %>
 
-<div class="auth-session h-full bg-white">
+<div class="auth-session register-tag bg-white">
   <div class="auth-session-container">
     <h2 class="mb-4">Register Tag</h2>
-    <p>To register your tag, please enter your code below:</p>
+    <p>Please enter your code below:</p>
 
     <div class="form-inputs">
       <%= form_tag update_register_input_path, method: :patch do %>
@@ -24,10 +24,7 @@
         <%# end %>
       <% end %>
     </div>
-    <div class="info-container">
-      <%= image_tag("info-primary-icon.svg", alt: "Information icon", class: "info-icon")%>
-      <span>By registering your tag, you are insuring your belongs.</span>
-    </div>
+    <p class="info">By registering your tag, you are increasing your chances to get back your lost belongs.</p>
   </div>
 </div>
 

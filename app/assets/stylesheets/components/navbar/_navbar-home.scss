@@ -1,9 +1,39 @@
-.navbar {
-  margin:0;
+.navbar-home {
+  padding-top: 1rem;
 
-  li {
-    display: inline-block;
-    list-style-type: none;
+  @include media-breakpoint-down(sm) {
+    background-color: $dark-blue;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    padding-top: 0;
   }
 
+  .logo-blue {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .navbar {
+    margin:0;
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+
+    li {
+      display: inline-block;
+      list-style-type: none;
+    }
+
+    .container {
+      @include media-breakpoint-down(sm) {
+        padding-top: 0 !important;
+      }
+    }
+  }
 }
+
+

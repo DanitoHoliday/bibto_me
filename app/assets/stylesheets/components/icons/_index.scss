@@ -1,7 +1,5 @@
 .s-media-icons {
   width: 1rem;
-
-  // BREAKPOINT
   @include media-breakpoint-down(sm) {
     width: 1.5rem;
   }
@@ -39,8 +37,6 @@
 
 
 .circle-container {
-
-  // BREAKPOINT
   @include media-breakpoint-down(sm) {
     display: flex;
     justify-content: center;
@@ -58,6 +54,12 @@
   margin-left: .5rem;
   margin-right: .2rem;
   margin-top: -3px;
+  @include media-breakpoint-down(sm) {
+    width: 1.8rem;
+    margin-left: 1rem;
+    margin-right: .5rem;
+    margin-bottom: .6rem;
+  }
 }
 
 
@@ -66,6 +68,10 @@
   font-size: .7rem;
   margin-left: .5rem;
   color: $light-grey-1;
+  @include media-breakpoint-down(sm) {
+    font-size: 1rem;
+    background-color: transparent;
+  }
 
   &:hover {
     color: $light-blue;
@@ -73,6 +79,15 @@
   }
 }
 
+
+.fa-bars {
+  font-size: 2.3rem;
+  color: $light-grey;
+  position: relative;
+  top: .3.2rem;
+  right: -21.5rem;
+  z-index: 2;
+}
 
 
 

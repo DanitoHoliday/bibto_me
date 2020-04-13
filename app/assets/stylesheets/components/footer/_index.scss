@@ -1,22 +1,21 @@
 .footer {
   background-color: $dark-blue-1;
   padding: 4rem 0 2rem;
+  @include media-breakpoint-down(sm) {
+    padding: 4rem 0;
+  }
 
-  // BREAPOINT
-    @include media-breakpoint-down(sm) {
-      padding: 4rem 0;
-    }
 
   h4{
     color: $white;
     font-size: .8rem;
     font-weight: 400;
     text-transform: capitalize;
-
-    // BREAPOINT
     @include media-breakpoint-only(xs) {
-      font-size: 1.2rem;
       text-align:center;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 1.4rem;
     }
   }
 
@@ -31,16 +30,18 @@
     font-size: .7rem;
     line-height: 2;
     color: $light-grey;
+    @include media-breakpoint-only(xs) {
+      font-size: 1.4rem;
+      text-align:center;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: 1.4rem;
+      text-align:left;
+    }
 
     &:hover {
       color: $light-blue;
       text-decoration: none;
-    }
-
-    // BREAPOINT
-    @include media-breakpoint-down(sm) {
-      font-size: 1.2rem;
-      text-align:center;
     }
   }
 
@@ -49,26 +50,19 @@
     display: flex;
     justify-content: space-between;
     width: 70%;
-
-    li{
-      list-style-type: none;
-    }
-
-
-    // BREAPOINTS
     @include media-breakpoint-only(xs) {
       margin: 0 auto;
       width: 40%;
     }
 
-    // @include media-breakpoint-down(md) {
-    //   width: 40%;
-    // }
+    li{
+      list-style-type: none;
+    }
   }
 
 
   &-logo-container {
-    @include media-breakpoint-only(xs) {
+    @include media-breakpoint-down(sm) {
       display: none;
     }
   }
@@ -82,6 +76,11 @@
     margin-top: 2rem;
     margin-left: 1rem;
     font-size: .6rem;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1rem;
+      text-align: center;
+    }
   }
 
 }

@@ -4,12 +4,31 @@
   justify-content: center;
   align-items: center;
   background-color: $white;
+  @include media-breakpoint-down(sm) {
+    align-items: start;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    height: auto;
+  }
 
   &-container {
     width: 50%;
+    @include media-breakpoint-down(sm) {
+      width: 90%;
+      margin-top: 6rem;
+    }
 
     p {
       font-size: .7rem;
+      @include media-breakpoint-down(sm) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        color: $light-grey-1;
+      }
     }
 
 
@@ -17,18 +36,38 @@
       display: flex;
       margin-bottom: 3rem;
       align-items: center;
+      @include media-breakpoint-down(sm) {
+        flex-direction: column;
+      }
 
       .user-info {
         margin-left: 3rem;
         width: 70%;
+        @include media-breakpoint-down(sm) {
+          margin: 1rem 0 0;
+        }
 
         h3 {
           margin: 0 0 .6rem;
+          @include media-breakpoint-down(sm) {
+            margin-bottom: 1rem;
+          }
         }
 
         .contact-details {
           display: flex;
           justify-content: space-between;
+          @include media-breakpoint-down(sm) {
+            flex-direction: column;
+            justify-content: center;
+          }
+
+          i {
+            @include media-breakpoint-down(sm) {
+              margin-right: 1rem;
+              color: $light-grey-1;
+            }
+          }
         }
 
         .btn {
@@ -36,6 +75,11 @@
           padding: .4rem;
           margin-top: .8rem;
           margin-bottom: 0;
+          @include media-breakpoint-down(sm) {
+            width: auto;
+            font-size: 1rem;
+            padding: .4rem .6rem;
+          }
         }
       }
     }
@@ -47,15 +91,25 @@
       h3 {
         margin-top: 0;
         padding: 0;
+        @include media-breakpoint-down(sm) {
+          font-size: 1.8rem;
+        }
       }
 
       h4 {
         margin-top: 1rem;
+        @include media-breakpoint-down(sm) {
+          font-size: 1rem;
+        }
       }
 
       p {
         border-bottom: .5px solid $grey;
         padding: .5rem 0;
+        @include media-breakpoint-down(sm) {
+          justify-content: flex-start;
+          color: $light-blue;
+        }
       }
 
       .tag-info {
@@ -71,7 +125,28 @@
 
           &:first-child, &:last-child {
             width: 12%;
+            @include media-breakpoint-only(xs) {
+              width: 10%;
+            }
           }
+
+          &:nth-child(4) {
+            @include media-breakpoint-only(xs) {
+              width: 40%;
+            }
+          }
+
+          &:nth-child(2), &:nth-child(2) {
+            @include media-breakpoint-only(xs) {
+              width: 30%;
+            }
+          }
+
+          // &:nth-child(2n) {
+          //   @include media-breakpoint-only(xs) {
+          //     color: red;
+          //   }
+          // }
         }
       }
     }

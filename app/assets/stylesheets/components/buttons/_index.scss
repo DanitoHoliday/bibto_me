@@ -3,59 +3,30 @@
   font-size: .55555rem;
   font-weight: 500;
   color: $dark-blue;
-  font-family: "Prompt", "sans-serif";
+  font-family: "Quicksand", "Lato", "sans-serif";
+  @include media-breakpoint-between(xs, sm) {
+    display: block;
+    margin: 0 auto .6rem;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+  }
+
+  @include media-breakpoint-only(xs) {
+    width: 100%;
+  }
+
+  @include media-breakpoint-only(sm) {
+    width: 40%;
+  }
+
 
   &:focus {
     outline: 0 !important;
     box-shadow: none;
   }
 
-
-
   &-primary, &-info {
     color: $white;
   }
-  // BREAKPOINT
-  // @include media-breakpoint-down(sm) {
-  //   display: block;
-  //   width: 50%;
-  //   font-size: 1.1rem;
-  //   margin: 1rem auto 0 auto;
-  //   padding: .7rem 0;
-  // }
-
-
-  // BREAKPOINTS
-  &-outline-primary, &-primary {
-    // @include media-breakpoint-down(sm) {
-    //   border-width: 2px;
-    // }
-  }
-
-  &-margin-helper {
-    // @include media-breakpoint-up(lg) {
-    //   margin-top: 5rem;
-    // }
-  }
-
-  &-size-helper {
-    @include media-breakpoint-only(xs) {
-      width: 76%;
-    }
-  }
 }
-
-
-
-// .isDisabled {
-//   cursor: not-allowed;
-//   pointer-events: none;
-//   color: white;
-//   opacity: 0.5;
-//   text-decoration: none;
-// }
-
-// .isDisabled:hover {
-//   color: white;
-// }
 

@@ -4,12 +4,12 @@
     <%= render "shared/navbar-home" %>
 
     <!-- Hero/banner -->
-    <div class="container container-margin-helper home-banner">
+    <div class="container home-banner">
       <div class="row">
         <div class="info col-md-6">
-          <h1 class="title">Bekomme deine verlorene Gegenstände <b>schnell</b>, <b>einfach</b> und <b>sicher</b> zurück. </h1>
-          <%= link_to "Tag registrieren", register_input_path, class: "btn btn-outline-primary btn-size-helper" %>
-          <%= link_to "Gegenstand zurückgeben", finder_input_path, class: "btn btn-primary btn-size-helper" %>
+          <h1 class="title">Bekomme deine verlorene Gegenstände schnell, einfach und sicher zurück. </h1>
+          <%= link_to "Tag registrieren", register_input_path, class: "btn btn-outline-primary" %>
+          <%= link_to "Gegenstand zurückgeben", finder_input_path, class: "btn btn-primary" %>
         </div>
         <div class="col-md-6 iphone-mockup-container">
           <%= image_tag("iphone-mockup.png", alt: "Bibtome app on iphone-mockup", class: "iphone-mockup")%>
@@ -85,7 +85,7 @@
       </div>
       <h3 class="text-danger mt-5">- Nur für begrenzte Zeit -</h3>
       <p>Sicher dir einen kostenlosen Tag, um unseren Service auszuprobieren.</p>
-      <%= link_to "Kostenlosen Tag bestellen", "https://bibto-me.myshopify.com/products/bibto-sticker", class: "btn btn-primary" %>
+      <%= link_to "Kostenlosen Tag bestellen", "https://bibto-me.myshopify.com/products/bibto-sticker", class: "btn btn-primary mt-3" %>
     </div>
   </section>
 
@@ -111,7 +111,7 @@
     <div class="container">
       <h2>Wir schützen deine Privatsphäre</h2>
       <div class="row">
-        <div class="col-sm gutter-max">
+        <div class="col-xs col-md-6 gutter-max">
           <div class="d-flex circle-container">
             <div class="circle circle-blue m-0">
               <%= image_tag("ic_filter_1.png", alt: "For finders icon", class: "c-icon ic-filter")%>
@@ -121,7 +121,7 @@
           <p class="mt-3">Du hast die Wahl: Gib dem Besitzer deine Telefonnummer, deine E-Mail oder hinterlasse eine anonyme Nachricht.</p>
           <a href="#" class="link">Erfahre mehr über den Datenschutz für Finder <span class="ml-1">&#8594;</span></a>
         </div>
-        <div class="col-sm">
+        <div class="col-xs col-md-6">
           <div class="d-flex circle-container">
             <div class="circle circle-pink m-0">
               <%= image_tag("ic_filter_2.png", alt: "For owners icon", class: "c-icon ic-filter")%>

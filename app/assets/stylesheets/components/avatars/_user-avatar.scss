@@ -11,9 +11,13 @@
   }
 
   &.large {
-    width: 110px;
-    height: 110px;
+    width: 6.5rem;
+    height: 6.5rem;
     background-color: $grey;
+    @include media-breakpoint-down(sm) {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 
   &.small {

@@ -1,52 +1,53 @@
 <!-- Shared Navbar -->
 <%= render "shared/navbar_shared" %>
 
-<div class="auth-session bg-white">
+<div class="auth-session bg-white sign-up-form">
   <div class="auth-session-container">
     <h2>Konto erstellen</h2 >
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+      <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :first_name,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" },
-                  placeholder: "Name*",
-                  label: false %>
-      <%= f.input :email,
-                  required: true,
-                  input_html: { autocomplete: "email" },
-                  placeholder: "E-mail*",
-                  label: false %>
-      <%= f.input :phone,
-                  required: false,
-                  input_html: { autocomplete: "phone" },
-                  placeholder: "Telefon",
-                  label: false %>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} Zeichen mindestens" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" },
-                  placeholder: "Passwort*",
-                  label: false %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "password" },
-                  placeholder: "Passwort bestätigen*",
-                  label: false %>
-    </div>
-
-    <div class="form-actions d-flex justify-content-between">
-      <%= f.button :submit, "Registrieren", class: "btn btn-primary" %>
-      <!-- Shared Links -->
-      <div class="d-flex align-items-center">
-        Bereits registriert?
-        <%= link_to "Einloggen", new_session_path(resource_name), class: "ml-1" %>
+      <div class="form-inputs">
+        <%= f.input :first_name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" },
+                    placeholder: "Name*",
+                    label: "Your name" %>
+        <%= f.input :email,
+                    required: true,
+                    input_html: { autocomplete: "email" },
+                    placeholder: "E-mail",
+                    label: "Email address" %>
+        <%= f.input :phone,
+                    required: false,
+                    input_html: { autocomplete: "phone" },
+                    placeholder: "Telefon",
+                    label: "Telefon" %>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} Zeichen mindestens" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" },
+                    placeholder: "Passwort",
+                    label: "Passwort" %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "password" },
+                    placeholder: "Passwort bestätigen",
+                    label: "Passwort bestätigen" %>
       </div>
-    </div>
-  <% end %>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Registrieren", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+    <!-- Shared Links -->
+    <%= render "devise/shared/links" %>
+
+    <!-- Policy and Terms of Service -->
+    <p class="terms-of-service">By signing up, I agree to the <a href="#">Terms of Service</a>.</p>
   </div>
 </div>
 
