@@ -6,9 +6,4 @@
     list-style-type: none;
   }
 
-
-  // BREAKPOINTS
-  @include media-breakpoint-down(sm) {
-    display: none;
-  }
 }

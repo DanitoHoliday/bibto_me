@@ -2,7 +2,8 @@
   height: 90vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 2rem;
+  // align-items: center;
 
   @include media-breakpoint-only(xs) {
     height: 90vh;
@@ -10,11 +11,12 @@
 
   &-container {
     background-color: $white;
-    width: 50%;
-    padding: 2rem 4rem;
+    width: 30%;
+    padding: 0 0 2rem;
     // margin: 3rem auto;
 
     h2 {
+      margin: 2rem 0;
       text-align: left;
     }
 

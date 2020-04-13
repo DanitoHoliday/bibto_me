@@ -1,15 +1,29 @@
-// .user-avatar {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 60px;
-//   height: 60px;
-//   color: $c1;
-//   background-color: #fff;
-//   border-radius: 50%;
-//   margin: 50px auto 10px auto;
+.user-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0 auto;
 
-//   h4 {
-//     margin: 0;
-//   }
-// }
+  h4 {
+    margin: 0;
+    color: $white;
+  }
+
+  &.large {
+    width: 110px;
+    height: 110px;
+    background-color: $grey;
+  }
+
+  &.small {
+    width: 18px;
+    height: 18px;
+    background-color: $pink;
+
+    h4 {
+      font-size: .5rem;
+    }
+
+  }
+}

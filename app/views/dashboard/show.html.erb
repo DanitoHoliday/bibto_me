@@ -1,66 +1,48 @@
-<div class="page-title">
-  <div class="container">
-    <div class="d-flex justify-content-between">
-      <%= link_to root_path do %>
-        <h2><i class="fas fa-chevron-left text-white"></i></h2>
+<!-- Shared Navbar -->
+<%= render "shared/navbar_shared" %>
+
+<div class="dashboard">
+  <div class="dashboard-container">
+    <div class="profile-container">
+      <div>
+        <div class="user-avatar large">
+          <h4><%= @user.first_name[0] unless @user.first_name.nil? %></h4>
+        </div>
+
+      </div>
+      <div class="user-info">
+        <h3><%= @user.first_name unless @user.first_name.nil? %> <%= @user.last_name unless @user.last_name.nil? %></h3>
+        <div class="contact-details">
+          <p><i class="fas fa-map-marker-alt"></i> Berlin, Germany</p>
+          <p><i class="far fa-envelope"></i> <%= @user.email unless @user.email.nil? %></p>
+          <p><i class="fas fa-phone-alt"></i> <%= @user.phone unless @user.phone.nil? %></p>
+        </div>
+        <p>
+          <%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-primary"%>
+        </p>
+      </div>
+    </div>
+
+    <div class="tag-info-container">
+      <h3>Registered tags</h3>
+      <div class="tag-info tag-info-header">
+        <h4 class="item">#</h4>
+        <h4 class="item">Category</h4>
+        <h4 class="item">ID-Code</h4>
+        <h4 class="item">Registered Date</h4>
+        <h4 class="item">Status</h4>
+      </div>
+
+      <% @user.tags.each do |t| %>
+        <div class="tag-info">
+          <p class="item"><%= @sequence += 1 %></p>
+          <p class="item"><%= t.category %></p>
+          <p class="item"><%= t.code %></p>
+          <p class="item"><%= t.created_at.strftime("%B %d, %Y") %></p>
+          <p class="item"><%= t.registered %></p>
+        </div>
       <% end %>
-      <h2 class="text-center">Dashboard</h2>
-      <h2><i class="far fa-bell text-white"></i></h2>
     </div>
-    <div class="user-avatar">
-      <h4><%= @user.first_name[0] unless @user.first_name.nil? %></h4>
-    </div>
-    <p class="text-center "> <%= @user.first_name unless @user.first_name.nil? %> <%= @user.last_name unless @user.last_name.nil? %></p>
-    <p class="text-center" style="margin-top: -15px">
-      <%= link_to 'Edit Profile', edit_user_registration_path, class: "text-small text-yellow"%>
-    </p>
-  </div>
-</div>
-<div class="container">
-  <div>
-    <p class="mt-5"><strong>Registered Tags</strong></p>
-
-    <% @user.tags.each do |t| %>
-      <div class="d-flex justify-content-between border-bottom py-2">
-        <span class="text-small"><%= t.category %></span>
-        <span class="text-small"><%= t.code %></span>
-      </div>
-    <% end %>
-
-
-    <!-- Danny's code -->
-
-    <%# @user.tags.sort.each do |t| %>
-    <!-- <div>
-      <div class="text-small text-secondary border-bottom py-2 d-flex justify-content-between"> -->
-        <!-- <div>
-          <%#= form_tag update_register_category_path, method: :patch do %>
-          <%#= hidden_field_tag :code, t.code %>
-          <select name="category_dropdown" class="border-0" style="background-color: white;" onchange="this.form.submit();">
-            <option value="" selected><%#= t.category %></option>
-            <option value="Bag">Bag</option>
-            <option value="Laptop">Laptop</option>
-            <option value="Keys">Keys</option>
-            <option value="Phone">Phone</option>
-          </select>
-        </div> -->
-        <!-- <div> -->
-          <%# if t.category == "Bag" %>
-            <!-- <i class="fas fa-shopping-bag"></i> -->
-          <%# elsif t.category == "Laptop" %>
-            <!-- <i class="fas fa-laptop"></i> -->
-          <%# elsif t.category == "Keys" %>
-            <!-- <i class="fas fa-key"></i> -->
-          <%# else %>
-            <!-- <i class="fas fa-mobile-alt"></i> -->
-          <%# end %>
-          <%# end %>
-        <!-- </div>
-        <span><%#= t.code %></span>
-      </div>
-    </div> -->
-    <%# end %>
   </div>
 </div>
 
-<%= render "shared/menu" %>

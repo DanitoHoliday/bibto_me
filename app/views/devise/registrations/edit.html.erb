@@ -1,74 +1,54 @@
-<div class="page-title">
-  <div class="container mb-2">
-    <div class="d-flex">
-        <%= link_to :back do %>
-          <h2><i class="fas fa-chevron-left text-white"></i></h2>
+<!-- Shared Navbar -->
+<%= render "shared/navbar_shared" %>
+
+<div class="auth-session bg-white">
+  <div class="auth-session-container">
+    <h2>Edit account details</h2>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :first_name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" },
+                    placeholder: "Name*",
+                    label: false %>
+        <%= f.input :email,
+                    required: true,
+                    input_html: { autocomplete: "email" },
+                    placeholder: "E-mail*",
+                    label: false %>
+        <%= f.input :phone,
+                    required: false,
+                    input_html: { autocomplete: "phone" },
+                    placeholder: "Telefon",
+                    label: false %>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
-      <h2 class="mx-auto ">Edit Profile</h2>
-      <h2><i class="far fa-bell text-green"></i></h2>
+
+        <%= f.input :current_password,
+                    hint: "we need your current password to confirm your changes.",
+                    required: true,
+                    input_html: { autocomplete: "current-password" },
+                    placeholder: "Your current password",
+                    label: false %>
+      </div>
+
+      <div class="form-actions d-flex">
+        <%= f.button :submit, "Update", class: "btn btn-primary" %>
+        <%= link_to "Cancel", :back, class: "ml-1 btn btn-outline-primary" %>
+      </div>
+    <% end %>
+
+    <div class="mt-3">
+      <p>Unhappy? <%= link_to "Delete account", registration_path(resource_name),  data: { confirm: "Are you sure?" }, method: :delete, class: "text-danger" %></p>
     </div>
   </div>
 </div>
 
-<div class="container">
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :first_name,
-                  autofocus: true,
-                  required: true,
-                  hint: "Your name",
-                  placeholder: "Name",
-                  input_html: { class: "bib-form-styling"},
-                  label: false %>
-      <%= f.input :phone,
-                  required: true,
-                  hint: "Your phone",
-                  placeholder: "Phone",
-                  input_html: { class: "bib-form-styling"},
-                  label: false %>
-      <%= f.input :email,
-                  required: true,
-                  hint: "Your e-mail",
-                  placeholder: "E-mail",
-                  input_html: { class: "bib-form-styling"},
-                  label: false %>
-
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-      <% end %>
-
-      <%#= f.input :password,
-                  hint: "leave it blank if you don't want to change it",
-                  required: false,
-                  input_html: { autocomplete: "new-password", class: "bib-form-styling" },
-                  placeholder: "New password",
-                  label: false %>
-      <%#= f.input :password_confirmation,
-                  required: false,
-                  input_html: { autocomplete: "new-password", class: "bib-form-styling" },
-                  placeholder: "New password confirmation",
-                  label: false %>
-      <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
-                  required: true,
-                  input_html: { autocomplete: "current-password", class: "bib-form-styling" },
-                  placeholder: "Your current password",
-                  label: false %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Update", class: "btn btn-bib btn-grey btn-form" %>
-    </div>
-  <% end %>
-
-  <div class="text-center mt-3 device-links">
-    <p id="devices-info-text-grey">Unhappy? <%= link_to "Cancel my account", registration_path(resource_name),  data: { confirm: "Are you sure?" }, method: :delete, class: "device-links" %></p>
-  </div>
-</div>
-
-<div class="text-center mt-3">
-  <%= render "shared/menu" %>
-</div>

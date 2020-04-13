@@ -1,0 +1,24 @@
+<p>Leave your contact info & get contacted by <%= @tag.user.first_name %></p>
+
+<%= simple_form_for [@tag, @finder] do |f| %>
+  <%= f.error_notification %>
+​  <div class="form-inputs">
+    <%= f.input :phone,
+                placeholder: 'Your phone',
+                label: false,
+                required: false %>
+    <%= f.input :email,
+                label: false,
+                placeholder: 'Your Email',
+                required: false,
+                input_html: { autocomplete: "email"}
+                 %>
+    <%= f.input :message,
+                label: false,
+                placeholder: 'Message',
+                required: false
+                %>
+    <%= f.input :tag, :as => :hidden, :input_html => { :value => params[:format] } %>
+    <%= f.button :submit, "Share my contact info", class: "btn btn-primary mb-4" %>
+​  </div>
+<% end %>

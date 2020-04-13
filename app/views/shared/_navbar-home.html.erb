@@ -1,0 +1,20 @@
+<div class="container d-flex justify-content-between align-items-center pt-4">
+  <%= image_tag("logo-blue.png", alt: "Bibtome Logo", class: "logo logo-blue")%>
+  <ul class="navbar">
+    <li><%= link_to "Über uns", root_path, class: "btn text-primary" %></li>
+    <li><%= link_to "Team", root_path, class: "btn text-primary" %></li>
+    <li><%= link_to "Kontakt", root_path, class: "btn text-primary" %></li>
+    <% if user_signed_in? %>
+      <div class="btn-group">
+        <div class="user-avatar small">
+          <h4><%= current_user.first_name[0] unless current_user.first_name.nil? %></h4>
+        </div>
+      </div>
+      <i class="fas fa-ellipsis-v dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+      <%= render "shared/dropdown" %>
+    <% else %>
+      <li><%= link_to "Einloggen", new_user_session_path, class: "btn text-primary" %></li>
+      <li><%= link_to "Registrieren", new_user_registration_path, class: "btn btn-primary" %></li>
+    <% end %>
+  </ul>
+</div>

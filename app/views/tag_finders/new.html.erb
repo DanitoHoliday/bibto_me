@@ -1,113 +1,30 @@
-<div class="page-title">
-  <div class="container mb-2">
-    <div class="d-flex">
-      <%= link_to :back do %>
-          <h2><i class="fas fa-chevron-left text-white"></i></h2>
-      <% end %>
-      <h2 class="mx-auto">You are a hero!</h2>
-      <h2><i class="far fa-bell text-green"></i></h2>
-    </div>
-  </div>
-</div>
-​
-<div class="container">
-    <h4 class="text-center">
-​
-    <div class="mt-3 mb-4">
-      <%= image_tag "heart.gif", class: "mb-4" %> <br>
-    </div>
-    <div class="my-4">
-      You have found <%= @tag.user.first_name %>´s <%= @tag.category %> <br>
-    </div>
-​
+<!-- Shared Navbar -->
+<%= render "shared/navbar_shared" %>
+
+<div class="auth-session h-full bg-white" style="overflow: scroll;">
+  <div class="auth-session-container">
+    <h2>You are a hero!</h2>
+    <h4>You have found <%= @tag.user.first_name %>´s <%= @tag.category %>.</h4>
+
     <% if @tag.user.phone && @tag.user.shared_phone %>
-      Please contact
-      <%= @tag.user.first_name %>
-      directly: <br>
-      <strong><%= @tag.user.phone %></strong><br>
-      <div class="container">
-        <%= link_to "I will reach out to #{@tag.user.first_name}", finder_thank_you_path(@tag), class: "btn btn-bib btn-green btn-form mt-4", id: "reach-out-btn" %>
-​       </div>
-      <p class="mt-5">
-        <div class="checkbox">
-          <label id="checky" class="switch">
+        <p>Contact <%= @tag.user.first_name %> directly: <%= @tag.user.phone %></p>
+        <%= link_to "I will reach out to #{@tag.user.first_name}", finder_thank_you_path(@tag), class: "btn btn-primary mt-2" %>
+        <h4 class="mt-3">OR</h4>
+        <div class="checkbox d-flex align-items-center">
+          <label id="checky" class="switch mr-2">
             <input type="checkbox" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
             <span class="slider round"></span>
-            </label>
-            <h4 class="mb-2">Share my contact info with <%= @tag.user.first_name %>!</h4>
+          </label>
+          <h4 class="mb-2">Share my contact info with <%= @tag.user.first_name %>!</h4>
         </div>
-      </p>
-          <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-              Leave your contact info & <br> get contacted by <%= @tag.user.first_name %>
-              <div class="mt-1">
-                <%= simple_form_for [@tag, @finder] do |f| %>
-                              <%= f.error_notification %>
-​
-                  <%= f.input :phone,
-                              placeholder: 'Your phone',
-                              label: false,
-                              required: false,
-                              input_html: { class: "bib-form-styling text-input" }
-                              %>
-                  <%= f.input :email,
-                              label: false,
-                              placeholder: 'Your Email',
-                              required: false,
-                              input_html: { autocomplete: "email", class: "bib-form-styling text-input" }
-                               %>
-                  <%= f.input :message,
-                              label: false,
-                              placeholder: 'Message',
-                              input_html: { class: "bib-form-styling text-input" },
-                              required: false
-                              %>
-                  <%= f.input :tag, :as => :hidden, :input_html => { :value => params[:format] } %>
-​
-                  <%= f.button :submit, "Share my contact info", class: "btn btn-bib btn-green btn-form", style: "width: 90%" %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-​
+        <div class="collapse" id="collapseExample">
+          <%= render "contact_form" %>
         </div>
-      </div>
-​
     <% else %>
-      Leave your contact info <br> - or a message - <br> & get contacted by <%= @tag.user.first_name %>
-​
-      <div class="mt-1">
-        <%= simple_form_for [@tag, @finder] do |f| %>
-          <%= f.error_notification %>
-          <%= f.input :phone,
-                      placeholder: 'Your phone',
-                      label: false,
-                      required: false,
-                      input_html: { class: "bib-form-styling text-input" }
-                      %>
-          <%= f.input :email,
-                      label: false,
-                      placeholder: 'Your Email',
-                      required: false,
-                      input_html: { autocomplete: "email", class: "bib-form-styling text-input" }
-                       %>
-          <%= f.input :message,
-                      label: false,
-                      placeholder: 'Message',
-                      input_html: { class: "bib-form-styling text-input" },
-                      required: true
-                      %>
-          <%= f.input :tag, :as => :hidden, :input_html => { :value => params[:format] } %>
-​
-          <%= f.button :submit, "Share my contact infos", class: "btn btn-bib btn-green btn-form", style: "width: 90%" %>
-        <% end %>
-      </div>
+      <%= render "contact_form" %>
     <% end %>
-​
-    <h5 class="text-center need-help">Need help? <span class="help-color">Click here.</span></h5>
-
-​
   </div>
 </div>
-​
-<%= render "shared/menu" %>
+
+
+

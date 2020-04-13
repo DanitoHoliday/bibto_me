@@ -1,6 +1,6 @@
 .footer {
   background-color: $dark-blue-1;
-  padding: 4rem 0;
+  padding: 4rem 0 2rem;
 
   // BREAPOINT
     @include media-breakpoint-down(sm) {
@@ -75,6 +75,13 @@
 
   .row {
     margin: 0 auto;
+  }
+
+  .copyright {
+    color: $white;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    font-size: .6rem;
   }
 
 }

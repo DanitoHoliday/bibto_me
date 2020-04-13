@@ -1,16 +1,7 @@
 <body>
   <header class="home-header">
-    <!-- Navbar -->
-    <div class="container d-flex justify-content-between align-items-center pt-4">
-      <%= image_tag("logo-blue.png", alt: "Bibtome Logo", class: "logo logo-blue")%>
-      <ul class="navbar">
-        <!-- For testing  -->
-        <a><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "border-bottom" %></a>
-
-        <li><%= link_to "Einloggen", new_user_session_path, class: "btn text-primary" %></li>
-        <li><%= link_to "Registrieren", new_user_registration_path, class: "btn btn-primary" %></li>
-      </ul>
-    </div>
+    <!-- Navbar-HOME -->
+    <%= render "shared/navbar-home" %>
 
     <!-- Hero/banner -->
     <div class="container container-margin-helper home-banner">
@@ -94,8 +85,7 @@
       </div>
       <h3 class="text-danger mt-5">- Nur für begrenzte Zeit -</h3>
       <p>Sicher dir einen kostenlosen Tag, um unseren Service auszuprobieren.</p>
-      <%= link_to "Kostenlosen Tag bestellen", finder_input_path, class: "btn btn-primary" %>
-      <%= link_to "Kostenlosen Tag bestellen", finder_input_path, class: "btn btn-outline-primary btn-size-helper" %>
+      <%= link_to "Kostenlosen Tag bestellen", "https://bibto-me.myshopify.com/products/bibto-sticker", class: "btn btn-primary" %>
     </div>
   </section>
 
@@ -191,11 +181,6 @@
   </section>
 
 <%#= link_to "Hier klicken.", finder_input_path, class: "link" %>
-
-
-  <!-- Shared Footer -->
-  <%= render "shared/footer" %>
-
 </body>
 
 

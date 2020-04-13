@@ -1,0 +1,27 @@
+.dropdown-toggle::after {
+  content: none;
+}
+
+.dropdown-menu {
+  // margin-top: .5rem;
+  font-family: "Prompt", "sans-serif";
+  // border-width: thin;
+  border-color: $light-grey;
+  border-top: 0;
+  border-radius: 0;
+  box-shadow: .1px .1px .2px 0px rgba(0,0,0,0.75);
+
+  .btn {
+    font-size: .5rem !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    // color: $light-blue;
+  }
+
+  .dropdown-divider {
+    margin: .5rem auto;
+    width: 80%;
+    border-color: $light-grey;
+    border-width: 2px;
+  }
+}
