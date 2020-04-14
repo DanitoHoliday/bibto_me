@@ -124,9 +124,6 @@ label {
     cursor:pointer;
     margin-top: 1rem;
     margin-right: -1rem;
-    // position: fixed;
-    // right: 4%;
-    // top: 85vh;
     @include media-breakpoint-down(sm) {
       display: block;
     }
@@ -155,7 +152,6 @@ label {
       font-weight: 600;
       display: block;
       transition: 0.3s;
-      // font-family: "Quicksand", "Lato", "sans-serif";
     }
   }
 

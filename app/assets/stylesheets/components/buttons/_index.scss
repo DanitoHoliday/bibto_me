@@ -10,15 +10,12 @@
     padding: 1rem 0;
     font-size: 1.1rem;
   }
-
   @include media-breakpoint-only(xs) {
     width: 100%;
   }
-
   @include media-breakpoint-only(sm) {
     width: 40%;
   }
-
 
   &:focus {
     outline: 0 !important;
@@ -27,6 +24,20 @@
 
   &-primary, &-info {
     color: $white;
+  }
+
+  &-primary, &-outline-primary {
+    &:hover {
+      background-color: $light-blue;
+      border-color: $light-blue;
+    }
+  }
+
+
+  &-nav-link {
+    color: $dark-blue;
+    padding-right: .4rem !important;
+    padding-left: .4rem !important;
   }
 }
 

@@ -23,7 +23,33 @@
   <section class="bg-white">
     <div class="container">
       <h2>Wie es funktioniert?</h2>
-      <div class="custom-grid">
+      <div class="items-container">
+        <div class="column-item">
+          <div class="circle circle-pink">
+            <%= image_tag("spaceship.png", alt: "Choose your tag icon", class: "c-icon")%>
+          </div>
+          <h3>QR-Tag aussuchen und geliefert bekommen</h3>
+          <p>In unserem Shop findest du verschiedene Tags – vom Sticker bis zum Schlüsselanhänger. Such dir einen aus und wir liefern ihn zu dir nach Hause.</p>
+          <a href="#" class="link">Mehr erfahren <span class="ml-1">&#8594;</span></a>
+        </div>
+        <div class="column-item">
+          <div class="circle circle-blue">
+            <%= image_tag("badge.png", alt: "Register your tag", class: "c-icon")%>
+          </div>
+          <h3>QR-Tag registrieren und an Gegenstand anbringen</h3>
+          <p>Scanne oder tippe deinen Code hier auf der Website ein, um deinen Code zu registrieren. Befestige ihn dann an einem Gegenstand, den du ungern verlieren möchtest. Fertig.</p>
+          <a href="#" class="link">Mehr erfahren <span class="ml-1">&#8594;</span></a>
+        </div>
+        <div class="column-item">
+          <div class="circle circle-green">
+            <%= image_tag("bell.png", alt: "Get notified", class: "c-icon")%>
+          </div>
+          <h3>Benachrichtigt werden, wenn der verlorene Gegenstand gefunden wurde</h3>
+          <p>Wenn jemand deinen Gegenstand findet, kann er den Code mit seinem Telefon scannen und sich anschließend entweder anonym oder mit seinen Kontaktdaten bei dir melden. Du erhältst daraufhin eine Benachrichtigung.</p>
+          <a href="#" class="link">Mehr erfahren <span class="ml-1">&#8594;</span></a>
+        </div>
+      </div>
+      <!-- <div class="custom-grid">
         <div class="gutter-max">
           <div class="circle circle-pink">
             <%= image_tag("spaceship.png", alt: "Choose your tag icon", class: "c-icon")%>
@@ -48,7 +74,7 @@
           <p>Wenn jemand deinen Gegenstand findet, kann er den Code mit seinem Telefon scannen und sich anschließend entweder anonym oder mit seinen Kontaktdaten bei dir melden. Du erhältst daraufhin eine Benachrichtigung.</p>
           <a href="#" class="link">Mehr erfahren <span class="ml-1">&#8594;</span></a>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 

@@ -69,15 +69,6 @@ p {
   }
 }
 
-
-.container {
-  @include media-breakpoint-only(sm) {
-    max-width: 85%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
 .gutter-max {
   @include media-breakpoint-down(sm) {
     margin-bottom: 2rem;
@@ -96,17 +87,11 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-column-gap: 2rem;
   grid-row-gap: 3rem;
-  @include media-breakpoint-only(sm) {
-    grid-template-columns: 1fr;
-  }
 }
 
 
 .info-container {
   margin-top: 2rem;
-  @include media-breakpoint-down(sm) {
-    display: none;
-  }
 
   span {
     font-size: .7rem;

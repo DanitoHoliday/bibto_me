@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   background-color: $white;
+
   @include media-breakpoint-down(sm) {
     align-items: start;
     padding-top: 3rem;
@@ -11,12 +12,21 @@
     height: auto;
   }
 
+  @include bp(ipad-only) {
+    height: 70vh;
+  }
+
   &-container {
     width: 50%;
     @include media-breakpoint-down(sm) {
       width: 90%;
+      // margin-top: 6rem;
+    }
+
+    @include media-breakpoint-only(xs) {
       margin-top: 6rem;
     }
+
 
     p {
       font-size: .7rem;
@@ -141,12 +151,6 @@
               width: 30%;
             }
           }
-
-          // &:nth-child(2n) {
-          //   @include media-breakpoint-only(xs) {
-          //     color: red;
-          //   }
-          // }
         }
       }
     }

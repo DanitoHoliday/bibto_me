@@ -1,6 +1,8 @@
 .shared-navbar {
   background-color: $white;
   border-bottom: 2px solid $light-grey;
+  padding: .5rem 0;
+
   @include media-breakpoint-down(sm) {
     position: fixed;
     top: 0;
