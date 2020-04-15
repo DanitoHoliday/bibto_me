@@ -3,30 +3,36 @@
   display: flex;
   justify-content: center;
   padding-top: 2rem;
+
   @include media-breakpoint-down(sm) {
     padding-top: 4rem;
     height: auto;
   }
+
+  @include bp(ipad-only) {
+    height: 70vh;
+  }
+
 
 
   &-container {
     background-color: $white;
     width: 28%;
     padding: 0 0 2rem;
+
     @include media-breakpoint-down(sm) {
       width: 90%;
-      // max-width: 360px;
       margin: 0;
       padding: 2rem 1.5rem;
     }
 
+    @include bp(ipad-only) {
+      width: 45%;
+    }
 
     h2 {
       margin: 2rem 0;
       text-align: center;
-      @include media-breakpoint-down(sm) {
-        display: none;
-      }
     }
 
     p {
@@ -111,12 +117,13 @@
   }
 }
 
-.d-on-sm {
-  h2 {
-    @include media-breakpoint-down(sm) {
-      display: block;
-    }
-  }
-}
+
+// .d-on-sm {
+//   h2 {
+//     @include media-breakpoint-down(sm) {
+//       display: block;
+//     }
+//   }
+// }
 
 

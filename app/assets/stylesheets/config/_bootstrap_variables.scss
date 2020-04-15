@@ -43,4 +43,14 @@ $border-radius-sm: 2px;
 
 
 // Override other variables below!
-
+@mixin bp($point) {
+  @if $point == mobile {
+    @media (max-width: 768px) { @content; }
+  }
+  @else if $point == ipad-only {
+    @media (min-width: 768px) and (max-width: 834px) { @content; }
+  }
+  @else if $point == desktop {
+    @media (max-width: 1920px) { @content; }
+  }
+}

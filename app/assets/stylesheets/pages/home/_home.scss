@@ -8,9 +8,12 @@ section:not(:first-child) {
 }
 
 .container {
-  @include media-breakpoint-between(xs, sm) {
+  @include media-breakpoint-only(xs) {
     padding-left: 0;
     padding-right: 0;
+  }
+  @include bp(ipad-only) {
+    padding-left: 2rem;
   }
 }
 
@@ -18,6 +21,11 @@ section:not(:first-child) {
   &-header {
     height: 100vh;
     background-color: $light-grey;
+
+    @include bp(ipad-only) {
+      height: 58vh;
+    }
+
     @include media-breakpoint-down(sm) {
       background-color: $dark-blue;
     }
@@ -86,7 +94,6 @@ section:not(:first-child) {
       }
     }
 
-
     .iphone-mockup-container {
       display: flex;
       justify-content: center;
@@ -98,6 +105,30 @@ section:not(:first-child) {
       }
       @include media-breakpoint-down(sm) {
         display: none;
+      }
+    }
+  }
+}
+
+
+.items-container {
+  display: flex;
+  justify-content: center;
+  @include bp(mobile) {
+    flex-direction: column;
+  }
+
+  .column-item {
+    width: 100%;
+    @include bp(ipad-only) {
+      text-align: center;
+      padding: 0 4rem;
+    }
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+      @include bp(mobile) {
+        margin-bottom: 2.5rem;
       }
     }
   }

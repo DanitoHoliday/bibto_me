@@ -14,17 +14,17 @@
                     autofocus: true,
                     input_html: { autocomplete: "email" },
                     placeholder: "Name*",
-                    label: false %>
+                    label: "Edit name" %>
         <%= f.input :email,
                     required: true,
                     input_html: { autocomplete: "email" },
                     placeholder: "E-mail*",
-                    label: false %>
+                    label: "Edit email" %>
         <%= f.input :phone,
                     required: false,
                     input_html: { autocomplete: "phone" },
                     placeholder: "Telefon",
-                    label: false %>
+                    label: "Edit phone" %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -34,8 +34,8 @@
                     hint: "we need your current password to confirm your changes.",
                     required: true,
                     input_html: { autocomplete: "current-password" },
-                    placeholder: "Your current password",
-                    label: false %>
+                    placeholder: "Current password",
+                    label: "Your current password" %>
       </div>
 
       <div class="form-actions d-flex">

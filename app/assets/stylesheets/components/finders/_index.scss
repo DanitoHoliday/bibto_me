@@ -1,3 +1,14 @@
+.finder-input {
+  .thank-you {
+    .btn {
+      width: fit-content;
+      @include media-breakpoint-only(xs) {
+        width: 100%;
+      }
+    }
+  }
+}
+
 .finder-contact {
   overflow: scroll;
 
