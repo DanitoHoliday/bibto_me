@@ -25,6 +25,7 @@ before_action :authenticate_user!, except: [:new, :create, :thank_you, :finder_i
     if @finder.save
       full_message = "#{@tag.category} found: #{@finder.phone} / #{@finder.email} | #{@finder.message}"
       TwilioController.send_message(@tag.user.phone, full_message)
+      UserMailer.tag_found(@tag.user.email).deliver_now
       redirect_to finder_thank_you_path(@tag)
     else
       render :new

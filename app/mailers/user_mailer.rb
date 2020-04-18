@@ -14,4 +14,13 @@ class UserMailer < ApplicationMailer
       :track_opens => 'true')
     # This will render a view in `app/views/user_mailer`!
   end
+
+  def tag_found(user)
+    mail(
+      :to => user,
+      :subject => 'Your item was found! | bibto.me',
+      :from => 'hello@bibto.me',
+      :track_opens => 'true')
+    # This will render a view in `app/views/user_mailer`!
+  end
 end
