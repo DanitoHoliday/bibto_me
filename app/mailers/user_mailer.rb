@@ -15,9 +15,12 @@ class UserMailer < ApplicationMailer
     # This will render a view in `app/views/user_mailer`!
   end
 
-  def tag_found(user)
+  def tag_found(tag, finder, full_message)
+    @tag = tag
+    @finder = finder
+    @full_message = full_message
     mail(
-      :to => user,
+      :to => @tag.user.email,
       :subject => 'Your item was found! | bibto.me',
       :from => 'hello@bibto.me',
       :track_opens => 'true')
