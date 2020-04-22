@@ -6,11 +6,12 @@ class User < ApplicationRecord
   has_many :tags
   has_many :finders, through: :tags
   has_one_attached :photo
+  after_create :send_welcome_email
   # after_create :send_welcome_email
 
   private
 
   def send_welcome_email
-    UserMailer.with(user: self).welcome.deliver_now
+    UserMailer.welcome(self).deliver_now
   end
 end

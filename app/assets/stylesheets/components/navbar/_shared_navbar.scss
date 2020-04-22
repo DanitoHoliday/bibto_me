@@ -1,25 +1,33 @@
 .shared-navbar {
   background-color: $white;
   border-bottom: 2px solid $light-grey;
+  padding: .5rem 0;
 
-
-  .larger-devices {
-    @include media-breakpoint-only(xs) {
-      display: none !important;
-    }
+  @include media-breakpoint-down(sm) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    padding-top: 0;
   }
 
-  .xs-devices {
-    display: none;
-
-    h2 {
-      margin: 0;
-      font-size: 1.4rem;
+  .navbar {
+    margin:0;
+    @include media-breakpoint-down(sm) {
+      display: none;
     }
 
-    @include media-breakpoint-only(xs) {
-      display: block;
-      padding: 1.4rem 1.5rem;
+    li {
+      display: inline-block;
+      list-style-type: none;
+    }
+
+    .container {
+      @include media-breakpoint-down(sm) {
+        padding-top: 0 !important;
+      }
     }
   }
 }
+

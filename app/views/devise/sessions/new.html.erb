@@ -14,13 +14,12 @@
                     autofocus: true,
                     input_html: { autocomplete: "email"},
                     placeholder: "E-mail",
-                    label: false%>
+                    label: "Email address"%>
         <%= f.input :password,
                     required: true,
                     input_html: { autocomplete: "current-password"},
-                    placeholder: "Password",
-                    label: false %>
-        <%= f.input :remember_me,
+                    placeholder: "Password"%>
+        <%#= f.input :remember_me,
                     label_html: {class: "checkbox"},
                     as: :boolean if devise_mapping.rememberable?%>
       </div>
@@ -33,6 +32,9 @@
 
     <!-- Shared Links -->
     <%= render "devise/shared/links" %>
+
+    <!-- Policy and Terms of Service -->
+    <p class="terms-of-service">By signing in, I agree to the <a href="#">Terms of Service</a>.</p>
   </div>
 </div>
 

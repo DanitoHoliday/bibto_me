@@ -1,0 +1,93 @@
+.successfully-registration {
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 2rem;
+    margin-top: 3rem;
+  }
+
+  .info-container {
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+  }
+
+  .auth-session-container {
+    width: 52%;
+    padding-left: 5rem;
+    margin-top: 2rem;
+    @include media-breakpoint-down(sm) {
+      width: 95%;
+      padding-left: 1.5rem;
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    h3, p, .link {
+      @include media-breakpoint-down(sm) {
+        text-align: left;
+        margin-left: 0;
+        font-size: 1.3rem;
+      }
+      @include media-breakpoint-only(sm) {
+        margin-left: 2rem;
+      }
+    }
+
+    p {
+      text-align: left;
+      color: $grey;
+      @include media-breakpoint-down(sm) {
+        line-height: 1;
+        margin-bottom: 1.5rem !important;
+      }
+    }
+
+    .buttons-container {
+      margin-top: 1.8rem;
+      display: flex;
+      justify-content: flex-start;
+      width: 60%;
+      @include media-breakpoint-only(xs) {
+        display: block;
+        width: 100%;
+      }
+
+      .btn-primary {
+        @include media-breakpoint-only(sm) {
+          margin-right: .5rem;
+          margin-left: 2rem;
+        }
+      }
+
+      .btn-outline-primary {
+        margin-left: .2rem;
+      }
+    }
+  }
+
+  .radio-box-container {
+    margin: 0 0 1.5rem;
+    @include media-breakpoint-only(sm) {
+      margin-left: 2rem;
+    }
+
+    .radio-boxs {
+      margin-bottom: 2rem;
+      color: $black;
+
+      .divider {
+        margin-bottom: .6rem;
+      }
+
+      span {
+        font-weight: 600;
+        font-size: .7rem;
+        @include media-breakpoint-down(sm) {
+          font-size: 1.3rem;
+          font-weight: 500;
+          margin-top: -1rem;
+        }
+      }
+    }
+  }
+
+
+}

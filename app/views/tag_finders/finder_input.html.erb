@@ -1,7 +1,7 @@
 <!-- Shared Navbar -->
 <%= render "shared/navbar_shared" %>
 
-<div class="auth-session h-full bg-white">
+<div class="auth-session finder-input bg-white">
   <div class="auth-session-container">
     <h2 class="mb-4">Return Item</h2>
     <p>Please insert the tag ID to proceed verification:</p>
@@ -21,9 +21,6 @@
         <%= submit_tag "Send code",class: "btn btn-primary" %>
       <% end %>
     </div>
-    <!-- <div class="info-container">
-      <%#= image_tag("info-primary-icon.svg", alt: "Information icon", class: "info-icon")%>
-      <span>We will verify if the code inserted is registered in our database.</span>
-    </div> -->
+    <h3 class="mt-5 text-center">Need help? <a href="#">Contact us.</a></h3 class="mt-5 text-center">
   </div>
 </div>

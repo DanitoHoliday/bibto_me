@@ -59,7 +59,7 @@ class TagsController < ApplicationController
 
     Cloudinary::Uploader.upload(imglink, :folder => "bibtome/qr/", :resource_type => "image", :public_id => "#{@tag.code}",
       :transformation => [
-        {:width => 340, :height => 340, :crop => :pad},
+        {:width => 340, :height => 340, :crop => "crop"},
         {:radius => 10}])
 
     @tag.save

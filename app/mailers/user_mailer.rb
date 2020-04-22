@@ -5,9 +5,22 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome.subject
   #
- def welcome
-    @user = params[:user] # Instance variable => available in view
-    mail(to: @user.email, subject: 'Welcome to bibto.me | return lost items')
+ def welcome(user)
+  @user = user
+    mail(
+      :to => @user.email,
+      :subject => 'Welcome to bibto.me | return lost items',
+      :from => 'hello@bibto.me',
+      :track_opens => 'true')
+    # This will render a view in `app/views/user_mailer`!
+  end
+
+  def tag_found(user)
+    mail(
+      :to => user,
+      :subject => 'Your item was found! | bibto.me',
+      :from => 'hello@bibto.me',
+      :track_opens => 'true')
     # This will render a view in `app/views/user_mailer`!
   end
 end

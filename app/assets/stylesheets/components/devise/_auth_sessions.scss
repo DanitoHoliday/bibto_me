@@ -3,54 +3,127 @@
   display: flex;
   justify-content: center;
   padding-top: 2rem;
-  // align-items: center;
 
-  @include media-breakpoint-only(xs) {
-    height: 90vh;
+  @include media-breakpoint-down(sm) {
+    padding-top: 4rem;
+    height: auto;
   }
+
+  @include bp(ipad-only) {
+    height: 70vh;
+  }
+
+
 
   &-container {
     background-color: $white;
-    width: 30%;
+    width: 28%;
     padding: 0 0 2rem;
-    // margin: 3rem auto;
+
+    @include media-breakpoint-down(sm) {
+      width: 90%;
+      margin: 0;
+      padding: 2rem 1.5rem;
+    }
+
+    @include bp(ipad-only) {
+      width: 45%;
+    }
 
     h2 {
       margin: 2rem 0;
-      text-align: left;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      color: $black;
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 2rem;
+        font-size: 1.4rem;
+      }
     }
 
     .form-inputs {
       margin-top: .5rem;
+      @include media-breakpoint-down(sm) {
+        margin-top: 2rem;
+        font-size: 1.2rem;
+      }
 
       .form-control {
         font-size: .7rem;
-        // color: $light-blue;
-        border-color: $light-blue;
+        border-color: $light-grey-1;
+        border-width: .5px;
+        @include media-breakpoint-down(sm) {
+          padding-top: 1.6rem;
+          padding-bottom: 1.6rem;
+          font-size: 1rem;
+          border-width: 1px;
+        }
 
         &:focus {
-          box-shadow: 0 0 0 0.1rem rgba($dark-blue, 0.25) ;
+          border-color: $light-blue;
+          outline: 0 !important;
+          box-shadow: none;
         }
 
         &::placeholder {
           color: $light-grey-1;
         }
+      }
 
-        @include media-breakpoint-only(xs) {
-          padding-top: 1.5rem;
-          padding-bottom: 1.5rem;
-          font-size: 1rem;
-        }
+      label {
+        display: inline;
       }
     }
 
-
-    @include media-breakpoint-down(sm) {
+    .btn {
       width: 100%;
-      margin: 0;
-      padding: 2rem 1.5rem;
-      height: 100vh;
+    }
+
+
+    .devise-links {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: $black;
+    }
+
+    .info {
+      color: $grey;
+      margin: 1rem 0;
     }
   }
 }
+
+.sign-up-form {
+  height: auto;
+
+  .devise-links {
+    margin-bottom: 1rem;
+  }
+}
+
+.register-tag, .finder-input {
+  @include media-breakpoint-down(sm) {
+    padding-top: 6rem;
+    height: 90vh;
+  }
+
+  .info {
+    @include media-breakpoint-down(sm) {
+      padding-top: 2rem;
+    }
+  }
+}
+
+
+// .d-on-sm {
+//   h2 {
+//     @include media-breakpoint-down(sm) {
+//       display: block;
+//     }
+//   }
+// }
+
 

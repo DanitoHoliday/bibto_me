@@ -3,8 +3,15 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
-  background-color: $white;
+  background-color: $light-grey;
   border: none;
+  @include media-breakpoint-down(sm) {
+    width: 90%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.2rem;
+
+  }
 
   &-info {
     color: $light-blue;

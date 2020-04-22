@@ -5,27 +5,14 @@ html {
 
 h1 {
   font-weight: 700;
-  // letter-spacing: .5px;
-
-  // BREAKPOINTS
-  // @include media-breakpoint-only(sm) {
-  //   font-size: 2rem;
-  // }
-
-  // @include media-breakpoint-only(xs) {
-  //   font-size: 1.7rem;
-  // }
 }
 
 h2 {
   text-align: center;
   margin-bottom: 2.5rem;
   font-size: 1.3rem;
-
-  // BREAKPOINT
   @include media-breakpoint-down(sm) {
-    // margin-bottom: 1.3rem;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -33,11 +20,9 @@ h2 {
 h3 {
   font-size: .8rem;
   margin: 1rem 0;
-
-  // BREAKPOINT
-  @include media-breakpoint-only(xs) {
+  @include media-breakpoint-down(sm) {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin: 1rem .6rem;
   }
 }
@@ -46,21 +31,17 @@ h3 {
 h4 {
   font-size: .7rem;
   text-align: left;
-
-  // BREAKPOINT
-  @include media-breakpoint-only(xs) {
-    font-size: 1.15rem;
+  @include media-breakpoint-down(sm) {
+    font-size: 1.3rem;
   }
 }
 
 
 p {
   margin: 0;
-
-  // BREAKPOINT
   @include media-breakpoint-down(sm) {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -70,32 +51,21 @@ p {
   display: block;
   margin-top: .6rem;
   font-family: 'Prompt', 'Poppins', sans-serif;
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+    font-size: 1.4rem;
+  }
 
   &:hover {
     text-decoration: none;
   }
 
-  // BREAKPOINT
-  @include media-breakpoint-down(sm) {
-    text-align: center;
-    font-size: 1rem;
-
-  }
 }
 
 
 .d-none-helper {
-  // BREAKPOINT
   @include media-breakpoint-down(sm) {
     display: none !important;
-  }
-}
-
-
-// BREAKPOINTS FOR ALL THE OTHER CLASSES
-.container:not(.container-margin-helper) {
-  @include media-breakpoint-down(sm) {
-    padding: 0 2rem;
   }
 }
 
@@ -136,114 +106,5 @@ p {
   margin-bottom: .5rem;
 }
 
-
-.successfully-registration {
-
-  .info-container {
-    margin-top: 0;
-    margin-bottom: 2.5rem;
-  }
-
-  .auth-session-container {
-    width: 52%;
-    padding-left: 5rem;
-    margin-top: 2rem;
-    //background-color: red;
-  }
-
-  .radio-box-container {
-    margin: 0 0 1.5rem;
-
-    .radio-boxs {
-      margin-bottom: 2rem;
-      color: $black;
-
-      .divider {
-        margin-bottom: .6rem;
-      }
-
-      span {
-        font-weight: 600;
-        font-size: .7rem;
-      }
-    }
-  }
-
-  .buttons-container {
-    margin-top: 1.8rem;
-  }
-}
-
-
-// ** Tablet **
-@media only screen and (min-width: 425px) and (max-width: 834px) {
-  h3, h4, p, .link, .quote-author, .footer h4 {
-    font-size: 1rem;
-  }
-
-  .card-gallery h4 {
-    font-size: .8rem;
-  }
-
-
-  .footer a {
-    font-size: .9rem;
-  }
-
-  .footer ul {
-    width: 70%;
-  }
-
-
-
-  .container {
-    padding: 0 2rem;
-  }
-
-
-  .home-header {
-    height: 55vh;
-  }
-
-
-  .carousel-inner p {
-    padding: 0 4rem;
-  }
-
-
-  .get-start .link{
-    font-family: 'Montserrat', sans-serif;
-  }
-
-
-  // .btn {
-  //   font-size: .6rem;
-  // }
-
-
-  .section-3 {
-
-    .w-40 {
-      width: 100%;
-
-      h2, p, a {
-        text-align: center;
-      }
-
-      h2 {
-        font-size: 1.4rem;
-      }
-    }
-
-    .image-container {
-      display: none;
-    }
-
-    .border-span {
-      margin: 1rem auto;
-    }
-  }
-
-}
 
 

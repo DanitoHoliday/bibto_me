@@ -10,6 +10,7 @@ $body-bg:                 $dark-grey;
 $font-size-base: .8rem;
 
 $container-max-widths: (
+  xs: 320px,
   sm: 540px,
   md: 820px,
   lg: 960px,
@@ -24,7 +25,7 @@ $primary:    $dark-blue;
 $secondary:  $dark-blue-1;
 $danger:     $red;
 $success:    $green-success;
-$light:      $white;
+$light:      $light-grey;
 $info:       $light-blue;
 // $warning:    $orange;
 
@@ -42,4 +43,14 @@ $border-radius-sm: 2px;
 
 
 // Override other variables below!
-
+@mixin bp($point) {
+  @if $point == mobile {
+    @media (max-width: 768px) { @content; }
+  }
+  @else if $point == ipad-only {
+    @media (min-width: 768px) and (max-width: 834px) { @content; }
+  }
+  @else if $point == desktop {
+    @media (max-width: 1920px) { @content; }
+  }
+}

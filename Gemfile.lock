@@ -236,7 +236,11 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+<<<<<<< HEAD
     webpacker (5.1.1)
+=======
+    webpacker (5.0.1)
+>>>>>>> master
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
