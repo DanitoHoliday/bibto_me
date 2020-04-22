@@ -234,13 +234,14 @@ GEM
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
+      activesupport (>= 5.2)
       bindex (>= 0.4.0)
+      rack-proxy (>= 0.6.1)
       railties (>= 5.0)
-<<<<<<< HEAD
-    webpacker (5.1.1)
-=======
+      railties (>= 5.2)
+      semantic_range (>= 2.3.0)
+      webpacker (= 5.0.1)
     webpacker (5.0.1)
->>>>>>> master
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
