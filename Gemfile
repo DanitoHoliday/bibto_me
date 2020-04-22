@@ -22,6 +22,8 @@ gem 'postmark-rails'
 gem 'cloudinary', '~> 1.12.0'
 gem 'rqrcode'
 gem 'twilio-ruby'
+gem 'unirest'
+gem 'json'
 
 
 group :development do
