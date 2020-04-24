@@ -31,8 +31,6 @@ class TagRegistersController < ApplicationController
       flash[:notice] = "Category #{params[:category_dropdown]} assigned"
     else
       @tag.update(category: params[:item_select])
-
-
     end
   end
 

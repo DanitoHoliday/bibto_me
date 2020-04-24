@@ -4,36 +4,35 @@ class Tag < ApplicationRecord
   validates :code, presence: true, uniqueness: true
   after_create :set_registration, on: [ :create ]
   has_one_attached :qr
-  after_create_commit :generate_qr
+  # after_create_commit :generate_qr
 
   private
 
-  def generate_qr
-    qrcode = RQRCode::QRCode.new("https://www.bibto.me/qr/#{self.code}")
+  # def generate_qr
+  #   qrcode = RQRCode::QRCode.new("https://www.bibto.me/qr/#{self.code}")
 
-    # NOTE: showing with default options specified explicitly
-    png = qrcode.as_png(
-      bit_depth: 1,
-      border_modules: 4,
-      color_mode: ChunkyPNG::COLOR_GRAYSCALE,
-      color: 'black',
-      file: nil,
-      fill: 'white',
-      module_px_size: 6,
-      resize_exactly_to: false,
-      resize_gte_to: false,
-      size: 600
-    )
+  #   png = qrcode.as_png(
+  #     bit_depth: 1,
+  #     border_modules: 0,
+  #     color_mode: ChunkyPNG::COLOR_GRAYSCALE,
+  #     color: '#424C6A',
+  #     file: nil,
+  #     fill: 'white',
+  #     module_px_size: 6,
+  #     resize_exactly_to: false,
+  #     resize_gte_to: true,
+  #     size: 300
+  #   )
 
-    file = Tempfile.new(["qr-#{self.code}", ".png"])
-    IO.binwrite(file, png.to_s)
-    file.rewind
-    file.close
+  #   file = Tempfile.new(["qr-#{self.code}", ".png"])
+  #   IO.binwrite(file, png.to_s)
+  #   file.rewind
+  #   file.close
 
-    self.qr.attach(io: File.open(file), filename: "qr-#{self.code}.png")
+  #   self.qr.attach(io: File.open(file), filename: "qr-#{self.code}.png")
 
-    file.unlink
-  end
+  #   file.unlink
+  # end
 
   def set_registration
     self.registered = false
