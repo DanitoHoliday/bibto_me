@@ -1,9 +1,13 @@
 class Tag < ApplicationRecord
   belongs_to :user, optional: true
   has_many :finders
-  validates :code, presence: true, uniqueness: true
+  #after_initialize :set_code
+  before_validation(on: :create) do
+    self.code = SecureRandom.hex(3).downcase
+  end
   after_create :set_registration, on: [ :create ]
   has_one_attached :qr
+  validates :code, uniqueness: true, presence: true
   after_create_commit :generate_image
 
   private
@@ -34,9 +38,12 @@ class Tag < ApplicationRecord
   #   file.unlink
   # end
 
-   def generate_image
-    #@tag = Tag.new(code: SecureRandom.hex(3).downcase, registered: false)
+  def set_code
+    self.code = SecureRandom.hex(3).downcase
+  end
 
+   def generate_image
+   # @tag = Tag.new(code: SecureRandom.hex(3).downcase, registered: false)
     url = URI("https://qrcode-monkey.p.rapidapi.com/qr/custom")
 
     http = Net::HTTP.new(url.host, url.port)
@@ -84,7 +91,7 @@ class Tag < ApplicationRecord
     result_hash = result["imageUrl"]
     imglink = "https:#{result_hash}"
 
-    Cloudinary::Uploader.upload(imglink, :folder => "bibtome/qr/", :resource_type => "image", :public_id => "#{@tag.code}",
+    Cloudinary::Uploader.upload(imglink, :folder => "bibtome/qr/", :resource_type => "image", :public_id => "#{self.code}",
       :transformation => [
         {:width => 340, :height => 340, :crop => "crop"},
         {:radius => 10}])
