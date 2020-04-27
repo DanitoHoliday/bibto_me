@@ -4,15 +4,15 @@
 # Tag.destroy_all
 # User.destroy_all
 
-# puts ""
-# puts "Creating admin"
-# puts ""
-# x = User.create(first_name: "Timo", last_name: "Turner", email: "user@bibto.me", password: "123456", phone: "+4916091101291", shared_phone: true)
+puts ""
+puts "Creating admin"
+puts ""
+x = User.create(first_name: "Timo", last_name: "Turner", email: "user@bibto.me", password: "123456", phone: "+4916091101291", shared_phone: true)
 
-# puts "Admin-Name     | #{x.first_name} #{x.last_name}"
-# puts "Admin-Email    | #{x.email}"
-# puts "Admin-password | #{x.password}"
-# puts ""
+puts "Admin-Name     | #{x.first_name} #{x.last_name}"
+puts "Admin-Email    | #{x.email}"
+puts "Admin-password | #{x.password}"
+puts ""
 # puts "creating already registered tags for Admin"
 # puts ""
 
@@ -130,13 +130,19 @@
 # puts ""
 # puts "Happy developing :)"
 
-tag = Tag.new(code: "xxxxxx", registered: false)
-tag.save
-tag = Tag.new(code: "a1b2c3", registered: false)
-tag.save
+# tag = Tag.new(code: "xxxxxx", registered: false)
+# tag.save
+# tag = Tag.new(code: "a1b2c3", registered: false)
+# tag.save
 
-puts "#### Presentation Tag  ####"
-puts "###########################"
-puts "##### xxxxxx created ######"
-puts "##### a1b2c3 created ######"
-puts "###########################"
+# puts "#### Presentation Tag  ####"
+# puts "###########################"
+# puts "##### xxxxxx created ######"
+# puts "##### a1b2c3 created ######"
+# puts "###########################"
+
+1.times {
+  puts "Creating tag",
+  Tag.create
+  puts "Tag created"
+}
