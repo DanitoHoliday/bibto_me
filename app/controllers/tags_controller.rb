@@ -1,5 +1,76 @@
+require 'uri'
+require 'net/http'
+require 'openssl'
+require 'json'
+require 'open-uri'
+
 class TagsController < ApplicationController
-before_action :authenticate_user!, only: [:update_registration]
+  before_action :authenticate_user!, only: [:update_registration]
+
+  def create
+    @tag = Tag.new(code: SecureRandom.hex(3).downcase, registered: false)
+
+    url = URI("https://qrcode-monkey.p.rapidapi.com/qr/custom")
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    request = Net::HTTP::Post.new(url)
+    request["x-rapidapi-host"] = 'qrcode-monkey.p.rapidapi.com'
+    request["x-rapidapi-key"] = ENV['RAPIDAPI_KEY']
+    request["content-type"] = 'application/json'
+    request["accept"] = 'application/json'
+
+    request.body = "{
+                  \"data\":\"https://www.bibto.me/qr/#{@tag.code}\",
+                  \"config\":{
+                  \"body\":\"round\",
+                  \"eye\":\"frame13\",
+                  \"eyeBall\":\"ball14\",
+                  \"erf1\":[],
+                  \"erf2\":[],
+                  \"erf3\":[],
+                  \"brf1\":[],
+                  \"brf2\":[],
+                  \"brf3\":[],
+                  \"bodyColor\":\"#3F4C6A\",
+                  \"bgColor\":\"#FFFFFF\",
+                  \"eye1Color\":\"#3F4C6A\",
+                  \"eye2Color\":\"#3F4C6A\",
+                  \"eye3Color\":\"#3F4C6A\",
+                  \"eyeBall1Color\":\"#3F4C6A\",
+                  \"eyeBall2Color\":\"#3F4C6A\",
+                  \"eyeBall3Color\":\"#3F4C6A\",
+                  \"gradientColor1\":\"#3F4C6A\",
+                  \"gradientColor2\":\"#3F4C6A\",
+                  \"gradientType\":\"linear\",
+                  \"gradientOnEyes\":false,
+                  \"logo\":\"https://res.cloudinary.com/dyuwip9bs/image/upload/v1587555929/bibtome/qr/logo/Group_3_2_vbumpc.png\",
+                  \"logoMode\":\"clean\"},
+                  \"size\":300,
+                  \"download\":true,
+                  \"file\":\"png\"}"
+
+    response = http.request(request)
+    result = JSON.parse(response.body)
+    result_hash = result["imageUrl"]
+    imglink = "https:#{result_hash}"
+
+    Cloudinary::Uploader.upload(imglink, :folder => "bibtome/qr/", :resource_type => "image", :public_id => "#{@tag.code}",
+      :transformation => [
+        {:width => 340, :height => 340, :crop => "crop"},
+        {:radius => 10}])
+
+    @tag.save
+    # download = open(imglink)
+    # file = Tempfile.new(["#{@tag.code}", ".png"])
+    # IO.binwrite(file, download.to_s)
+    # file.rewind
+    # file.close
+    # @tag.qr.attach(io: File.open(file), filename: "#{@tag.code}.png")
+    # file.unlink
+  end
 
   def update_registration(tag)
     if @tag.registered == true
@@ -42,8 +113,6 @@ before_action :authenticate_user!, only: [:update_registration]
       update_registration(@tag)
     end
   end
-
-  #need view?
 
   def update
     @tag = Tag.find(params[:id])

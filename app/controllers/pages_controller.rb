@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
   end
 
-   def thank_you
+  def thank_you
   end
 
   def the_404
