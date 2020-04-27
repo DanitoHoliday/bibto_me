@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_09_143431) do
+ActiveRecord::Schema.define(version: 2020_04_27_102820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_03_09_143431) do
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string "code"
+    t.string "code", default: "3315b2"
     t.boolean "registered"
     t.string "category"
     t.string "type"
