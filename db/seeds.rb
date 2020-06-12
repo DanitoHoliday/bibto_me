@@ -141,7 +141,7 @@ puts ""
 # puts "##### a1b2c3 created ######"
 # puts "###########################"
 
-1.times {
+500.times {
   puts "Creating tag",
   Tag.create
   puts "Tag created"

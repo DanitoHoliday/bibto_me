@@ -8,7 +8,7 @@ class Tag < ApplicationRecord
   after_create :set_registration, on: [ :create ]
   has_one_attached :qr
   validates :code, uniqueness: true, presence: true
-  after_create_commit :generate_image
+  #after_create_commit :generate_image
 
   private
 
