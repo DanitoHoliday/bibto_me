@@ -12,7 +12,7 @@ class TagRegistersController < ApplicationController
       @tag.user = current_user
       @tag.save
       redirect_to register_success_path(tag: @tag)
-    elsif @tag.registered == true
+    elsif @tag.registered ==   true
       # flash.alert = "Code is already registered."
       @error = "* Code is already registered"
       render :register_input
