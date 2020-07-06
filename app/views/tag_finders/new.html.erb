@@ -5,34 +5,39 @@
   <div class="auth-session-container">
     <h2 class="text-center">You are a hero!</h2>
     <h4 class="text-center">You have found <%= @tag.user.first_name %>´s <%= @tag.category %>.</h4>
+
     <% if @tag.category != "Phone" %>
-    <% if @tag.user.phone && @tag.user.shared_phone %>
+
+      <% if @tag.user.phone && @tag.user.shared_phone %>
         <p class="text-center">Contact <%= @tag.user.first_name %> directly: <%= @tag.user.phone %></p>
        <!--  <div class="buttons-container">
           <#%= link_to "I will reach out to #{@tag.user.first_name}", finder_thank_you_path(@tag), class: "btn btn-primary mt-2", html: {width: "fit-content"}%>
         </div> -->
         <h4 class="mt-3 text-center">OR</h4>
-        <div class="switch-container">
+<!--         <div class="switch-container">
           <label id="checky" class="switch mr-2">
             <input type="checkbox" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
             <span class="slider round"></span>
           </label>
           <h4 class="share-contact">Share my contact info with <%= @tag.user.first_name %>!</h4>
-        </div>
-        <div class="collapse" id="collapseExample">
+        </div> -->
+<!--         <div class="collapse" id="collapseExample">
+ -->          <%= render "contact_form" %>
+        <!-- </div> -->
+      <% else %>
+      <!-- REMOVING d-flex before justi... -->
+        <div class="justify-content-center">
           <%= render "contact_form" %>
         </div>
+      <% end %>
+
     <% else %>
-      <div class="d-flex justify-content-center">
-        <%= render "contact_form" %>
-      </div>
-    <% end %>
-    <% else %>
-      <div class="justify-content-center">
-        <%= render "contact_form" %>
-      </div>
-    <% end %>
+     <div class="justify-content-center">
+       <%= render "contact_form" %>
+     </div>
+   <% end %>
   </div>
+
 </div>
 
 

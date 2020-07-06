@@ -7,7 +7,7 @@
 puts ""
 puts "Creating admin"
 puts ""
-x = User.create(first_name: "Timo", last_name: "Turner", email: "user@bibto.me", password: "123456", phone: "+4916091101291", shared_phone: true)
+x = User.create(first_name: "Timo", last_name: "Turner", email: "jan@bibto.me", password: "123456", phone: "+4915774307257", shared_phone: false)
 
 puts "Admin-Name     | #{x.first_name} #{x.last_name}"
 puts "Admin-Email    | #{x.email}"
@@ -104,20 +104,20 @@ puts ""
 #   puts
 # end
 
-# puts "###########################"
-# puts "## Creating special tags ##"
-# puts "###########################"
+puts "###########################"
+puts "## Creating special tags ##"
+puts "###########################"
 
-# tag = Tag.new(code: "xxxxxx", registered: false)
-# tag.save
-# tag = Tag.new(code: "a1b2c3", registered: false)
-# tag.save
+tag = Tag.new(code: "xxxxxx", registered: false)
+tag.save
+tag = Tag.new(code: "a1b2c3", registered: false)
+tag.save
 
-# puts "#### Presentation Tag  ####"
-# puts "###########################"
-# puts "##### xxxxxx created ######"
-# puts "##### a1b2c3 created ######"
-# puts "###########################"
+puts "#### Presentation Tag  ####"
+puts "###########################"
+puts "##### xxxxxx created ######"
+puts "##### a1b2c3 created ######"
+puts "###########################"
 
 # puts ""
 # puts "INSTRUCTION PLEASE READ !!!"
@@ -141,8 +141,8 @@ puts ""
 # puts "##### a1b2c3 created ######"
 # puts "###########################"
 
-500.times {
-  puts "Creating tag",
-  Tag.create
-  puts "Tag created"
-}
+# 500.times {
+#   puts "Creating tag",
+#   Tag.create
+#   puts "Tag created"
+# }
