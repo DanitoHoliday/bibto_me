@@ -1,7 +1,7 @@
 class TwilioController < ApplicationController
 
   def self.send_message(phone_number, message)
-   # @twilio_number = ENV['TWILIO_NUMBER']
+   @twilio_number = ENV['TWILIO_NUMBER']
    @client = Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
    message = @client.messages.create(
      :from => '(904) 626-7040',
