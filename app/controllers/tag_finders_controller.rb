@@ -23,8 +23,8 @@ before_action :authenticate_user!, except: [:new, :create, :thank_you, :finder_i
     @finder = Finder.new(finder_params)
     @finder.tag = @tag
     if @finder.save
-      full_message = "#{@tag.category} found: #{@finder.phone} / #{@finder.email} | #{@finder.message}"
-      ########### ------------------
+      full_message = "Your #{@tag.category} was found: Finder's info: #{@finder.phone} - #{@finder.email} Message: #{@finder.message}"
+      ########## ------------------
       TwilioController.send_message(@tag.user.phone, full_message)
       ########### ------------------
       UserMailer.tag_found(@tag, @finder, full_message).deliver_now

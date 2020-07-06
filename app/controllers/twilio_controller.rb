@@ -4,12 +4,12 @@ class TwilioController < ApplicationController
    @twilio_number = ENV['TWILIO_NUMBER']
    @client = Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
    message = @client.messages.create(
-     :from => '(904) 626-7040',
+     :from => 'bibtome',
      :to => phone_number,
      :provide_feedback => true,
      :body => message
      )
    puts "sid: #{message.sid} delivered: #{message.status}"
  end
-
+ ## (904) 626-7040
 end
