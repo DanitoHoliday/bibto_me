@@ -3,7 +3,6 @@ class TagRegistersController < ApplicationController
 
   def update
     @tag = Tag.find_by(code: params[:code].downcase)
-    binding.pry
     if @tag.nil?
       @error = "* Code not found"
       #flash[:alert] = "Code not found."
