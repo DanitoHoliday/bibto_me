@@ -25,7 +25,7 @@ before_action :authenticate_user!, except: [:new, :create, :thank_you, :finder_i
     if @finder.save
       full_message = "Your #{@tag.category} was found: Finder's info: #{@finder.phone} - #{@finder.email} Message: #{@finder.message}"
       ########## ------------------
-      TwilioController.send_message(@tag.user.phone, full_message)
+      TwilioController.send_message(@tag.user.phone.starts_with?("0") ? @tag.user.phone = "+49" + "#{@tag.user.phone[1..-1]}" : @tag.user.phone, full_message)
       ########### ------------------
       UserMailer.tag_found(@tag, @finder, full_message).deliver_now
       redirect_to finder_thank_you_path(@tag)

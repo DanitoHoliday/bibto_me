@@ -9,21 +9,23 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
+
+      <h3>Deine Daten werden ausschließlich dafür genutzt, dich beim Verlust deiner Gegenstände zu informieren. Versprochen. </h2>
         <%= f.input :first_name,
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email" },
-                    placeholder: "Name*",
-                    label: "Your name" %>
+                    placeholder: "Denk dir etwas aus oder nimm deinen echten Namen",
+                    label: "Wie willst du genannt werden?" %>
         <%= f.input :email,
                     required: true,
                     input_html: { autocomplete: "email" },
                     placeholder: "E-mail",
-                    label: "Email address" %>
+                    label: "Email" %>
         <%= f.input :phone,
-                    required: false,
+                    required: true,
                     input_html: { autocomplete: "phone" },
-                    placeholder: "Telefon",
+                    placeholder: "+49....",
                     label: "Telefon" %>
         <%= f.input :password,
                     required: true,
